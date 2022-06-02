@@ -42,7 +42,7 @@
                                 <strong class="text-gray-dark" id="title">봄여름가을겨울 (Still Life)</strong>
                             </a>
                         </div>
-                        <span class="d-block" id="singer" style="float: left;">빅뱅 · </span>
+                        <span class="d-block" id="singer" style="float: left;">BIGBANG · </span>
                         <span class="d-block" id="times">&nbsp;3:09</span>
                     </div>
                 </div>
