@@ -1,0 +1,23 @@
+#senti {
+    float: left;
+}
+#pitch {
+    float: right;
+}
+.nav-link{
+    font-size: 90%;
+}
+#musicSearch{
+    margin-left: 12%;
+    border-radius: 8px;
+}
+.card{
+    margin-left: 12%;
+    text-align: center;
+}
+audio{
+    margin-left: 10%;
+}
+.hidden{
+    display: none;
+}
