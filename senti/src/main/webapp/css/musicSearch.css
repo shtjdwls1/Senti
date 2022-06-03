@@ -61,3 +61,9 @@ a {
     color: gray;
     text-decoration: none;
 }
+
+#musicSearchInput{
+    float: left;
+    width: 57%;
+    height: 38px;
+}

@@ -23,24 +23,58 @@
             </div>
             <br>
             <div>
-                <form class="musicSearch" action="musicSearchResult.jsp">
-                    <input class="form-control me-2 w-75 h-25 d-inline-block" name="search" type="search" placeholder="노래, 아티스트 검색"
+                <form class="musicSearch" action="">
+                    <input id="musicSearchInput" class="form-control me-2 d-inline-block" type="search" placeholder="노래, 아티스트 검색"
                         aria-label="Search">
+                    <input id="musicSearchSubmit" type="submit" class="btn btn-outline-primary h-25 d-inline-block" value="입력"></input>    
                 </form>
             </div>
+            <!-- 노래 검색하면 뜸 -->
 
             <hr>
+            <!-- 노래 -->
+            <div id="music1" class="h-50 shadow-none p-1 mb-1 bg-light rounded">
+                <div class="d-flex text-muted pt-3">
+                    <a href="musicSearch.jsp"><img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+                            src="img/album.jpg" width="40" height="40"></a>
+                    <div class="pb-3 mb-0 small lh-sm w-100">
+                        <div class="d-flex justify-content-between">
+                            <a href="musicSearchDetail.html">
+                                <strong class="text-gray-dark" id="title">봄여름가을겨울 (Still Life)</strong>
+                            </a>
+                        </div>
+                        <span class="d-block" id="singer" style="float: left;"> 빅뱅 </span>
+                        <span class="d-block" id="times">&nbsp;3:09</span>
+                    </div>
+                </div>
+            </div>
+            <div id="music1" class="h-50 shadow-none p-1 mb-1 bg-light rounded">
+                <div class="d-flex text-muted pt-3">
+                    <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="img/album.jpg" width="40"
+                        height="40">
+                    <div class="pb-3 mb-0 small lh-sm w-100">
+                        <div class="d-flex justify-content-between">
+                            <a href="musicSearchDetail.html">
+                                <strong class="text-gray-dark" id="title">봄여름가을겨울 (Still Life)</strong>
+                            </a>
+                        </div>
+                        <span class="d-block" id="singer" style="float: left;">빅뱅 · </span>
+                        <span class="d-block" id="times">&nbsp;3:09</span>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- 하단 네비게이션 -->
             <ul class="nav fixed-bottom nav-pills justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="playList.jsp">플레이리스트</a>
+                    <a class="nav-link" href="playList.html">플레이리스트</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">음역대측정</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="musicSearch.jsp" aria-current="page">노래검색</a>
+                    <a class="nav-link active" href="musicSearch.html" aria-current="page">노래검색</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link">프로필</a>

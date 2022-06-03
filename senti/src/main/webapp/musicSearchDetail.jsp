@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,26 +17,29 @@
 
 <body>
     <div class="p-3 mb-2" id="top">
-        <h1 id="pitch">F3~D5</h1>
-        <h1 id="senti">Senti</h1>
+        <h1 id="pitch">내 음역대</h1>
+        <h1 id="senti"><img src="img/facebook.png" id="logo"> Senti</h1>
     </div>
     <br>
-    <div>
+    <button type="button" class="btn-close" aria-label="Close" onclick="location.href='musicSearch.jsp'"></button>
+    <br>
+    <!-- <div>
         <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
-            placeholder="노래, 아티스트 검색" aria-label="Search">
-    </div>
+            placeholder="노래, 아티스트 검색" aria-label="Search" style="visibility: hidden;">
+    </div> -->
     <!-- 노래 검색하면 뜸 -->
     
     <!-- 노래 디테일 -->
     <main>
-        <hr>
+        <hr style="visibility: hidden;">
         <div class="card" style="width: 18rem;">
             <img src="img/album.jpg" class="card-img-top" alt="...">
 
             <div class="card-body">
-                <h5 class="card-title title">봄여름가을겨울</h5>
-                <p class="card-text singer">빅뱅</p>
-                <p class="card-text">음역대 : </p>
+                <h5 class="card-title"  id= "title">봄여름가을겨울</h5>
+                <p class="card-text" id= "singer">빅뱅</p>
+                <p class="card-text"  id= "genre">장르 : </p>
+                <p class="card-text"  id= "singer">음역대 : </p>
                 <p class="card-text">내 음역대와 비교 : </p>
                 
                 <!-- Button trigger modal -->
