@@ -21,11 +21,11 @@ select * from USERINFO;
 delete from userinfo where pw = '123';
 
 create table songinfo(
-keys varchar2(4) primary key,
+keys varchar2(100) primary key,
 title varchar2(20) not null,
 singer varchar2(20) not null,
 genre varchar2(10),
-bpm number(3),
+bpm number(6,3),
 lyrics varchar2(4000),
 path varchar2(100),
 mrpath varchar2(100),
@@ -34,9 +34,9 @@ albumimg varchar2(1000),
 release varchar2(10) 
 );
 
-drop table songinfo;
+drop table songinfo cascade constraints;
 insert into songinfo
-values('test', 'test', 1, 'test', 'test', 1, 'test', 'test', 'test', 'test');
+values('test', 'test', 'test', 'test', 111.111, 'test', 'test', 'test', 'test','test','test');
 
 select * from songinfo;
 
