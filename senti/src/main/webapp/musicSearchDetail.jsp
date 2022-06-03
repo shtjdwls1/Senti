@@ -21,7 +21,7 @@
         <h1 id="senti"><img src="img/facebook.png" id="logo"> Senti</h1>
     </div>
     <br>
-    <button type="button" class="btn-close" aria-label="Close" onclick="location.href='musicSearch.jsp'"></button>
+    <button type="button" class="btn-close" aria-label="Close" onclick="location.href='musicSearchResult.jsp'"></button>
     <br>
     <!-- <div>
         <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
@@ -33,11 +33,11 @@
     <main>
         <hr style="visibility: hidden;">
         <div class="card" style="width: 18rem;">
-            <img src="img/album.jpg" class="card-img-top" alt="...">
-
             <div class="card-body">
-                <h5 class="card-title"  id= "title">봄여름가을겨울</h5>
-                <p class="card-text" id= "singer">빅뱅</p>
+                <h5 class="card-title"  id= "title" ><strong>봄여름가을겨울</strong></h5>
+                <p class="card-text mb-1" id= "singer">빅뱅</p>
+                <img src="img/album.jpg" class="card-img-top shadow-sm p-3 mb-1 bg-body rounded" id="albumimg" alt="...">
+                <p>2022.04.05</p>
                 <p class="card-text"  id= "genre">장르 : </p>
                 <p class="card-text"  id= "singer">음역대 : </p>
                 <p class="card-text">내 음역대와 비교 : </p>
@@ -100,7 +100,9 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    플레이리스트 추가
+                </button>
             </div>
         </div>
         <audio src="봄여름가을겨울.mp3" controls></audio>
