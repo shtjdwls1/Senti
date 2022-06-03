@@ -1,4 +1,4 @@
-const musicSearch = document.querySelector(".musicSearch");
+
 const colors = ["#4e4376", "#2b5876"];
 const button = document.querySelector("#top");
 
@@ -8,9 +8,5 @@ function topColor() {
   button.style.background = `linear-gradient(${color1},${color2})`;
 }
 
-function handleMusicSearch(event) {
-  event.preventDefault();
-}
 
-musicSearch.addEventListener("submit", handleMusicSearch);
 topColor();

@@ -31,8 +31,8 @@
     </div>
     <div class="main">
       <!-- 플레이리스트 만들기 -->
-      <form class="playList-form">
-        <input type="text" class="form-control" id="createPlayList" placeholder="플레이리스트를 만드세요">
+      <form class="playList-form" action="playList">
+        <input type="text" class="form-control" id="createPlayList" name="playListName" placeholder="플레이리스트를 만드세요">
       </form>
       <!-- 플레이리스트  예시-->
       <!-- <div id="playList" class="my-3 p-1 bg-body rounded shadow-sm">

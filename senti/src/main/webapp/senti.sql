@@ -23,26 +23,36 @@ delete from userinfo where pw = '123';
 create table songinfo(
 keys varchar2(4) primary key,
 title varchar2(20) not null,
-times number(4) not null,
 singer varchar2(20) not null,
-genre varchar2(10) not null,
+genre varchar2(10),
 bpm number(3),
-lyrics varchar2(4000) not null,
-path varchar2(100) not null,
-mrpath varchar2(100) not null,
-cover varchar2(1000)
+lyrics varchar2(4000),
+path varchar2(100),
+mrpath varchar2(100),
+albumname varchar2(100),
+albumimg varchar2(1000),
+release varchar2(10) 
 );
 
+drop table songinfo;
 insert into songinfo
 values('test', 'test', 1, 'test', 'test', 1, 'test', 'test', 'test', 'test');
 
 select * from songinfo;
 
 create table playlist(
-keys varchar2(20) primary key,
-id varchar2(20) not null,
-pname varchar2(20) not null,
+keys varchar2(20),
+id varchar2(10) not null,
+pname varchar2(20) not null
 );
+
+select * from playlist;
+
+alter table playlist
+add foreign key (id)
+references songinfo(keys);
+
+drop table playlist;
 
 create table range(
 keys varchar2(20) primary key,

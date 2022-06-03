@@ -2,10 +2,6 @@ package Model;
 
 public class DTO {
 
-	// DTO : Data Transfer Object 데이터 전송 객체
-	// DB의 테이블 형태와 같음
-	
-	// 필드 선언(컬럼 값들을 저장)
 	private String id;
 	private String pw;
 	private String nick;
