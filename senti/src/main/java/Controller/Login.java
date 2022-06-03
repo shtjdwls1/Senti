@@ -48,7 +48,6 @@ public class Login extends HttpServlet {
 			response.sendRedirect("playList.jsp?nickname="+URLEncoder.encode(nick, "UTF-8"));
 			System.out.println("닉네임 : "+nick);
 			
-			
 		}else{
 			System.out.println("로그인 실패");
 			response.sendRedirect("LoginFalse.jsp");

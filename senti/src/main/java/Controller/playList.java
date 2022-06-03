@@ -13,10 +13,16 @@ public class playList extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		System.out.println("playList controller");
+		
+		// 1. post방식 인코딩
+		request.setCharacterEncoding("UTF-8");
 	
+		// 2. 값 받아오기
+		String playListName = request.getParameter("playListName");
+		System.out.println(playListName);
 	
-	
-	
+		
 	
 	}
 
