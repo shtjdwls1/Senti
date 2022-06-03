@@ -24,7 +24,7 @@
             <br>
             <div>
                 <form class="musicSearch" action="musicSearchResult.jsp">
-                    <input id="musicSearchInput" class="form-control me-2 d-inline-block" type="search" placeholder="노래, 아티스트 검색"
+                    <input id="musicSearchInput" class="form-control me-2 d-inline-block" type="search" name="search" placeholder="노래, 아티스트 검색"
                         aria-label="Search">
                     <input id="musicSearchSubmit" type="submit" class="btn btn-outline-primary h-25 d-inline-block" value="입력"></input>    
                 </form>

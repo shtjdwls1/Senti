@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class DAO {
 
@@ -123,5 +124,40 @@ public class DAO {
 		} finally {
 			db_close();
 		} return nick;
+	}
+	
+	//검색기능
+	public ArrayList<songinfoDTO> SearchSong(String search) {
+		// 검색받은 데이터 검색
+		String sql = "select title, times, singer, cover from songinfo where title like '%"+search+"%'";
+		// 데이터를 담을 ArrayList
+		ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
+		db_conn();
+		try {
+			psmt = conn.prepareStatement(sql);
+			
+			//실행
+			rs = psmt.executeQuery();
+			//결과 꺼내서 ArrayList에 담기
+			while(rs.next()) {
+				
+				String title = rs.getString(1);
+				String times = rs.getString(2);
+				String singer = rs.getString(3);
+				String cover = rs.getString(4);
+				
+				songinfoDTO dto = new songinfoDTO(title, times, singer, cover);
+				
+				playList.add(dto);
+			}
+							
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db_close();
+		}
+		
+	return playList;
+	
 	}
 }
