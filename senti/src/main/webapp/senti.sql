@@ -35,6 +35,7 @@ release varchar2(10)
 );
 
 drop table songinfo cascade constraints;
+
 insert into songinfo
 values('test', 'test', 'test', 'test', 111.111, 'test', 'test', 'test', 'test','test','test');
 
