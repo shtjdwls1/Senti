@@ -1,3 +1,6 @@
+<%@page import="Model.songinfoDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html>
     <html lang="en">
@@ -23,16 +26,16 @@
             </div>
             <br>
             <div>
-                <form class="musicSearch" action="">
-                    <input class="form-control me-2 w-75 h-25 d-inline-block" type="search" placeholder="노래, 아티스트 검색"
+                <form class="musicSearch" action="musicSearchResult.jsp">
+                    <input class="form-control me-2 w-75 h-25 d-inline-block" type="search" name="search" placeholder="노래, 아티스트 검색"
                         aria-label="Search">
                 </form>
             </div>
             <!-- 노래 검색하면 뜸 -->
 			<% String search = request.getParameter("search");
-               System.out.println(search);
-              DAO dao = new DAO();
-              ArrayList<DTO> playList = dao.SearchMusic(search);
+               System.out.println("검색 키워드 :"+search);
+               DAO dao = new DAO();
+               ArrayList<songinfoDTO> playList = dao.SearchSong(search);
                  
               %>
 			

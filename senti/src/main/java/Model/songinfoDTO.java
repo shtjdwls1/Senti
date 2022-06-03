@@ -6,63 +6,102 @@ public class songinfoDTO {
 	// DB의 테이블 형태와 같음
 	
 	// 필드 선언(컬럼 값들을 저장)
-	private String id;
-	private String pw;
-	private String nick;
-	private String gender;
-	private String high;
-	private String low;
-	private String imgpath;
+	private String keys;
+	private String title;
+	private String times;
+	private String singer;
+	private String genre;
+	private String bpm;
+	private String lyrics;
+	private String path;
+	private String mrpath;
+	private String cover;
 	
-	public songinfoDTO(String id, String pw, String nick, String gender) {
+	public songinfoDTO(String title, String times, String singer, String cover) {
 		super();
-		this.id = id;
-		this.pw = pw;
-		this.nick = nick;
-		this.gender = gender;
+		this.title = title;
+		this.times = times;
+		this.singer = singer;
+		this.cover = cover;
 	}
-	
-	public String getId() {
-		return id;
+
+	public String getKeys() {
+		return keys;
 	}
-	public void setId(String id) {
-		this.id = id;
+
+	public void setKeys(String keys) {
+		this.keys = keys;
 	}
-	public String getPw() {
-		return pw;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getNick() {
-		return nick;
+
+	public String getTimes() {
+		return times;
 	}
-	public void setNick(String nick) {
-		this.nick = nick;
+
+	public void setTimes(String times) {
+		this.times = times;
 	}
-	public String getGender() {
-		return gender;
+
+	public String getSinger() {
+		return singer;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+
+	public void setSinger(String singer) {
+		this.singer = singer;
 	}
-	public String getHigh() {
-		return high;
+
+	public String getGenre() {
+		return genre;
 	}
-	public void setHigh(String high) {
-		this.high = high;
+
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
-	public String getLow() {
-		return low;
+
+	public String getBpm() {
+		return bpm;
 	}
-	public void setLow(String low) {
-		this.low = low;
+
+	public void setBpm(String bpm) {
+		this.bpm = bpm;
 	}
-	public String getImgpath() {
-		return imgpath;
+
+	public String getLyrics() {
+		return lyrics;
 	}
-	public void setImgpath(String imgpath) {
-		this.imgpath = imgpath;
+
+	public void setLyrics(String lyrics) {
+		this.lyrics = lyrics;
 	}
-	
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public String getMrpath() {
+		return mrpath;
+	}
+
+	public void setMrpath(String mrpath) {
+		this.mrpath = mrpath;
+	}
+
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
 }
