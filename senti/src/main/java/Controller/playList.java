@@ -21,7 +21,8 @@ public class playList extends HttpServlet {
 		// 2. 값 받아오기
 		String playListName = request.getParameter("playListName");
 		System.out.println(playListName);
-	
+		
+		response.sendRedirect("playList.jsp");
 		
 	
 	}

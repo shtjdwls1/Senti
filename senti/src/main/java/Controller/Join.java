@@ -28,6 +28,8 @@ public class Join extends HttpServlet {
 		String nick = request.getParameter("nick");
 		String gender = request.getParameter("gender");
 		
+		String pwCheck = request.getParameter("pwCheck");
+		
 		System.out.println(id);
 		System.out.println(pw);
 		System.out.println(nick);
@@ -44,8 +46,7 @@ public class Join extends HttpServlet {
 		if(cnt>0){
 			System.out.println("회원가입 성공");
 			response.sendRedirect("joinSuccess.jsp?nick="+URLEncoder.encode(nick, "UTF-8"));
-			
-		}else{
+		}else {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("joinFalse.jsp");
 		}

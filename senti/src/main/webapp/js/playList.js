@@ -55,8 +55,8 @@ function paintPlayList(playListName) {
 }
 
 // 플레이리스트 만들기
-function createPlayList(event) {
-  event.preventDefault();
+function createPlayList() {
+  //event.preventDefault();
   const playListName = playListInput.value;
   playListInput.value = "";
   paintPlayList(playListName);

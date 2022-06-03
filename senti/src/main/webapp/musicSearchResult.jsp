@@ -43,7 +43,7 @@
 		</div>
 		<!-- 노래 검색하면 뜸 -->
 		<% String search = request.getParameter("search");
-               System.out.println("검색 키워드 :"+search);
+               System.out.println("검색 키워드 : "+search);
                DAO dao = new DAO();
                ArrayList<songinfoDTO> playList = dao.SearchSong(search);
                  
