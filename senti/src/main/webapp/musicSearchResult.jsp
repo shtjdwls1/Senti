@@ -31,13 +31,14 @@
             <!-- 노래 검색하면 뜸 -->
 			<% String search = request.getParameter("search");
                System.out.println(search);
-              //WineDAO dao = new WineDAO();
-              //ArrayList<WineDTO> wineList = dao.SerchWine(search);
+              DAO dao = new DAO();
+              ArrayList<DTO> playList = dao.SearchMusic(search);
                  
               %>
 			
             <hr>
             <!-- 노래 -->
+            <% for(int i = 0 ; i < playList.size() ; i++) {%>
             <div id="music1" class="h-50 shadow-none p-1 mb-1 bg-light rounded">
                 <div class="d-flex text-muted pt-3">
                     <a href="musicSearch.jsp"><img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
@@ -45,30 +46,15 @@
                     <div class="pb-3 mb-0 small lh-sm w-100">
                         <div class="d-flex justify-content-between">
                             <a href="musicSearchDetail.html">
-                                <strong class="text-gray-dark" id="title">봄여름가을겨울 (Still Life)</strong>
+                                <strong class="text-gray-dark" id="title"><%=playList.get(i).getTitle() %></strong>
                             </a>
                         </div>
-                        <span class="d-block" id="singer" style="float: left;"> 빅뱅 </span>
-                        <span class="d-block" id="times">&nbsp;3:09</span>
+                        <span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger() %> </span>
+                        <span class="d-block" id="times">&nbsp;<%=playList.get(i).getTimes() %></span>
                     </div>
                 </div>
             </div>
-            <div id="music1" class="h-50 shadow-none p-1 mb-1 bg-light rounded">
-                <div class="d-flex text-muted pt-3">
-                    <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="img/album.jpg" width="40"
-                        height="40">
-                    <div class="pb-3 mb-0 small lh-sm w-100">
-                        <div class="d-flex justify-content-between">
-                            <a href="musicSearchDetail.html">
-                                <strong class="text-gray-dark" id="title">봄여름가을겨울 (Still Life)</strong>
-                            </a>
-                        </div>
-                        <span class="d-block" id="singer" style="float: left;">빅뱅 · </span>
-                        <span class="d-block" id="times">&nbsp;3:09</span>
-                    </div>
-                </div>
-            </div>
-
+            <% } %>
 
             <!-- 하단 네비게이션 -->
             <ul class="nav fixed-bottom nav-pills justify-content-center">
