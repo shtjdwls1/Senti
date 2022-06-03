@@ -56,7 +56,7 @@
 			<div class="d-flex text-muted pt-3">
 				<a href="musicSearch.jsp"><img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="img/album.jpg" width="40" height="40"></a>
+					src="<%=playList.get(i).getAlbumimg() %>" width="40" height="40"></a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
 						<a href="musicSearchDetail.html"> <strong
@@ -64,7 +64,7 @@
 						</a>
 					</div>
 					<span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger() %>
-					</span> <span class="d-block" id="times">&nbsp;<%=playList.get(i).getTimes() %></span>
+					</span>
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 						<button class="btn btn-primary w-25" type="button">Button</button>
 					</div>

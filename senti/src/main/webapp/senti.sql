@@ -24,7 +24,7 @@ create table songinfo(
 keys varchar2(100) primary key,
 title varchar2(20) not null,
 singer varchar2(20) not null,
-genre varchar2(10),
+genre varchar2(40),
 bpm number(6,3),
 lyrics varchar2(4000),
 path varchar2(100),

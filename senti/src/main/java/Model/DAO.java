@@ -129,7 +129,7 @@ public class DAO {
 	//검색기능
 	public ArrayList<songinfoDTO> SearchSong(String search) {
 		// 검색받은 데이터 검색
-		String sql = "select title, times, singer, cover from songinfo where title like '%"+search+"%'";
+		String sql = "select title, singer, albumimg from songinfo where title like '%"+search+"%' or singer like '%"+search+"%'";
 		// 데이터를 담을 ArrayList
 		ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
 		db_conn();
@@ -142,11 +142,10 @@ public class DAO {
 			while(rs.next()) {
 				
 				String title = rs.getString(1);
-				String times = rs.getString(2);
-				String singer = rs.getString(3);
-				String cover = rs.getString(4);
+				String singer = rs.getString(2);
+				String albumimg = rs.getString(3);
 				
-				songinfoDTO dto = new songinfoDTO(title, times, singer, cover);
+				songinfoDTO dto = new songinfoDTO(title, singer, albumimg);
 				
 				playList.add(dto);
 			}
