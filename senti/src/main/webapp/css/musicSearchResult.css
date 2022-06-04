@@ -77,6 +77,10 @@ a {
 	height: 38px;
 }
 
+#musicSearchSubmit{
+	margin-left: 22px;
+}
+
 #playListAdd {
 	float: right;
 }
@@ -84,4 +88,8 @@ a {
 #title {
 	display: block;
 	margin-top: 15px;
+}
+button{
+	all: unset;
+	margin-right:15px;
 }
