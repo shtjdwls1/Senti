@@ -42,36 +42,42 @@
 			</form>
 		</div>
 		<!-- 노래 검색하면 뜸 -->
-		<% String search = request.getParameter("search");
-               System.out.println("검색 키워드 :"+search);
-               DAO dao = new DAO();
-               ArrayList<songinfoDTO> playList = dao.SearchSong(search);
-                 
-              %>
+		<%
+		String search = request.getParameter("search");
+		System.out.println("검색 키워드 :" + search);
+		DAO dao = new DAO();
+		ArrayList<songinfoDTO> playList = dao.SearchSong(search);
+		%>
 
 		<hr>
 		<!-- 노래 -->
-		<% for(int i = 0 ; i < playList.size() ; i++) {%>
-		<div id="music1" class="h-50 shadow-none p-1 mb-1 bg-light rounded">
-			<div class="d-flex text-muted pt-3">
+		<%
+		for (int i = 0; i < playList.size(); i++) {
+		%>
+		<div id="music1" class="">
+			<div class="d-flex text-muted pt-1">
 				<a href="musicSearch.jsp"><img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="<%=playList.get(i).getAlbumimg() %>" width="40" height="40"></a>
+					src="<%=playList.get(i).getAlbumimg()%>" width="64" height="64"></a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href="musicSearchDetail.html"> <strong
-							class="text-gray-dark" id="title"><%=playList.get(i).getTitle() %></strong>
+						<a href="musicSearchDetail.html"> <strong2
+							class="text-gray-dark" id="title"><%=playList.get(i).getTitle()%></strong>
 						</a>
 					</div>
-					<span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger() %>
-					</span>
-					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-						<button class="btn btn-primary w-25" type="button">Button</button>
+					<div class="d-flex justify-content-between">
+						<span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger()%>
+						</span>
 					</div>
+					<i class="bi bi-plus-lg fs-1" style = "float : right;"></i>
+					<!-- <button id="playListAdd" class="btn btn-primary w-25"  type="button">Button</button> -->
+
 				</div>
 			</div>
 		</div>
-		<% } %>
+		<%
+		}
+		%>
 
 		<!-- 하단 네비게이션 -->
 		<ul class="nav fixed-bottom nav-pills justify-content-center">
