@@ -42,21 +42,12 @@
 			</form>
 		</div>
 		<!-- 노래 검색하면 뜸 -->
-<<<<<<< HEAD
 		<%
 		String search = request.getParameter("search");
-		System.out.println("검색 키워드 :" + search);
+		System.out.println("검색 키워드 : " + search);
 		DAO dao = new DAO();
 		ArrayList<songinfoDTO> playList = dao.SearchSong(search);
 		%>
-=======
-		<% String search = request.getParameter("search");
-               System.out.println("검색 키워드 : "+search);
-               DAO dao = new DAO();
-               ArrayList<songinfoDTO> playList = dao.SearchSong(search);
-                 
-              %>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/Senti.git
 
 		<hr>
 		<!-- 노래 -->
@@ -65,13 +56,14 @@
 		%>
 		<div id="music1" class="">
 			<div class="d-flex text-muted pt-1">
-				<a href="musicSearch.jsp"><img
+				<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>"><img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 					src="<%=playList.get(i).getAlbumimg()%>" width="64" height="64"></a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href="musicSearchDetail.html"> <strong2
-							class="text-gray-dark" id="title"><%=playList.get(i).getTitle()%></strong>
+						<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>">
+							<strong class="text-gray-dark" id="title" name="">
+							<%=playList.get(i).getTitle()%></strong>
 						</a>
 					</div>
 					<div class="d-flex justify-content-between">
@@ -87,7 +79,6 @@
 		<%
 		}
 		%>
-
 		<!-- 하단 네비게이션 -->
 		<ul class="nav fixed-bottom nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
