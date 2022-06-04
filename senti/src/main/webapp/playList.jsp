@@ -33,26 +33,13 @@
          </h1>
       </div>
       <div class="main">
+      
          <!-- 플레이리스트 만들기 -->
-         <form class="playList-form" action="playList">
+         <form class="playList-form" action="playList" method="post">
             <input type="text" class="form-control me-2 d-inline-block w-75" id="createPlayList"
                name="playListName" placeholder="플레이리스트를 만드세요">
             <input id="playListSubmit" type="submit" class="btn btn-outline-primary h-25 d-inline-block" value="입력"></input>   
          </form>
-         <!-- 플레이리스트  예시-->
-         <!-- <div id="playList" class="my-3 p-1 bg-body rounded shadow-sm">
-        <div class="d-flex text-muted pt-3"> -->
-         <!-- 앨범 커버 -->
-         <!-- <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="img/add.png" width="40" height="40">
-          <div class="pb-3 mb-0 small lh-sm w-100">
-            <div class="d-flex justify-content-between">
-              <strong class="text-gray-dark">재생목록이름</strong>
-              <a href="playListDetail.html">상세보기</a>
-            </div>
-            <span class="d-block">@<%= nick %></span>
-          </div>
-        </div>
-      </div> -->
    </main>
 
    <!-- 하단 네비게이션 -->

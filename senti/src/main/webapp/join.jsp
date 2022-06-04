@@ -73,7 +73,7 @@
 
                         <div class="col-12">
                             <label for="id2" class="form-label">비밀번호 확인</label>
-                            <input required type="password" class="form-control" id="password2"
+                            <input required type="password" class="form-control" id="password2" name="pwCheck"
                                 placeholder="비밀번호를 다시 입력해 주세요">
                         </div>
 
