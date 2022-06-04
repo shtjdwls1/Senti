@@ -50,6 +50,11 @@ body{
     margin-left: 12%;
     border-radius: 8px;
 }
+#musicSearchInput {
+	float: left;
+	width: 57%;
+	height: 38px;
+}
 .card{
     margin-left: 12%;
     text-align: center;
