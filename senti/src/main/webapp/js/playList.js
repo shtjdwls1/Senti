@@ -1,6 +1,6 @@
-const playListForm = document.querySelector(".playList-form");
+/*const playListForm = document.querySelector(".playList-form");
 const playListInput = document.querySelector("#createPlayList");
-const main = document.querySelector("main");
+const main = document.querySelector("main");*/
 
 const colors = ["#4e4376", "#2b5876"];
 const button = document.querySelector("#top");
@@ -13,7 +13,7 @@ function topColor() {
 }
 
 // 플레이리스트 화면에 보여주기
-function paintPlayList(playListName) {
+/*function paintPlayList(playListName) {
   const playList = document.createElement("div");
   playList.setAttribute("id", "playList1");
   playList.setAttribute("class", "my-3 p-1 bg-body rounded shadow-sm");
@@ -52,16 +52,16 @@ function paintPlayList(playListName) {
 
   playList.appendChild(div);
   main.appendChild(playList);
-}
+}*/
 
 // 플레이리스트 만들기
-function createPlayList() {
-  //event.preventDefault();
+/*function createPlayList(event) {
+  event.preventDefault();
   const playListName = playListInput.value;
   playListInput.value = "";
   paintPlayList(playListName);
-}
+}*/
 
-playListForm.addEventListener("submit", createPlayList);
+/*playListForm.addEventListener("submit", createPlayList);*/
 
 topColor();

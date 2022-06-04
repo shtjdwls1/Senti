@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 3초후에 Login.html로 화면 이동 -->
-    <meta http-equiv="refresh" content="2;url=Login.html">
+    <meta http-equiv="refresh" content="2;url=Login.jsp">
 
 
     <link rel="stylesheet" href="css/splash.css">
