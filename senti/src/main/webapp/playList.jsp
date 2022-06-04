@@ -31,7 +31,9 @@
 		<br>
 		<div>
 			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
-			<% String nick = (String)session.getAttribute("nick"); %>
+			<% String nick = (String)session.getAttribute("nick"); 
+			   String id = (String)session.getAttribute("id");
+			   System.out.println(id);%>
 			<h1 id="nick">
 				<%= nick %>님의<br>플레이리스트
 			</h1>

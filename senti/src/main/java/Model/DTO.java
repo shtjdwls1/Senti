@@ -18,8 +18,6 @@ public class DTO {
 		this.gender = gender;
 	}
 	
-	
-	
 	public String getId() {
 		return id;
 	}

@@ -42,6 +42,7 @@ public class Login extends HttpServlet {
 			
 			// 2. session 생성 (session구분할 이름, 값)
 			session.setAttribute("nick", nick);
+			session.setAttribute("id", id);
 			
 			// 3. 페이지 응답
 			//response.sendRedirect("./playList.jsp");
