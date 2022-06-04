@@ -12,6 +12,8 @@ public class playListDTO {
 		this.id = id;
 		this.pname = pname;
 	}
+	
+	
 
 	public String getKeys() {
 		return keys;

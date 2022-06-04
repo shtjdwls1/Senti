@@ -11,12 +11,24 @@ public class songinfoDTO {
 	private String path;
 	private String mrpath;
 	private String albumimg;
-	
-	public songinfoDTO(String title, String singer, String albumimg) {
+	private String release;
+
+	public songinfoDTO(String keys, String title, String singer, String albumimg) {
 		super();
+		this.keys = keys;
 		this.title = title;
 		this.singer = singer;
 		this.albumimg = albumimg;
+	}
+
+	public songinfoDTO(String title, String singer, String albumimg, String release, String genre, String lyrics) {
+		super();
+		this.title = title;
+		this.singer = singer;
+		this.genre = genre;
+		this.albumimg = albumimg;
+		this.release = release;
+		this.lyrics = lyrics;
 	}
 
 	public String getKeys() {
@@ -91,5 +103,12 @@ public class songinfoDTO {
 		this.albumimg = albumimg;
 	}
 
-	
+	public String getRelease() {
+		return release;
+	}
+
+	public void setRelease(String release) {
+		this.release = release;
+	}
+
 }
