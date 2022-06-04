@@ -126,10 +126,10 @@ public class DAO {
 		} return nick;
 	}
 	
-	//검색기능
+	// 검색기능
 	public ArrayList<songinfoDTO> SearchSong(String search) {
 		// 검색받은 데이터 검색
-		String sql = "select title, singer, albumimg from songinfo where title like '%"+search+"%' or singer like '%"+search+"%'";
+		String sql = "select keys, title, singer, albumimg from songinfo where title like '%"+search+"%' or singer like '%"+search+"%'";
 		// 데이터를 담을 ArrayList
 		ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
 		db_conn();
@@ -140,12 +140,12 @@ public class DAO {
 			rs = psmt.executeQuery();
 			//결과 꺼내서 ArrayList에 담기
 			while(rs.next()) {
+				String keys = rs.getString(1);
+				String title = rs.getString(2);
+				String singer = rs.getString(3);
+				String albumimg = rs.getString(4);
 				
-				String title = rs.getString(1);
-				String singer = rs.getString(2);
-				String albumimg = rs.getString(3);
-				
-				songinfoDTO dto = new songinfoDTO(title, singer, albumimg);
+				songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
 				
 				playList.add(dto);
 			}
@@ -158,6 +158,46 @@ public class DAO {
 		
 	return playList;
 	
+	}
+	
+	// 음악 상세
+	
+	public ArrayList<songinfoDTO> detail(String key) {
+		// 검색받은 데이터 검색
+		String sql = "select title, singer, albumimg, release, genre, lyrics from songinfo where keys like '%" + key + "%'";
+		// 데이터를 담을 ArrayList
+		ArrayList<songinfoDTO> musicSearchDetail = new ArrayList<songinfoDTO>();
+		db_conn();
+		System.out.println("DETAIL");
+		try {
+			psmt = conn.prepareStatement(sql);
+			
+			// 실행
+			rs = psmt.executeQuery();
+			// 결과 꺼내서 ArrayList에 담기
+			rs.next();
+			
+
+			String title = rs.getString(1);
+			String singer = rs.getString(2);
+			String albumimg = rs.getString(3);
+			String release = rs.getString(4);
+			String genre = rs.getString(5);
+			String lyrics = rs.getString(6);
+			
+			songinfoDTO dto = new songinfoDTO(title, singer, albumimg, release, genre, lyrics);
+
+			musicSearchDetail.add(dto);
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db_close();
+		}
+
+		return musicSearchDetail;
+
 	}
 	
 	public int playList(playListDTO dto) {
