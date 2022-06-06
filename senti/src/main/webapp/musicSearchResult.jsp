@@ -54,25 +54,27 @@
 		<%
 		for (int i = 0; i < playList.size(); i++) {
 		%>
-		<div id="music1" class="">
+		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded">
 			<div class="d-flex text-muted pt-1">
 				<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>"><img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 					src="<%=playList.get(i).getAlbumimg()%>" width="64" height="64"></a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>">
-							<strong class="text-gray-dark" id="title" name="">
-							<%=playList.get(i).getTitle()%></strong>
+						<a
+							href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>">
+							<strong class="text-gray-dark" id="title" name=""> <%=playList.get(i).getTitle()%></strong>
 						</a>
 					</div>
+
 					<div class="d-flex justify-content-between">
-						<span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger()%>
+						<span class="d-block" id="singer"> <%=playList.get(i).getSinger()%>
 						</span>
 					</div>
-					<i class="bi bi-plus-lg fs-1" style = "float : right;"></i>
 					<!-- <button id="playListAdd" class="btn btn-primary w-25"  type="button">Button</button> -->
-
+				</div>
+				<div>
+					<button id="musicPlus" class="bi bi-plus-lg fs-1"></button>
 				</div>
 			</div>
 		</div>

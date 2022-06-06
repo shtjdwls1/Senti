@@ -1,96 +1,115 @@
 /* fadein css */
 body {
-    animation: fadeout 3s;
-    -webkit-animation: fadeout 3s;
+	animation: fadeout 3s;
+	-webkit-animation: fadeout 3s;
 }
 
-@keyframes fadeout {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+@keyframes fadeout {from { opacity:0;
+	
 }
 
+to {
+	opacity: 1;
+}
+
+}
 @-webkit-keyframes fadeout {
-
-    /* Safari and Chrome */
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+	/* Safari and Chrome */ from { opacity:0;
+	
 }
 
+to {
+	opacity: 1;
+}
+
+}
 #top {
-    height: 60px;
+	height: 60px;
 }
 
 #pitch {
-    float: right;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
+	float: right;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: white;
 }
 
 #senti {
-    float: left;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    font-size: 28px;
+	float: left;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: white;
+	font-size: 28px;
 }
 
-
 .nav-link {
-    font-size: 90%;
+	font-size: 90%;
 }
 
 .btn-close {
-    margin-left: 3%;
+	margin-left: 3%;
 }
 
 #playListThumbNail {
-    width: 30%;
-    height: 30%;
-    float: left;
-    margin-left: 3%;
-    margin-top: 3%;
+	width: 30%;
+	height: 30%;
+	float: left;
+	margin: 0px;
+	margin-left: 5%;
 }
 
-#playListTitle {
+/* #playListTitle {
     margin-top: 10%;
     margin-left: 5%;
-}
+} */
 
-#playListNick {
+/* #playListNick {
     margin-top: 9%;
     margin-left: 2%;
-}
-
+} */
 #plus {
-    width: 10%;
-    height: 30%;
+	width: 10%;
+	height: 30%;
 }
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 #logo {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 5%;
+	width: 32px;
+	height: 32px;
+	margin-bottom: 5%;
 }
 
 #main {
-    display: contents;
+	display: contents;
 }
 
 /* a태그 파란색 링크 제거 */
 a {
-    color: gray;
-    text-decoration: none;
+	color: gray;
+	text-decoration: none;
+}
+
+button{
+	all: unset;
+}
+#playListTitleUpdateInput{
+	width: 70%;
+}
+.hidden{
+	display:none;
+}
+#musicPlus:link{
+	color:black;
+	text-decoration: none;
+} 
+#musicPlus:visited{
+	color:black;
+	text-decoration: none;
+} 
+#musicPlus:hover{
+	color:black;
+	text-decoration: underline;
 }

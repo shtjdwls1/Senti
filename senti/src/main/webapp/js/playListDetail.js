@@ -1,5 +1,8 @@
 const colors = ["#4e4376", "#2b5876"];
 const button = document.querySelector("#top");
+const btnUpdate = document.querySelector("#btnUpdate")
+const playListTitle = document.querySelector("#playListTitle")
+const playListTitleUpdate = document.querySelector(".playListTitleUpdate ")
 
 // 맨 위쪽
 function topColor() {
@@ -7,5 +10,16 @@ function topColor() {
   const color2 = colors[1];
   button.style.background = `linear-gradient(${color1},${color2})`;
 }
+function paintPlayListTitleUpdate(){
+	playListTitle.classList.add("hidden");
+	playListTitleUpdate.classList.remove("hidden");
+}
+function paintPlayListTitle(){
+	playListTitle.classList.remove("hidden");
+	playListTitleUpdate.classList.add("hidden");
+}
 
+btnUpdate.addEventListener("click",paintPlayListTitleUpdate);
+playListTitleUpdate.addEventListener("submit",paintPlayListTitle);
 topColor();
+

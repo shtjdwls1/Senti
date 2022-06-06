@@ -93,3 +93,15 @@ button{
 	all: unset;
 	margin-right:15px;
 }
+#musicPlus:link{
+	color:black;
+	text-decoration: none;
+} 
+#musicPlus:visited{
+	color:black;
+	text-decoration: none;
+} 
+#musicPlus:hover{
+	color:black;
+	text-decoration: underline;
+}
