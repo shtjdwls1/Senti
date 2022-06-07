@@ -227,72 +227,38 @@ public class DAO {
 		return cnt;
 	}
 	
-	// 플레이리스트 add
-	public ArrayList<playListDTO> playListAdd(String key) {
-		// 검색받은 데이터 검색
-		String sql = "select keys, id, pName from playList";
-
-		// 데이터를 담을 ArrayList
-		ArrayList<playListDTO> playListAdd = new ArrayList<playListDTO>();
-		db_conn();
-		
-		System.out.println("playListAddDAO");
-		try {
-			psmt = conn.prepareStatement(sql);
-
-			// 실행
-			rs = psmt.executeQuery();
-			// 결과 꺼내서 ArrayList에 담기
-			rs.next();
-
-			String keys = rs.getString(1);
-			String id = rs.getString(2);
-			String pName = rs.getString(3);
-
-			playListDTO dto = new playListDTO(keys, id, pName);
-
-			playListAdd.add(dto);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
-
-		return playListAdd;
-
-	}
-	
-	// 플레이리스트
-	public ArrayList<playListDTO> playListAdd(playListDTO info) {
-		ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
-
-		try {
-			db_conn();
-
-			String sql = "SELECT * FROM playlist WHERE id=?";
-
-			psmt = conn.prepareStatement(sql);
-
-			psmt.setString(1, info.getId());
-
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				String keys = rs.getString(1);
-				String id = rs.getString(2);
-				String pname = rs.getString(3);
-
-				playListDTO dto = new playListDTO(keys, id, pname);
-
-				mlist.add(dto);
+	//로그인한 사용자에게 온 메세지 조회
+		public ArrayList<playListDTO> selectPl(DTO info) {
+			ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+			
+			try {
+				db_conn();
+				
+				String sql = "SELECT * FROM playlist WHERE id=?";
+				
+				psmt = conn.prepareStatement(sql);
+				
+				psmt.setString(1, info.getId());
+				
+				rs = psmt.executeQuery();
+				
+				while(rs.next()) {
+					String keys = rs.getString(1);
+					String id = rs.getString(2);
+					String pname = rs.getString(3);
+					
+					playListDTO dto = new playListDTO(keys, id, pname);
+					
+					mlist.add(dto);
+				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				db_close();
+			}
+			return mlist;
 		}
-		return mlist;
-	}
-
+	
 }

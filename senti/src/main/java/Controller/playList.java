@@ -41,7 +41,7 @@ public class playList extends HttpServlet {
 		// SQL문 실행결과에 따라 회원가입 성공실패 여부 확인
 		if(cnt>0){
 			System.out.println("플레이리스트 생성");
-			response.sendRedirect("playListAdd.jsp?nick="+URLEncoder.encode(playListName, "UTF-8"));
+			response.sendRedirect("playListAdd.jsp");
 		}else {
 			System.out.println("생성 실패");
 			response.sendRedirect("playList.jsp");

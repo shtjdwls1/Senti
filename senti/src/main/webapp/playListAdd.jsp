@@ -1,5 +1,8 @@
 <!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
 <!DOCTYPE html>
+<%@page import="Model.DAO"%>
+<%@page import="Model.playListDTO"%>
+<%@page import="java.util.ArrayList"%>
 <html lang="en">
 
 <head>
@@ -18,7 +21,6 @@
 <link rel="stylesheet" href="css/playList.css">
 <title>Document</title>
 </head>
-
 <body>
 	<main>
 		<div class="p-3 mb-2" id="top">
@@ -32,6 +34,7 @@
 			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
 			<% String nick = (String)session.getAttribute("nick"); 
 			   String id = (String)session.getAttribute("id");%>
+			   
 			<h1 id="nick">
 				<%=nick%>님의<br>플레이리스트
 			</h1>
@@ -55,7 +58,7 @@
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 						src="img/add.png">
 					<div id ="playListInfo">
-						<strong class="text-gray-dark">재생목록이름</strong> 
+						<strong class="text-gray-dark"> 플레이리스트 제목 </strong> 
 						<span class="d-block">노래 : 0곡</span>
 					</div>
 					<!-- <div class="pb-3 mb-0 small lh-sm w-100">
