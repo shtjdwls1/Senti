@@ -1,3 +1,4 @@
+<%@page import="Model.DTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,18 +32,21 @@
 		<br>
 		<div>
 			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
-			<% String nick = (String)session.getAttribute("nick"); 
-			   String id = (String)session.getAttribute("id");
-			   System.out.println(id);%>
+			<% DTO info = (DTO)session.getAttribute("info");
+			   System.out.println(info.getNick());  
+			
+			   //String nick = (String)session.getAttribute("nick"); 
+			   //String id = (String)session.getAttribute("id");
+			   //System.out.println(id);%>
 			<h1 id="nick">
-				<%= nick %>님의<br>플레이리스트
+				<%= info.getNick() %>님의<br>플레이리스트
 			</h1>
 		</div>
 		<div class="main">
 
 			<!-- 플레이리스트 만들기 -->
 			<form class="playList-form" action="playList" method="post">
-				<input type="text" name="id" value=<%=id%> style="display:none"></input>
+				<input type="text" name="id" value=<%= info.getId() %> style="display:none"></input>
 				<input type="text" class="form-control me-2 d-inline-block w-75"
 					id="createPlayList" name="playListName" placeholder="플레이리스트를 만드세요">
 				<input id="playListSubmit" type="submit"

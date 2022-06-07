@@ -227,8 +227,8 @@ public class DAO {
 		return cnt;
 	}
 	
-	//로그인한 사용자에게 온 메세지 조회
-		public ArrayList<playListDTO> selectPl(DTO info) {
+	//플레이리스트
+		public ArrayList<playListDTO> playListAdd(DTO info) {
 			ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
 			
 			try {

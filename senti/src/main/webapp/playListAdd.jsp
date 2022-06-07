@@ -1,5 +1,6 @@
 <!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
 <!DOCTYPE html>
+<%@page import="Model.DTO"%>
 <%@page import="Model.DAO"%>
 <%@page import="Model.playListDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -37,10 +38,19 @@
 		<div>
 			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
 			<% String nick = (String)session.getAttribute("nick"); 
-			   String id = (String)session.getAttribute("id");%>
+			   String id = (String)session.getAttribute("id");
+			   DTO info = (DTO)session.getAttribute("info");
+			   
+			   DAO mdao = new DAO();
+			   ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+			   
+			   if(info != null){
+					mlist = mdao.playListAdd(info);
+				}
+			   %>
 			   
 			<h1 id="nick">
-				<%=nick%>님의<br>플레이리스트
+				<%=info.getNick()%>님의<br>플레이리스트
 			</h1>
 		</div>
 		<div class="main">
@@ -55,6 +65,7 @@
 		</div>
 		<hr>
 		<!-- 플레이리스트  예시-->
+		<%for(int i=0; i<mlist.size(); i++){ %>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
 			<a href="playListDetail.jsp">
 				<div class="">
@@ -62,7 +73,7 @@
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 						src="img/add.png">
 					<div id ="playListInfo">
-						<strong class="text-gray-dark"> 플레이리스트 제목 </strong> 
+						<strong class="text-gray-dark"> <%= mlist.get(i).getPname() %> </strong> 
 						<span class="d-block">노래 : 0곡</span>
 					</div>
 					<!-- <div class="pb-3 mb-0 small lh-sm w-100">
@@ -76,6 +87,7 @@
 				</div>
 			</a>
 		</div>
+		<%} %>
 	</main>
 
 	<!-- 하단 네비게이션 -->

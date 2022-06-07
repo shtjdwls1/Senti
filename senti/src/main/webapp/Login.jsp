@@ -32,7 +32,7 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form action="Login" method="post">
+        <form action="LoginServiceCon" method="post">
             <div class="p-3 mb-2" id="top">
                 <br>
                 <br>

@@ -47,6 +47,8 @@ id varchar2(10) not null,
 pname varchar2(20) not null
 );
 
+delete from playlist where pname = '승재';
+
 select * from playlist;
 
 alter table playlist
