@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DAO {
@@ -203,67 +202,66 @@ public class DAO {
 		try {
 			// db연결 메소드 호출
 			db_conn();
-			System.out.println("db연결");
+			System.out.println("db연결 완료");
 			// ------------------ DB연결 완료 -----------------------
 
-			// DB에서 어떤 행위를 할지 결정 -> sql문
-			// ? = 바인드변수
-			// 들어갈 자리가 정해져있으면 userinfo(id, pw, nickname) 뒤에 들어갈 자리 지정
-			String sql = "insert into userinfo values(?, ?, ?)";
-
+			String sql = "insert into playlist values(?, ?, ?)";
+			
 			// DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
 			psmt = conn.prepareStatement(sql);
-
+			
 			// ? 바인드 변수에 값채우기
 			// psmt.setString(?의 번호, ?에 넣을 값);
-			psmt.setString(1, dto.getKeys());
+			psmt.setString(1, "");
 			psmt.setString(2, dto.getId());
 			psmt.setString(3, dto.getPname());
+			System.out.println("keys : "+dto.getKeys());
+			System.out.println("id : "+dto.getId());
+			System.out.println("pname : "+dto.getPname());
 
-			// SQL문 실행
-			// executeUpdate(); : 데이터베이스에 변화가 생겼을 때 사용
-			// : 실행 결과가 int형태로 반환
-			// : int의 의미 = 몇개의 행이 변화가 생겼는지
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally { // finally는 무조건 실행해야 함 (DB문 닫기)
+		} finally {
 			db_close();
 		}
 		return cnt;
 	}
-	// 플레이리스트 생성
-	public int newPlay(playListDTO dto) {
+	
+	// 플레이리스트 add
+	public ArrayList<playListDTO> playListAdd(String key) {
+		// 검색받은 데이터 검색
+		String sql = "select keys, id, pName from playList";
+
+		// 데이터를 담을 ArrayList
+		ArrayList<playListDTO> playListAdd = new ArrayList<playListDTO>();
+		db_conn();
+		
+		System.out.println("playListAddDAO");
 		try {
-			// db연결 메소드 호출
-			db_conn();
-			System.out.println("db연결");
-			// ------------------ DB연결 완료 -----------------------
-
-			// DB에서 어떤 행위를 할지 결정 -> sql문
-			// ? = 바인드변수
-			// 들어갈 자리가 정해져있으면 userinfo(id, pw, nickname) 뒤에 들어갈 자리 지정
-			String sql = "insert into userinfo values(?, ?, ?)";
-
-			// DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
 			psmt = conn.prepareStatement(sql);
 
-			// ? 바인드 변수에 값채우기
-			// psmt.setString(?의 번호, ?에 넣을 값);
-			psmt.setString(1, dto.getId());
-			psmt.setString(2, "");
-			psmt.setString(3, dto.getPname());
+			// 실행
+			rs = psmt.executeQuery();
+			// 결과 꺼내서 ArrayList에 담기
+			rs.next();
 
-			// SQL문 실행
-			// executeUpdate(); : 데이터베이스에 변화가 생겼을 때 사용
-			// : 실행 결과가 int형태로 반환
-			// : int의 의미 = 몇개의 행이 변화가 생겼는지
-			cnt = psmt.executeUpdate();
+			String keys = rs.getString(1);
+			String id = rs.getString(2);
+			String pName = rs.getString(3);
+
+			playListDTO dto = new playListDTO(keys, id, pName);
+
+			playListAdd.add(dto);
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally { // finally는 무조건 실행해야 함 (DB문 닫기)
+		} finally {
 			db_close();
 		}
-		return cnt;
+
+		return playListAdd;
+
 	}
+
 }

@@ -25,13 +25,14 @@ public class playList extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 	
 		// 2. 값 받아오기
+		String id = request.getParameter("id");
 		String playListName = request.getParameter("playListName");
+		System.out.println("id : " + id);
 		System.out.println("playList Name : "+playListName);
 		
-		response.sendRedirect("playListAdd.jsp");
-		
+		//response.sendRedirect("playListAdd.jsp");
 		// 받아온 값을 DTO로 묶기
-		playListDTO dto = new playListDTO(playListName);
+		playListDTO dto = new playListDTO("", id, playListName);
 		
 		// join메소드 호출 -> 실행결과(int)
 		DAO dao = new DAO();
@@ -40,10 +41,10 @@ public class playList extends HttpServlet {
 		// SQL문 실행결과에 따라 회원가입 성공실패 여부 확인
 		if(cnt>0){
 			System.out.println("플레이리스트 생성");
-			response.sendRedirect("joinSuccess.jsp?nick="+URLEncoder.encode(playListName, "UTF-8"));
+			response.sendRedirect("playListAdd.jsp?nick="+URLEncoder.encode(playListName, "UTF-8"));
 		}else {
 			System.out.println("생성 실패");
-			response.sendRedirect("joinFalse.jsp");
+			response.sendRedirect("playList.jsp");
 		}
 	
 

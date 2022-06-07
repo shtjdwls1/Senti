@@ -6,10 +6,10 @@ public class playListDTO {
 	private String id;
 	private String pname;
 	
-	public playListDTO(String id, String keys, String pname) {
+	public playListDTO( String keys,String id, String pname) {
 		super();
-		this.id = id;
 		this.keys = keys;
+		this.id = id;
 		this.pname = pname;
 	}
 	
