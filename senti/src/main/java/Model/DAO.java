@@ -16,7 +16,6 @@ public class DAO {
 	int cnt = 0;
 	ResultSet rs = null;
 	String nickname = null;
-
 	
 	// DB연결 메소드
 	public void db_conn() {
@@ -88,7 +87,7 @@ public class DAO {
 		}
 		return cnt;
 	}
-
+	
 	// 로그인 메소드
 	public String login(String id, String pw) {
 		String nick = null;
@@ -262,6 +261,38 @@ public class DAO {
 
 		return playListAdd;
 
+	}
+	
+	// 플레이리스트
+	public ArrayList<playListDTO> playListAdd(playListDTO info) {
+		ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+
+		try {
+			db_conn();
+
+			String sql = "SELECT * FROM playlist WHERE id=?";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, info.getId());
+
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String keys = rs.getString(1);
+				String id = rs.getString(2);
+				String pname = rs.getString(3);
+
+				playListDTO dto = new playListDTO(keys, id, pname);
+
+				mlist.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db_close();
+		}
+		return mlist;
 	}
 
 }

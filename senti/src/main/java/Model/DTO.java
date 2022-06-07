@@ -10,6 +10,17 @@ public class DTO {
 	private String low;
 	private String imgpath;
 	
+	public DTO(String id, String pw, String nick, String gender, String high, String low, String imgpath) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.nick = nick;
+		this.gender = gender;
+		this.high = high;
+		this.low = low;
+		this.imgpath = imgpath;
+	}
+	
 	public DTO(String id, String pw, String nick, String gender) {
 		super();
 		this.id = id;
@@ -17,7 +28,7 @@ public class DTO {
 		this.nick = nick;
 		this.gender = gender;
 	}
-	
+
 	public String getId() {
 		return id;
 	}

@@ -27,7 +27,6 @@ public class Join extends HttpServlet {
 		String pw = request.getParameter("pw");	
 		String nick = request.getParameter("nick");
 		String gender = request.getParameter("gender");
-		
 		String pwCheck = request.getParameter("pwCheck");
 		
 		System.out.println(id);
