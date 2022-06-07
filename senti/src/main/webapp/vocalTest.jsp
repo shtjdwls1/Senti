@@ -49,8 +49,9 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2">직접
-						테스트</button>
+					<button id="vocalTest" type="button"
+						class="btn btn-primary btn-lg px-4 me-md-2"
+						onclick="location.href='./vocalTestIng.jsp';">직접 테스트</button>
 					<button type="button" class="btn btn-outline-secondary btn-lg px-4">녹음한
 						파일 올리기</button>
 				</div>
@@ -60,9 +61,9 @@
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom">
 		<ul class="nav fixed-bottom nav-pills justify-content-center">
-			<li class="nav-item"><a class="nav-link" href="#">플레이리스트</a></li>
+			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
-				aria-current="page" href="playList.jsp">음역대측정</a></li>
+				aria-current="page" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
 			</li>
 			<li class="nav-item"><a class="nav-link">프로필</a></li>
