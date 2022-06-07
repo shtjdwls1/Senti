@@ -123,7 +123,7 @@
                     <h5>Senti의 회원이 되신 것을 축하합니다!</h5>
             </div>
             <div>
-                <a id="next" class="w-100 btn btn-primary btn-lg" href="vocalTest.html">음역대 테스트</a>
+                <a id="next" class="w-100 btn btn-primary btn-lg" href="playListAdd.jsp">확인</a>
             </div>
         </div>
 

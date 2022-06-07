@@ -14,6 +14,10 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/vocalTest.css">
+<!-- font  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
 <style>
 .bd-placeholder-img {
 	font-size: 1.125rem;
@@ -30,6 +34,7 @@
 }
 </style>
 <title>Document</title>
+
 </head>
 
 <body>
@@ -52,8 +57,9 @@
 					<button id="vocalTest" type="button"
 						class="btn btn-primary btn-lg px-4 me-md-2"
 						onclick="location.href='./vocalTestIng.jsp';">직접 테스트</button>
-					<button type="button" class="btn btn-outline-secondary btn-lg px-4">녹음한
-						파일 올리기</button>
+					<label class="btn btn-warning btn-lg px-4 me-md-2" for="input-file" style = "color : white;"> 녹음한
+						파일 올리기 </label> <input class=""
+						type="file" id="input-file"  style="display: none"/>
 				</div>
 			</div>
 		</div>

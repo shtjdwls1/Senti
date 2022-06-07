@@ -84,7 +84,7 @@
 								<button type="button" class="btn-close" data-bs-dismiss="modal"
 									aria-label="Close"></button>
 							</div>
-							<div class="modal-body">
+							<div class="modal-body" style="font-size:15px;">
 								<%=dto.get(0).getLyrics()%>
 							</div>
 							<div class="modal-footer">
@@ -106,36 +106,48 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="staticBackdropLabel">플리</h5>
+								<h5 class="modal-title" id="staticBackdropLabel">플레이리스트 목록</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal"
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<div id="playList1" class="bg-body rounded shadow-sm col-6">
-									<a href="playListDetail.jsp">
-										<div class="">
-											<!-- 앨범 커버 -->
-											<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-												src="img/add.png">
-											<div id="playListInfo">
-												<strong class="text-gray-dark">재생목록이름</strong> <span
-													class="d-block">노래 : 0곡</span>
+								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
+									<div class="d-flex text-muted pt-3">
+										<a href=""> <img
+											class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+											src="img/add.png" id="musicAdd">
+										</a>
+										<div class="pb-3 mb-0 small lh-sm w-100">
+											<div class="d-flex justify-content-between">
+												<a href=""> <strong class="text-gray-dark" id="title">재생목록제목</strong>
+												</a>
 											</div>
+											<span class="d-block" id="singer" style="float: left;">노래
+												: 0곡 </span>
 										</div>
-									</a>
+										<div>
+											<button id="musicPlus" class="bi bi-plus-lg fs-1"></button>
+										</div>
+									</div>
 								</div>
-								<div id="playList1" class="bg-body rounded shadow-sm col-6">
-									<a href="playListDetail.jsp">
-										<div class="">
-											<!-- 앨범 커버 -->
-											<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-												src="img/add.png">
-											<div id="playListInfo">
-												<strong class="text-gray-dark">재생목록이름</strong> <span
-													class="d-block">노래 : 0곡</span>
+								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
+									<div class="d-flex text-muted pt-3">
+										<a href=""> <img
+											class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+											src="img/add.png" id="musicAdd">
+										</a>
+										<div class="pb-3 mb-0 small lh-sm w-100">
+											<div class="d-flex justify-content-between">
+												<a href=""> <strong class="text-gray-dark" id="title">재생목록제목</strong>
+												</a>
 											</div>
+											<span class="d-block" id="singer" style="float: left;">노래
+												: 0곡 </span>
 										</div>
-									</a>
+										<div>
+											<button id="musicPlus" class="bi bi-plus-lg fs-1"></button>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -146,14 +158,13 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<audio src="봄여름가을겨울.mp3" controls></audio>
+			<audio src="봄여름가을겨울.mp3" controls></audio>
 	</main>
 	<!-- 하단 네비게이션 -->
 	<ul class="nav fixed-bottom nav-pills justify-content-center">
-		<li class="nav-item"><a class="nav-link" href="playList.html">플레이리스트</a>
+		<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
 		</li>
-		<li class="nav-item"><a class="nav-link" href="#">음역대측정</a></li>
+		<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 		<li class="nav-item"><a class="nav-link active"
 			href="musicSearch.html" aria-current="page">노래검색</a></li>
 		<li class="nav-item"><a class="nav-link">프로필</a></li>

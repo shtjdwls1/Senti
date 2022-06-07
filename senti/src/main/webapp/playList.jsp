@@ -56,7 +56,7 @@
 		<ul class="nav fixed-bottom nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="playList.jsp">플레이리스트</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">음역대측정</a></li>
+			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
 			</li>
 			<li class="nav-item"><a class="nav-link">프로필</a></li>

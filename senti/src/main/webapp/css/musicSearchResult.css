@@ -105,3 +105,11 @@ button{
 	color:black;
 	text-decoration: underline;
 }
+#music{
+	width: 340px;
+    height: 75px;
+}
+#musicAdd{
+	width: 40px;
+	height: 40px;
+}

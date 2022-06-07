@@ -13,41 +13,9 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/vocalTest.css">
-<style>
-.bd-placeholder-img {
-	font-size: 1.125rem;
-	text-anchor: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
-@media ( min-width : 768px) {
-	.bd-placeholder-img-lg {
-		font-size: 3.5rem;
-	}
-}
-</style>
+<link rel="stylesheet" href="css/vocalTestIng.css">
 <title>Document</title>
-<script>
-	Swal.fire({
-		title : '<strong>HTML <u>example</u></strong>',
-		icon : 'info',
-		html : 'You can use <b>bold text</b>, '
-				+ '<a href="//sweetalert2.github.io">links</a> '
-				+ 'and other HTML tags',
-		showCloseButton : true,
-		showCancelButton : true,
-		focusConfirm : false,
-		confirmButtonText : '<i class="fa fa-thumbs-up"></i> Great!',
-		confirmButtonAriaLabel : 'Thumbs up, great!',
-		cancelButtonText : '<i class="fa fa-thumbs-down"></i>',
-		cancelButtonAriaLabel : 'Thumbs down'
-	})
-</script>
 </head>
-
 <body>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
@@ -65,19 +33,18 @@
 				<button id="btnHigh">최고 음역</button>
 			</div>
 			<!-- 최저음 테스트 -->
-			<div class="vocalTestLow">
+			<div class="vocalTestLow shadow p-3 mb-5 bg-body rounded">
 				<!-- 비디오  -->
 				<video id="vocalTestLowVideo" src="video/low.mp4" controls></video>
 			</div>
 			<!-- 최고음 테스트 -->
-			<div class="vocalTestHigh hidden">
+			<div class="vocalTestHigh hidden shadow p-3 mb-5 bg-body rounded">
 				<!-- 비디오 -->
 				<video id="vocalTestHighVideo" src="video/high.mp4" controls></video>
 			</div>
 			<form id="note-selector">
 				<select id="low-note-select">
-					<option style="display: none;" selected="selected">Your
-						Low Note</option>
+					<option style="display: none;" selected="selected">최저 음역</option>
 					<option value="25">C3</option>
 					<option value="27">D3</option>
 					<option value="29">E3</option>
@@ -91,8 +58,7 @@
 					<option value="42">F4</option>
 					<option value="44">G4</option>
 				</select><select id="high-note-select">
-					<option style="display: none;" selected="selected">Your
-						High Note</option>
+					<option style="display: none;" selected="selected">최고 음역</option>
 					<option value="37">C4</option>
 					<option value="39">D4</option>
 					<option value="41">E4</option>
@@ -112,8 +78,7 @@
 			</form>
 			<div class="col-lg-6">
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2">직접
-						테스트</button>
+					<button type="button" class="btn btn-success btn-lg px-4 me-md-2">측정 완료</button>
 				</div>
 			</div>
 		</div>
