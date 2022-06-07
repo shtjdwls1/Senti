@@ -38,7 +38,7 @@ public class LoginServiceCon extends HttpServlet {
 			
 			//2. 로그인 정보를 담은 session만들기
 			session.setAttribute("info", info);
-			response.sendRedirect("playList.jsp");
+			response.sendRedirect("playListAdd.jsp");
 		}
 		else {
 			System.out.println("로그인 실패");
