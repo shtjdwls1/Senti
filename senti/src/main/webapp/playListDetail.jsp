@@ -55,8 +55,30 @@
 				</a>
 				<button type="button" class="bi bi-pencil fs-2" id="btnUpdate"
 					title="재생목록이름 수정"></button>
-				<button type="button" class="bi bi-x-lg fs-2" id="btnDelete"
-					title="재생목록 삭제"></button>
+
+				<!-- 재생목록 삭제 버튼 -->
+				<button type="button" class="bi bi-x-lg fs-2" data-bs-toggle="modal"
+					data-bs-target="#playListDelete"></button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="playListDelete" tabindex="-1"
+					aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">플레이리스트 삭제</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">정말로 삭제하시겠습니까?</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger">삭제</button>
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">닫기</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<br>
@@ -75,7 +97,10 @@
 						</a>
 					</div>
 					<span class="d-block" id="singer" style="float: left;">가수이름
-						· </span> <span class="d-block" id="times">&nbsp;노래길이</span>
+						· </span> <span class="d-block" id="times" style="float: left;">&nbsp;노래길이</span>
+					<div>
+						<button id="musicDelete" class="bi bi-x-lg fs-2"></button>
+					</div>
 				</div>
 			</div>
 		</div>

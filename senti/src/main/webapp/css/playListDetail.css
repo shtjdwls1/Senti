@@ -94,6 +94,7 @@ a {
 
 button{
 	all: unset;
+	margin-right:15px;
 }
 #playListTitleUpdateInput{
 	width: 70%;
