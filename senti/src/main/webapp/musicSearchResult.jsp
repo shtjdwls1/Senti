@@ -59,7 +59,6 @@
 				mlist = mdao.playListAdd(info);
 			}
 		   %>
-		%>
 		<hr>
 		<!-- 노래 -->
 		<%
