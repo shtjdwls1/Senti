@@ -1,3 +1,4 @@
+<%@page import="Model.playListDTO"%>
 <%@page import="Model.DTO"%>
 <%@page import="Model.songinfoDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -48,6 +49,15 @@
 	DAO dao = new DAO();
 	ArrayList<songinfoDTO> dto = new ArrayList<songinfoDTO>();
 	dto = dao.detail(keys);
+	
+	DTO info = (DTO)session.getAttribute("info");
+	   
+	DAO mdao = new DAO();
+	ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+	   
+	if(info != null){
+		mlist = mdao.playListAdd(info);
+	}
 	%>
 
 	<!-- 노래 디테일 -->
@@ -111,6 +121,7 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
+							<%for(int i=0; i<mlist.size(); i++){ %>
 								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 									<div class="d-flex text-muted pt-3">
 										<a href=""> <img
@@ -119,7 +130,7 @@
 										</a>
 										<div class="pb-3 mb-0 small lh-sm w-100">
 											<div class="d-flex justify-content-between">
-												<a href=""> <strong class="text-gray-dark" id="title">재생목록제목</strong>
+												<a href=""> <strong class="text-gray-dark" id="title"><%= mlist.get(i).getPname() %></strong>
 												</a>
 											</div>
 											<span class="d-block" id="singer" style="float: left;">노래
@@ -130,25 +141,7 @@
 										</div>
 									</div>
 								</div>
-								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
-									<div class="d-flex text-muted pt-3">
-										<a href=""> <img
-											class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-											src="img/add.png" id="musicAdd">
-										</a>
-										<div class="pb-3 mb-0 small lh-sm w-100">
-											<div class="d-flex justify-content-between">
-												<a href=""> <strong class="text-gray-dark" id="title">재생목록제목</strong>
-												</a>
-											</div>
-											<span class="d-block" id="singer" style="float: left;">노래
-												: 0곡 </span>
-										</div>
-										<div>
-											<button id="musicPlus" class="bi bi-plus-lg fs-1"></button>
-										</div>
-									</div>
-								</div>
+							<%} %>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"

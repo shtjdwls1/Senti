@@ -56,7 +56,7 @@
 		<div class="main">
 			<!-- 플레이리스트 만들기 -->
 			<form class="playList-form" action="playList" method="post">
-				<input type="text" name="id" value=<%= info.getId() %> style="display:none"></input>
+				<input type="text" name="id" value=<%= info.getId() %> style="display:none"/>
 				<input type="text" class="form-control me-2 d-inline-block w-75"
 					id="createPlayList" name="playListName" placeholder="플레이리스트를 만드세요">
 				<input id="playListSubmit" type="submit"
@@ -73,7 +73,7 @@
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 						src="img/add.png">
 					<div id ="playListInfo">
-						<strong class="text-gray-dark"> <%= mlist.get(i).getPname() %> </strong> 
+						<strong class="text-gray-dark"><%= mlist.get(i).getPname() %></strong> 
 						<span class="d-block">노래 : 0곡</span>
 					</div>
 					<!-- <div class="pb-3 mb-0 small lh-sm w-100">
