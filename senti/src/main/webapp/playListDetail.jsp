@@ -44,18 +44,19 @@
 						id="playListTitleUpdateSubmit" type="submit"
 						class="btn btn-outline-primary d-inline-block" value="입력"></input>
 				</form>
-				
+
 			</div>
 			<div class="d-flex justify-content-between">
 				<span class="d-block" id="">노래 : 0곡</span>
 			</div>
 			<div>
 				<a id="musicPlus" href="musicSearch.jsp">
-					<button type="button" class="bi bi-plus-lg fs-1"
-						title="노래 추가"></button>
+					<button type="button" class="bi bi-plus-lg fs-1" title="노래 추가"></button>
 				</a>
 				<button type="button" class="bi bi-pencil fs-2" id="btnUpdate"
 					title="재생목록이름 수정"></button>
+				<button type="button" class="bi bi-x-lg fs-2" id="btnDelete"
+					title="재생목록 삭제"></button>
 			</div>
 		</div>
 		<br>

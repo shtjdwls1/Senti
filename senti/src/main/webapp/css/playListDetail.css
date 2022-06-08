@@ -113,5 +113,9 @@ button{
 	color:black;
 	text-decoration: underline;
 }
-
+#btnUpdate{
+	color:black;
+}
+#btnDelete{
+	color:black;
 }

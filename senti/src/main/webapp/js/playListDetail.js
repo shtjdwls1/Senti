@@ -4,6 +4,7 @@ const btnUpdate = document.querySelector("#btnUpdate")
 const playListTitle = document.querySelector("#playListTitle")
 const playListTitleUpdate = document.querySelector(".playListTitleUpdate ")
 
+
 // 맨 위쪽
 function topColor() {
   const color1 = colors[0];
