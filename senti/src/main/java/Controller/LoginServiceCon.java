@@ -14,7 +14,7 @@ import Model.MemberDAO;
 @WebServlet("/LoginServiceCon")
 public class LoginServiceCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("LoginServiceCon");
+		System.out.println("Login Controller");
 		
 		request.setCharacterEncoding("UTF-8");
 		
@@ -38,7 +38,7 @@ public class LoginServiceCon extends HttpServlet {
 			
 			//2. 로그인 정보를 담은 session만들기
 			session.setAttribute("info", info);
-			response.sendRedirect("playListAdd.jsp");
+			response.sendRedirect("playList.jsp");
 		}
 		else {
 			System.out.println("로그인 실패");
