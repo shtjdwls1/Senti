@@ -44,7 +44,6 @@
 						id="playListTitleUpdateSubmit" type="submit"
 						class="btn btn-outline-primary d-inline-block" value="입력"></input>
 				</form>
-
 			</div>
 			<div class="d-flex justify-content-between">
 				<span class="d-block" id="">노래 : 0곡</span>
@@ -60,7 +59,7 @@
 				<button type="button" class="bi bi-x-lg fs-2" data-bs-toggle="modal"
 					data-bs-target="#playListDelete"></button>
 
-				<!-- Modal -->
+				<!-- 재생목록 삭제 모달 -->
 				<div class="modal fade" id="playListDelete" tabindex="-1"
 					aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
@@ -84,23 +83,23 @@
 		<br>
 		<hr>
 		<!-- 노래 -->
-		<div id="music1" class="my-1 p-1 bg-body rounded shadow-sm">
+		<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 			<div class="d-flex text-muted pt-3">
-				<a href="musicSearchDetail.jsp"> <img
+				<a href=""> <img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="img/add.png" width="40" height="40">
+					src="img/add.png" id="musicAdd">
 				</a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href="musicSearchDetail.jsp"> <strong
-							class="text-gray-dark" id="title">노래제목</strong>
+						<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
 						</a>
 					</div>
-					<span class="d-block" id="singer" style="float: left;">가수이름
-						· </span> <span class="d-block" id="times" style="float: left;">&nbsp;노래길이</span>
-					<div>
-						<button id="musicDelete" class="bi bi-x-lg fs-2"></button>
-					</div>
+					<span class="d-block" id="singer" style="float: left;">가수이름</span>
+					<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
+					<span class="d-block" id="times" style="float: left;">노래길이</span>
+				</div>
+				<div>
+					<button id="musicDelete" class="bi bi-x-lg fs-1 hidden" ></button>
 				</div>
 			</div>
 		</div>

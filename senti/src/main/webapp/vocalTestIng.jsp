@@ -78,7 +78,54 @@
 			</form>
 			<div class="col-lg-6">
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-success btn-lg px-4 me-md-2">측정 완료</button>
+					<button type="button" class="btn btn-success btn-lg px-4 me-md-2"
+						data-bs-toggle="modal" data-bs-target="#genreChoice">측정
+						완료</button>
+					<!-- Modal -->
+					<div class="modal fade" id="genreChoice" tabindex="-1"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">선호하는 장르</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value=""
+											id="ballad"> <label class="form-check-label"
+											for="ballad"> 발라드 </label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value=""
+											id="soul" > <label class="form-check-label"
+											for="soul"> R&B/소울 </label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value=""
+											id="ost"> <label class="form-check-label" for="ost">
+											OST </label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value=""
+											id="dance"> <label class="form-check-label"
+											for="dance"> 댄스 </label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value=""
+											id="rock"> <label class="form-check-label" for="rock">
+											락 </label>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary">노래추천 받기</button>
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
