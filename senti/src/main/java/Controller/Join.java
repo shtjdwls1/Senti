@@ -44,7 +44,7 @@ public class Join extends HttpServlet {
 		// SQL문 실행결과에 따라 회원가입 성공실패 여부 확인
 		if(cnt>0){
 			System.out.println("회원가입 성공");
-			response.sendRedirect("joinSuccess.jsp?nick="+URLEncoder.encode(nick, "UTF-8"));
+			response.sendRedirect("joinSuccess.jsp");
 		}else {
 			System.out.println("회원가입 실패");
 			response.sendRedirect("joinFalse.jsp");
