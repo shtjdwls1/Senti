@@ -42,17 +42,21 @@ values('test', 'test', 'test', 'test', 111.111, 'test', 'test', 'test', 'test','
 select * from songinfo;
 
 create table playlist(
-keys varchar2(20),
+keys varchar2(100),
 id varchar2(10) not null,
-pname varchar2(20) not null
+pname varchar2(20) not null,
+CONSTRAINT playlist_id_fk FOREIGN KEY(id) REFERENCES userinfo(id),
+CONSTRAINT playlist_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 );
 
 delete from playlist where pname = '승재';
 
-insert into playlist
-values('test1', 'test2', 'test3', 'test4','','','');
+drop table playlist;
 
 select * from playlist;
+
+insert into playlist
+values('test1', 'wjdeogus', '테스트');
 
 alter table playlist
 add foreign key (id)

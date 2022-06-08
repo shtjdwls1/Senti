@@ -49,21 +49,20 @@
 		System.out.println("검색 키워드 : " + search);
 		DAO dao = new DAO();
 		ArrayList<songinfoDTO> playList = dao.SearchSong(search);
-		
-		DTO info = (DTO)session.getAttribute("info");
-		   
-		   DAO mdao = new DAO();
-		   ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
-		   
-		   if(info != null){
-				mlist = mdao.playListAdd(info);
-			}
-		   %>
+
+		DTO info = (DTO) session.getAttribute("info");
+
+		DAO mdao = new DAO();
+		ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+
+		if (info != null) {
+			mlist = mdao.playListAdd(info);
+		}
+		%>
 		<hr>
 		<!-- 노래 -->
-		<%
-		for (int i = 0; i < playList.size(); i++) {
-		%>
+		<form action="listDetail" method="post">
+		<% for (int i = 0; i < playList.size(); i++) { %>
 		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded">
 			<div class="d-flex text-muted pt-1">
 				<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>"><img
@@ -73,7 +72,7 @@
 					<div class="d-flex justify-content-between">
 						<a
 							href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>">
-							<strong class="text-gray-dark" id="title" name=""> <%=playList.get(i).getTitle()%></strong>
+							<strong class="text-gray-dark" id="title"> <%=playList.get(i).getTitle()%></strong>
 						</a>
 					</div>
 					<div class="d-flex justify-content-between">
@@ -83,8 +82,8 @@
 					<!-- <button id="playListAdd" class="btn btn-primary w-25"  type="button">Button</button> -->
 				</div>
 				<!-- 플레이리스트 추가 modal -->
-				<button type="button" class="bi bi-plus-lg fs-1" data-bs-toggle="modal"
-					data-bs-target="#playList"></button>
+				<button type="button" class="bi bi-plus-lg fs-1"
+					data-bs-toggle="modal" data-bs-target="#playList"></button>
 				<!-- Modal -->
 				<div class="modal fade" id="playList" data-bs-backdrop="static"
 					data-bs-keyboard="false" tabindex="-1"
@@ -97,7 +96,8 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-							<%for(int p=0; p<mlist.size(); p++){ %>
+								<form action="listDetail" method="post">
+								<% for (int p = 0; p < mlist.size(); p++) { %>
 								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 									<div class="d-flex text-muted pt-3">
 										<a href=""> <img
@@ -113,11 +113,15 @@
 												: 0곡 </span>
 										</div>
 										<div>
-											<button id="musicPlus" class="bi bi-plus-lg fs-1"></button>
+										<input type="text" name="keys" value=<%=playList.get(i).getKeys()%> style="display:none"/>
+										<input type="text" name="id" value=<%= info.getId() %> style="display:none"/>
+										<input type="text" name="pname" value=<%= mlist.get(p).getPname() %> style="display:none"/>
+											<button type="submit" id="musicPlus" class="bi bi-plus-lg fs-1"></button>
 										</div>
 									</div>
 								</div>
-							<%} %>
+								<% } %>
+								</form>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -128,9 +132,8 @@
 				</div>
 			</div>
 		</div>
-		<%
-		}
-		%>
+		<% } %>
+		</form>
 		<!-- 하단 네비게이션 -->
 		<ul class="nav fixed-bottom nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
