@@ -29,9 +29,11 @@
 <body>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
-		<h1 id="senti">
-			<img src="img/facebook.png" id="logo"> Senti
-		</h1>
+		<a href="./playList.jsp">
+			<h1 id="senti">
+				<img src="img/facebook.png" id="logo"> Senti
+			</h1>
+		</a>
 	</div>
 	<br>
 	<button type="button" class="btn-close" aria-label="Close"
@@ -49,13 +51,13 @@
 	DAO dao = new DAO();
 	ArrayList<songinfoDTO> dto = new ArrayList<songinfoDTO>();
 	dto = dao.detail(keys);
-	
-	DTO info = (DTO)session.getAttribute("info");
-	   
+
+	DTO info = (DTO) session.getAttribute("info");
+
 	DAO mdao = new DAO();
 	ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
-	   
-	if(info != null){
+
+	if (info != null) {
 		mlist = mdao.playListAdd(info);
 	}
 	%>
@@ -94,9 +96,11 @@
 								<button type="button" class="btn-close" data-bs-dismiss="modal"
 									aria-label="Close"></button>
 							</div>
-							<div class="modal-body" style="font-size:15px;">
+							<div class="modal-body" style="font-size: 15px;">
 								<%=dto.get(0).getLyrics()%>
-								<% System.out.println(dto.get(0).getKeys()); %>
+								<%
+								System.out.println(dto.get(0).getKeys());
+								%>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -122,32 +126,39 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-							<form action="listDetail" method="post">
-							<%for(int i=0; i<mlist.size(); i++){ %>
-								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
-									<div class="d-flex text-muted pt-3">
-										<a href=""> <img
-											class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-											src="img/add.png" id="musicAdd">
-										</a>
-										<div class="pb-3 mb-0 small lh-sm w-100">
-											<div class="d-flex justify-content-between">
-												<a href=""> <strong class="text-gray-dark" id="title"><%= mlist.get(i).getPname() %></strong>
-												</a>
+								<form action="listDetail" method="post">
+									<%
+									for (int i = 0; i < mlist.size(); i++) {
+									%>
+									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
+										<div class="d-flex text-muted pt-3">
+											<a href=""> <img
+												class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+												src="img/add.png" id="musicAdd">
+											</a>
+											<div class="pb-3 mb-0 small lh-sm w-100">
+												<div class="d-flex justify-content-between">
+													<a href=""> <strong class="text-gray-dark" id="title"><%=mlist.get(i).getPname()%></strong>
+													</a>
+												</div>
+												<span class="d-block" id="singer" style="float: left;">노래
+													: 0곡 </span>
 											</div>
-											<span class="d-block" id="singer" style="float: left;">노래
-												: 0곡 </span>
-										</div>
-										<div>
-										<input type="text" name="keys" value=<%=dto.get(0).getKeys()%> style="display:none"/>
-										<input type="text" name="id" value=<%= info.getId() %> style="display:none"/>
-										<input type="text" name="pname" value=<%= mlist.get(i).getPname() %> style="display:none"/>
-											<button type="submit" id="musicPlus" class="bi bi-plus-lg fs-1"></button>
+											<div>
+												<input type="text" name="keys"
+													value=<%=dto.get(0).getKeys()%> style="display: none" /> <input
+													type="text" name="id" value=<%=info.getId()%>
+													style="display: none" /> <input type="text" name="pname"
+													value=<%=mlist.get(i).getPname()%> style="display: none" />
+												<button type="submit" id="musicPlus"
+													class="bi bi-plus-lg fs-1"></button>
+											</div>
 										</div>
 									</div>
-								</div>
-							<%} %>
-							</form>
+									<%
+									}
+									%>
+								</form>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -161,13 +172,13 @@
 	</main>
 	<!-- 하단 네비게이션 -->
 	<ul class="nav fixed-bottom nav-pills justify-content-center">
-		<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
-		</li>
-		<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-		<li class="nav-item"><a class="nav-link active"
-			href="musicSearch.html" aria-current="page">노래검색</a></li>
-		<li class="nav-item"><a class="nav-link">프로필</a></li>
-	</ul>
+			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
+			<li class="nav-item"><a class="nav-link active"
+				href="musicSearchResult.jsp" aria-current="page">노래검색</a></li>
+			<li class="nav-item"><a class="nav-link">프로필</a></li>
+		</ul>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

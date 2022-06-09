@@ -17,7 +17,9 @@
 <!-- font  -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+	rel="stylesheet">
 <style>
 .bd-placeholder-img {
 	font-size: 1.125rem;
@@ -40,14 +42,16 @@
 <body>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
-		<h1 id="senti">
-			<img src="img/facebook.png" id="logo"> Senti
-		</h1>
+		<a href="./playList.jsp">
+			<h1 id="senti">
+				<img src="img/facebook.png" id="logo"> Senti
+			</h1>
+		</a>
 	</div>
 	<br>
 	<h1 class="display-5 lh-1 mb-1" style="text-align: center;">음역대
 		테스트</h1>
-	<div class="container col-xxl-8 px-4 py-5">
+	<div class="container col-xxl-8 px-4 py-3">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 			<div class="col-10 col-sm-8 col-lg-6">
 				<img src="img/vocalTest.jpg" id="thumbnail" />
@@ -57,16 +61,16 @@
 					<button id="vocalTest" type="button"
 						class="btn btn-primary btn-lg px-4 me-md-2"
 						onclick="location.href='./vocalTestIng.jsp';">직접 테스트</button>
-					<label class="btn btn-warning btn-lg px-4 me-md-2" for="input-file" style = "color : white;"> 녹음한
-						파일 올리기 </label> <input class=""
-						type="file" id="input-file"  style="display: none"/>
+					<label class="btn btn-warning btn-lg px-4 me-md-2" for="input-file"
+						style="color: white;"> 녹음한 파일 올리기 </label> <input class=""
+						type="file" id="input-file" style="display: none" />
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom">
-		<ul class="nav fixed-bottom nav-pills justify-content-center">
+		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="vocalTest.jsp">음역대측정</a></li>

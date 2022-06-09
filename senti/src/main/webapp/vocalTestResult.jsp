@@ -19,9 +19,11 @@
 <body>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
-		<h1 id="senti">
-			<img src="img/facebook.png" id="logo"> Senti
-		</h1>
+		<a href="./playList.jsp">
+			<h1 id="senti">
+				<img src="img/facebook.png" id="logo"> Senti
+			</h1>
+		</a>
 	</div>
 	<br>
 	<h1 class="display-5 fw-bold lh-1 mb-1" style="text-align: center;">테스트
@@ -153,7 +155,7 @@
 	</div>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom">
-		<ul class="nav fixed-bottom nav-pills justify-content-center">
+		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="vocalTest.jsp">음역대측정</a></li>
