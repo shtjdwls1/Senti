@@ -96,6 +96,7 @@
 							</div>
 							<div class="modal-body" style="font-size:15px;">
 								<%=dto.get(0).getLyrics()%>
+								<% System.out.println(dto.get(0).getKeys()); %>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -121,6 +122,7 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
+							<form action="listDetail" method="post">
 							<%for(int i=0; i<mlist.size(); i++){ %>
 								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 									<div class="d-flex text-muted pt-3">
@@ -137,11 +139,15 @@
 												: 0곡 </span>
 										</div>
 										<div>
-											<button id="musicPlus" class="bi bi-plus-lg fs-1"></button>
+										<input type="text" name="keys" value=<%=dto.get(0).getKeys()%> style="display:none"/>
+										<input type="text" name="id" value=<%= info.getId() %> style="display:none"/>
+										<input type="text" name="pname" value=<%= mlist.get(i).getPname() %> style="display:none"/>
+											<button type="submit" id="musicPlus" class="bi bi-plus-lg fs-1"></button>
 										</div>
 									</div>
 								</div>
 							<%} %>
+							</form>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"

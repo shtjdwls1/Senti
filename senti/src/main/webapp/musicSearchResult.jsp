@@ -70,8 +70,7 @@
 					src="<%=playList.get(i).getAlbumimg()%>" width="64" height="64"></a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a
-							href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>">
+						<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>">
 							<strong class="text-gray-dark" id="title"> <%=playList.get(i).getTitle()%></strong>
 						</a>
 					</div>
@@ -79,7 +78,7 @@
 						<span class="d-block" id="singer"> <%=playList.get(i).getSinger()%>
 						</span>
 					</div>
-					<!-- <button id="playListAdd" class="btn btn-primary w-25"  type="button">Button</button> -->
+					<!-- <button id="playListAdd" class="btn btn-primary w-25"  type=-"button">Button</button> -->
 				</div>
 				<!-- 플레이리스트 추가 modal -->
 				<button type="button" class="bi bi-plus-lg fs-1"

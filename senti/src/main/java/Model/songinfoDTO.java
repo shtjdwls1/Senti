@@ -30,6 +30,18 @@ public class songinfoDTO {
 		this.release = release;
 		this.lyrics = lyrics;
 	}
+	
+	public songinfoDTO(String title, String singer, String albumimg, String release, String genre, String lyrics, 
+			String keys) {
+		super();
+		this.keys = keys;
+		this.title = title;
+		this.singer = singer;
+		this.genre = genre;
+		this.lyrics = lyrics;
+		this.albumimg = albumimg;
+		this.release = release;
+	}
 
 	public String getKeys() {
 		return keys;
