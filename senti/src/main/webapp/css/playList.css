@@ -74,6 +74,8 @@ body{
 	width: 180.5px;
     height: 242.5px;
     display: inline-block;
+    margin-left: 7.5px;
+    margin-bottom: 7.5px;
 }
 
 #plus {

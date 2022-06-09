@@ -49,7 +49,7 @@ CONSTRAINT playlist_id_fk FOREIGN KEY(id) REFERENCES userinfo(id),
 CONSTRAINT playlist_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 );
 
-delete from playlist where pname = '승재';
+delete from playlist where id = 'seoil1221';
 
 drop table playlist;
 
