@@ -19,9 +19,11 @@
 <body>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
-		<h1 id="senti">
-			<img src="img/facebook.png" id="logo"> Senti
-		</h1>
+		<a href="./playList.jsp">
+			<h1 id="senti">
+				<img src="img/facebook.png" id="logo"> Senti
+			</h1>
+		</a>
 	</div>
 	<br>
 	<h1 class="display-5 fw-bold lh-1 mb-1" style="text-align: center;">음역대
@@ -29,8 +31,10 @@
 	<div class="container col-xxl-8 px-4 py-5">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 			<div class="controls__btns">
-				<button id="btnLow">최저 음역</button>
-				<button id="btnHigh">최고 음역</button>
+				<button id="btnLow">최저 음역 
+				테스트</button>
+				<button id="btnHigh">최고 음역 
+				테스트</button>
 			</div>
 			<!-- 최저음 테스트 -->
 			<div class="vocalTestLow shadow p-3 mb-5 bg-body rounded">
@@ -44,7 +48,7 @@
 			</div>
 			<form id="note-selector">
 				<select id="low-note-select" required>
-					<option style="display: none;" selected="selected">최저 음역</option>
+					<option style="display: none;" selected="selected">최저 음역 입력</option>
 					<option value="25">C3</option>
 					<option value="27">D3</option>
 					<option value="29">E3</option>
@@ -58,7 +62,7 @@
 					<option value="42">F4</option>
 					<option value="44">G4</option>
 				</select><select id="high-note-select" required>
-					<option style="display: none;" selected="selected">최고 음역</option>
+					<option style="display: none;" selected="selected">최고 음역 입력</option>
 					<option value="37">C4</option>
 					<option value="39">D4</option>
 					<option value="41">E4</option>
@@ -99,7 +103,7 @@
 									</div>
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" value=""
-											id="soul" > <label class="form-check-label"
+											id="soul"> <label class="form-check-label"
 											for="soul"> R&B/소울 </label>
 									</div>
 									<div class="form-check">
@@ -132,7 +136,7 @@
 	</div>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom">
-		<ul class="nav fixed-bottom nav-pills justify-content-center">
+		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="vocalTest.jsp">음역대측정</a></li>

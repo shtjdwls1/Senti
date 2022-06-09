@@ -64,6 +64,12 @@ body{
 .hidden {
 	display: none;
 }
+#btnLow{
+	width: 68px;
+}
+#btnHigh{
+	width: 68px;
+}
 .vocalTestLow{
 	margin-top : 0px;
 	border-radius: 50px;
@@ -75,13 +81,13 @@ body{
 #vocalTestLowVideo {
 	width: 342px;
 	margin-left: 9px;
-	height: 250px;
+	height: 207px;
 }
 
 #vocalTestHighVideo {
 	width: 342px;
 	margin-left: 9px;
-	height: 250px;
+	height: 207px;
 }
 
 .controls__btns {

@@ -23,32 +23,37 @@
 <!-- font  -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
+	rel="stylesheet">
 <title>Document</title>
 </head>
 <body>
 	<main>
 		<div class="p-3 mb-2" id="top">
 			<h1 id="pitch">내 음역대</h1>
-			<h1 id="senti">
-				<img src="img/facebook.png" id="logo"> Senti
-			</h1>
+			<a href = "./playList.jsp">
+				<h1 id="senti">
+					<img src="img/facebook.png" id="logo"> Senti
+				</h1>
+			</a>
 		</div>
 		<br>
 		<div>
 			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
-			<% String nick = (String)session.getAttribute("nick"); 
-			   String id = (String)session.getAttribute("id");
-			   DTO info = (DTO)session.getAttribute("info");
-			   
-			   DAO mdao = new DAO();
-			   ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
-			   
-			   if(info != null){
-					mlist = mdao.playListAdd(info);
-				}
-			   %>
-			   
+			<%
+			String nick = (String) session.getAttribute("nick");
+			String id = (String) session.getAttribute("id");
+			DTO info = (DTO) session.getAttribute("info");
+
+			DAO mdao = new DAO();
+			ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+
+			if (info != null) {
+				mlist = mdao.playListAdd(info);
+			}
+			%>
+
 			<h1 id="nick">
 				<%=info.getNick()%>님의<br>플레이리스트
 			</h1>
@@ -56,24 +61,27 @@
 		<div class="main">
 			<!-- 플레이리스트 만들기 -->
 			<form class="playList-form" action="playList" method="post">
-				<input type="text" name="id" value=<%= info.getId() %> style="display:none"/>
-				<input type="text" class="form-control me-2 d-inline-block w-75"
-					id="createPlayList" name="playListName" placeholder="플레이리스트를 만드세요">
-				<input id="playListSubmit" type="submit"
+				<input type="text" name="id" value=<%=info.getId()%>
+					style="display: none" /> <input type="text"
+					class="form-control me-2 d-inline-block w-75" id="createPlayList"
+					name="playListName" placeholder="플레이리스트를 만드세요"> <input
+					id="playListSubmit" type="submit"
 					class="btn btn-outline-primary h-25 d-inline-block" value="입력"></input>
 			</form>
 		</div>
 		<hr>
 		<!-- 플레이리스트  예시-->
-		<%for(int i=0; i<mlist.size(); i++){ %>
+		<%
+		for (int i = 0; i < mlist.size(); i++) {
+		%>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
 			<a href="playListDetail.jsp">
 				<div class="">
 					<!-- 앨범 커버 -->
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 						src="img/add.png">
-					<div id ="playListInfo">
-						<strong class="text-gray-dark"><%= mlist.get(i).getPname() %></strong> 
+					<div id="playListInfo">
+						<strong class="text-gray-dark"><%=mlist.get(i).getPname()%></strong>
 						<span class="d-block">노래 : 0곡</span>
 					</div>
 					<!-- <div class="pb-3 mb-0 small lh-sm w-100">
@@ -87,12 +95,14 @@
 				</div>
 			</a>
 		</div>
-		<%} %>
+		<%
+		}
+		%>
 	</main>
 
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom">
-		<ul class="nav fixed-bottom nav-pills justify-content-center">
+		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>

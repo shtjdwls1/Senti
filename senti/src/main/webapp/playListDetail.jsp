@@ -24,12 +24,13 @@
 	<main>
 		<div class="p-3 mb-2" id="top">
 			<h1 id="pitch">내 음역대</h1>
-			<h1 id="senti">
-				<img src="img/facebook.png" id="logo"> Senti
-			</h1>
+			<a href="./playList.jsp">
+				<h1 id="senti">
+					<img src="img/facebook.png" id="logo"> Senti
+				</h1>
+			</a>
 		</div>
-		<br>
-		<button type="button" class="btn-close" aria-label="Close"
+		<button type="button" class="bi bi-arrow-left fs-1" aria-label="Close"
 			onclick="location.href='playList.jsp'"></button>
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
@@ -99,7 +100,7 @@
 					<span class="d-block" id="times" style="float: left;">노래길이</span>
 				</div>
 				<div>
-					<button id="musicDelete" class="bi bi-x-lg fs-1 hidden" ></button>
+					<button id="musicDelete" class="bi bi-x-lg fs-1 hidden"></button>
 				</div>
 			</div>
 		</div>
