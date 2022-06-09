@@ -24,6 +24,7 @@
 body{
   animation: fadeout 3s;
   -webkit-animation: fadeout 3s;
+  background-color: aliceblue;
 }
 
 @keyframes fadeout {

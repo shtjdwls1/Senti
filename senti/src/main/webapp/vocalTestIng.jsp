@@ -43,7 +43,7 @@
 				<video id="vocalTestHighVideo" src="video/high.mp4" controls></video>
 			</div>
 			<form id="note-selector">
-				<select id="low-note-select">
+				<select id="low-note-select" required>
 					<option style="display: none;" selected="selected">최저 음역</option>
 					<option value="25">C3</option>
 					<option value="27">D3</option>
@@ -57,7 +57,7 @@
 					<option value="41">E4</option>
 					<option value="42">F4</option>
 					<option value="44">G4</option>
-				</select><select id="high-note-select">
+				</select><select id="high-note-select" required>
 					<option style="display: none;" selected="selected">최고 음역</option>
 					<option value="37">C4</option>
 					<option value="39">D4</option>

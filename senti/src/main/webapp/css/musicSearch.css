@@ -22,6 +22,9 @@ body{
   }
 }
 
+body{
+	background-color: aliceblue;
+}
 #top{
     height: 60px;
 }

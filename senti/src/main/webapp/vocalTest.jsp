@@ -45,7 +45,7 @@
 		</h1>
 	</div>
 	<br>
-	<h1 class="display-5 fw-bold lh-1 mb-1" style="text-align: center;">음역대
+	<h1 class="display-5 lh-1 mb-1" style="text-align: center;">음역대
 		테스트</h1>
 	<div class="container col-xxl-8 px-4 py-5">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
