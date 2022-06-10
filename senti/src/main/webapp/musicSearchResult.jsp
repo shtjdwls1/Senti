@@ -66,11 +66,11 @@
 		<%
 			for (int i = 0; i < playList.size(); i++) {
 			%>
-		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded">
+		<div id="music1" class="shadow-sm p-0 mb-1 bg-body rounded">
 			<div class="d-flex text-muted pt-1">
 				<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>"><img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="<%=playList.get(i).getAlbumimg()%>" width="64" height="64"></a>
+					src="<%=playList.get(i).getAlbumimg()%>" width="56" height="56"></a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
 						<a
