@@ -130,6 +130,7 @@
 									<%
 									for (int i = 0; i < mlist.size(); i++) {
 									%>
+									<% System.out.println("피네임 : "+mlist.get(i).getPname()); %>
 									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 										<div class="d-flex text-muted pt-3">
 											<a href=""> <img

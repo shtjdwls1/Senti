@@ -285,7 +285,7 @@ public class DAO {
 			psmt.setString(3, dto2.getPname());
 			System.out.println("keys : " + dto2.getKeys());
 			System.out.println("id : " + dto2.getId());
-			System.out.println("pname : " + dto2.getPname());
+			System.out.println("pname2 : " + dto2.getPname());
 
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
