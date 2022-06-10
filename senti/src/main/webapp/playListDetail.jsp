@@ -46,10 +46,10 @@
 			onclick="location.href='playList.jsp'"></button>
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
-			<img class="shadow-sm p-1 mb-1 bg-body rounded"
+			<img class="shadow-sm p-1 mb-1 bg-body rounded "
 				id="playListThumbNail" src="<%=listDetail.get(0).getAlbumimg()%>"
 				alt="">
-			<div class = "playListInfo">
+			<div class="playListInfo">
 				<div class="d-flex justify-content-between">
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
 					<!-- 재생목록 수정  -->
@@ -98,23 +98,24 @@
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
+		<br> <br>
 		<hr>
 		<!-- 노래 -->
 		<%
 		for (int i = 0; i < listDetail.size(); i++) {
 		%>
-		<div id="" class="music my-1 p-1 bg-body rounded shadow-sm">
-			<div class="d-flex text-muted pt-3">
-				<a href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>"> <img
-					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="<%=listDetail.get(i).getAlbumimg()%>" id="musicAdd">
+		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded">
+			<div class="d-flex text-muted pt-1">
+				<a
+					href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
+					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+					src="<%=listDetail.get(i).getAlbumimg()%>" width="56" height="56">
 				</a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
-						<strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
+						<a
+							href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
+							<strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
 						</a>
 					</div>
 					<span class="d-block" id="singer" style="float: left;"><%=listDetail.get(i).getSinger()%></span>
