@@ -76,13 +76,18 @@
 		for (int i = 0; i < mlist.size(); i++) {
 		DAO dao = new DAO();
 		ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
+		
 		%>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
 			<a href="playListDetail.jsp?pname=<%=mlist.get(i).getPname()%>">
 				<div class="">
 					<!-- 앨범 커버 -->
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-						src="<%=listDetail.get(0).getAlbumimg()%>">
+					<% if(listDetail.size() != 0){ %>
+						src="<%=listDetail.get(0).getAlbumimg()%>"
+					<% } else{ %>
+						src="img/add.png"
+						<% } %>>
 					<div id="playListInfo">
 						<strong class="text-gray-dark"><%=mlist.get(i).getPname()%></strong>
 						<span class="d-block">노래 : <%= listDetail.size() %>곡</span>
