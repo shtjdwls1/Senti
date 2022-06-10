@@ -31,13 +31,11 @@
 	<div class="container col-xxl-8 px-4 py-5">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 			<div class="controls__btns">
-				<button id="btnLow">최저 음역 
-				테스트</button>
-				<button id="btnHigh">최고 음역 
-				테스트</button>
+				<button id="btnLow">최저 음역 테스트</button>
+				<button id="btnHigh">최고 음역 테스트</button>
 			</div>
 			<!-- 최저음 테스트 -->
-			<div class="vocalTestLow shadow p-3 mb-5 bg-body rounded">
+			<div class="vocalTestLow shadow p-3 mb-2 bg-body rounded">
 				<!-- 비디오  -->
 				<video id="vocalTestLowVideo" src="video/low.mp4" controls></video>
 			</div>
@@ -46,45 +44,53 @@
 				<!-- 비디오 -->
 				<video id="vocalTestHighVideo" src="video/high.mp4" controls></video>
 			</div>
-			<form id="note-selector">
-				<select id="low-note-select" required>
-					<option style="display: none;" selected="selected">최저 음역 입력</option>
-					<option value="25">C3</option>
-					<option value="27">D3</option>
-					<option value="29">E3</option>
-					<option value="30">F3</option>
-					<option value="32">G3</option>
-					<option value="34">A3</option>
-					<option value="36">B3</option>
-					<option value="37">C4</option>
-					<option value="39">D4</option>
-					<option value="41">E4</option>
-					<option value="42">F4</option>
-					<option value="44">G4</option>
-				</select><select id="high-note-select" required>
-					<option style="display: none;" selected="selected">최고 음역 입력</option>
-					<option value="37">C4</option>
-					<option value="39">D4</option>
-					<option value="41">E4</option>
-					<option value="42">F4</option>
-					<option value="44">G4</option>
-					<option value="46">A4</option>
-					<option value="48">B4</option>
-					<option value="49">C5</option>
-					<option value="51">D5</option>
-					<option value="53">E5</option>
-					<option value="54">F5</option>
-					<option value="56">G5</option>
-					<option value="58">A5</option>
-					<option value="60">B5</option>
-					<option value="61">C6</option>
-				</select>
+			<form action="" class="userInfo">
+				<div id="select">
+					<select name="lowSelect">
+						<option selected>최저 음역 입력</option>
+						<option value="25">C3</option>
+						<option value="27">D3</option>
+						<option value="29">E3</option>
+						<option value="30">F3</option>
+						<option value="32">G3</option>
+						<option value="34">A3</option>
+						<option value="36">B3</option>
+						<option value="37">C4</option>
+						<option value="39">D4</option>
+						<option value="41">E4</option>
+						<option value="42">F4</option>
+						<option value="44">G4</option>
+					</select> <select name="highSelect">
+						<option selected>최고 음역 입력</option>
+						<option value="37">C4</option>
+						<option value="39">D4</option>
+						<option value="41">E4</option>
+						<option value="42">F4</option>
+						<option value="44">G4</option>
+						<option value="46">A4</option>
+						<option value="48">B4</option>
+						<option value="49">C5</option>
+						<option value="51">D5</option>
+						<option value="53">E5</option>
+						<option value="54">F5</option>
+						<option value="56">G5</option>
+						<option value="58">A5</option>
+						<option value="60">B5</option>
+						<option value="61">C6</option>
+					</select>
+				</div>
+				<div id="checkbox" class="shadow-sm p-1 mb-1 bg-body rounded">
+					<h5>선호하는 장르</h5>
+					<input type="checkbox" name='genres' value="ballad"> 발라드 <input
+						type="checkbox" name='genres' value="soul"> R&B/소울 <input
+						type="checkbox" name='genres' value="ost"> OST <input
+						type="checkbox" name='genres' value="danse"> 댄스 <input
+						type="checkbox" name='genres' value="rock"> 락
+				</div>
 			</form>
 			<div class="col-lg-6">
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-success btn-lg px-4 me-md-2"
-						data-bs-toggle="modal" data-bs-target="#genreChoice">측정
-						완료</button>
+					
 					<!-- Modal -->
 					<div class="modal fade" id="genreChoice" tabindex="-1"
 						aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -95,38 +101,40 @@
 									<button type="button" class="btn-close" data-bs-dismiss="modal"
 										aria-label="Close"></button>
 								</div>
-								<div class="modal-body">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="ballad"> <label class="form-check-label"
-											for="ballad"> 발라드 </label>
+								<form action="" method="">
+									<div class="modal-body">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value=""
+												id="ballad"> <label class="form-check-label"
+												for="ballad"> 발라드 </label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value=""
+												id="soul"> <label class="form-check-label"
+												for="soul"> R&B/소울 </label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value=""
+												id="ost"> <label class="form-check-label" for="ost">
+												OST </label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value=""
+												id="dance"> <label class="form-check-label"
+												for="dance"> 댄스 </label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value=""
+												id="rock"> <label class="form-check-label"
+												for="rock"> 락 </label>
+										</div>
 									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="soul"> <label class="form-check-label"
-											for="soul"> R&B/소울 </label>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-primary">노래추천 받기</button>
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">닫기</button>
 									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="ost"> <label class="form-check-label" for="ost">
-											OST </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="dance"> <label class="form-check-label"
-											for="dance"> 댄스 </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="rock"> <label class="form-check-label" for="rock">
-											락 </label>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-primary">노래추천 받기</button>
-									<button type="button" class="btn btn-secondary"
-										data-bs-dismiss="modal">닫기</button>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>

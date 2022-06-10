@@ -117,18 +117,19 @@ body{
 	transform: scale(0.98);
 }
 
-#note-selector select {
+select {
 	font-weight: bold;
 	background: rgb(244, 244, 244);
 	border-radius: 4px;
 	margin: 0 auto;
 }
-
-#note-selector {
-	margin-top: 8px;
-	display: flex;
+.userInfo{
+	margin-top:10px;
 }
-
-#note-selector select:first-of-type {
-	margin-right: 10px;
+#select{
+	text-align : center;
+}
+#checkbox{
+	text-align : center;
+	margin-top: 50px;
 }
