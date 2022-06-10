@@ -107,13 +107,14 @@
 		%>
 		<div id="" class="music my-1 p-1 bg-body rounded shadow-sm">
 			<div class="d-flex text-muted pt-3">
-				<a href=""> <img
+				<a href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>"> <img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 					src="<%=listDetail.get(i).getAlbumimg()%>" id="musicAdd">
 				</a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href=""> <strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
+						<a href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
+						<strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
 						</a>
 					</div>
 					<span class="d-block" id="singer" style="float: left;"><%=listDetail.get(i).getSinger()%></span>
