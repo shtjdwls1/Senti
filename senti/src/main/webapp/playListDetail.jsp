@@ -99,7 +99,7 @@
 		<%
 		for (int i = 0; i < listDetail.size(); i++) {
 		%>
-		<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
+		<div id="" class="music my-1 p-1 bg-body rounded shadow-sm">
 			<div class="d-flex text-muted pt-3">
 				<a href=""> <img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
@@ -114,8 +114,8 @@
 					<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
 					<span class="d-block" id="times" style="float: left;">노래길이</span>
 				</div>
-				<div>
-					<button id="musicDelete" class="bi bi-x-lg fs-1 hidden musicDelete"></button>
+				<div class="">
+					<button class="musicDelete bi bi-x-lg fs-1 hidden"></button>
 				</div>
 			</div>
 		</div>
