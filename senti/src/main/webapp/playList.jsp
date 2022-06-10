@@ -1,5 +1,6 @@
 <!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
 <!DOCTYPE html>
+<%@page import="Model.songinfoDTO"%>
 <%@page import="Model.DTO"%>
 <%@page import="Model.DAO"%>
 <%@page import="Model.playListDTO"%>
@@ -73,16 +74,18 @@
 		<!-- 플레이리스트  예시-->
 		<%
 		for (int i = 0; i < mlist.size(); i++) {
+		DAO dao = new DAO();
+		ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
 		%>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
 			<a href="playListDetail.jsp?pname=<%=mlist.get(i).getPname()%>">
 				<div class="">
 					<!-- 앨범 커버 -->
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-						src="img/add.png">
+						src="<%=listDetail.get(0).getAlbumimg()%>">
 					<div id="playListInfo">
 						<strong class="text-gray-dark"><%=mlist.get(i).getPname()%></strong>
-						<span class="d-block">노래 : 0곡</span>
+						<span class="d-block">노래 : <%= listDetail.size() %>곡</span>
 					</div>
 					<!-- <div class="pb-3 mb-0 small lh-sm w-100">
 						<div class="d-flex justify-content-between">
