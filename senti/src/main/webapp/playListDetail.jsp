@@ -47,8 +47,12 @@
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
 			<img class="shadow-sm p-1 mb-1 bg-body rounded "
-				id="playListThumbNail" src="<%=listDetail.get(0).getAlbumimg()%>"
-				alt="">
+				id="playListThumbNail" 
+				<% if(listDetail.size() != 0){ %>
+						src="<%=listDetail.get(0).getAlbumimg()%>"
+					<% } else{ %>
+						src="img/add.png"
+						<% } %>>
 			<div class="playListInfo">
 				<div class="d-flex justify-content-between">
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
