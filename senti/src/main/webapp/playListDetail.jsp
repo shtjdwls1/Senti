@@ -31,7 +31,7 @@
 	ArrayList<songinfoDTO> listDetail = dao.pDetail(pname);
 
 	DTO info = (DTO) session.getAttribute("info");
-
+	int cnt = 0;
 	%>
 	<main>
 		<div class="p-3 mb-2" id="top">
@@ -46,7 +46,7 @@
 			onclick="location.href='playList.jsp'"></button>
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
-			<img id="playListThumbNail" src="img/add.png" alt="">
+			<img id="playListThumbNail" src="<%=listDetail.get(0).getAlbumimg()%>" alt="">
 			<div class="d-flex justify-content-between">
 				<strong class="text-gray-dark" id="playListTitle"><%= pname %></strong>
 				<!-- 재생목록 수정  -->
@@ -59,7 +59,7 @@
 				</form>
 			</div>
 			<div class="d-flex justify-content-between">
-				<span class="d-block" id="">노래 : 0곡</span>
+				<span class="d-block" id="">노래 : <%= listDetail.size() %>곡</span>
 			</div>
 			<div>
 				<a id="musicPlus" href="musicSearch.jsp">

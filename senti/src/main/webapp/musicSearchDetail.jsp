@@ -60,6 +60,8 @@
 	if (info != null) {
 		mlist = mdao.playListAdd(info);
 	}
+	
+	int cnt = 0;
 	%>
 
 	<!-- 노래 디테일 -->
