@@ -131,21 +131,21 @@
 								<form action="listDetail" method="post">
 									<%
 									for (int i = 0; i < mlist.size(); i++) {
+										ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
 									%>
-									<% System.out.println("피네임 : "+mlist.get(i).getPname()); %>
 									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 										<div class="d-flex text-muted pt-3">
 											<a href=""> <img
 												class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-												src="img/add.png" id="musicAdd">
+												src="<%=listDetail.get(0).getAlbumimg()%>" id="musicAdd">
 											</a>
 											<div class="pb-3 mb-0 small lh-sm w-100">
 												<div class="d-flex justify-content-between">
 													<a href=""> <strong class="text-gray-dark" id="title"><%=mlist.get(i).getPname()%></strong>
 													</a>
 												</div>
-												<span class="d-block" id="singer" style="float: left;">노래
-													: 0곡 </span>
+												<span class="d-block" id="singer" style="float: left;">
+												노래 : <%= listDetail.size() %>곡 </span>
 											</div>
 											<div>
 												<input type="text" name="keys"
@@ -178,8 +178,7 @@
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-			<li class="nav-item"><a class="nav-link active"
-				href="musicSearchResult.jsp" aria-current="page">노래검색</a></li>
+			<li class="nav-item"><a class="nav-link active" href="musicSearch.jsp" aria-current="page">노래검색</a></li>
 			<li class="nav-item"><a class="nav-link">프로필</a></li>
 		</ul>
 
