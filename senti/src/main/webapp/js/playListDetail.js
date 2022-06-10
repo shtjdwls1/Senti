@@ -2,7 +2,7 @@ const colors = ["#4e4376", "#2b5876"];
 const button = document.querySelector("#top");
 const btnUpdate = document.querySelector("#btnUpdate");
 const btnDelete = document.querySelector("#btnDelete");
-const musicDelete = document.querySelector("#musicDelete");
+const musicDelete = document.querySelector(".musicDelete");
 const playListTitle = document.querySelector("#playListTitle");
 const playListTitleUpdate = document.querySelector(".playListTitleUpdate ");
 
@@ -20,12 +20,12 @@ function paintPlayListTitleUpdate() {
 		update = false;
 		playListTitle.classList.add("hidden");
 		playListTitleUpdate.classList.remove("hidden");
-		musicDelete.classList.remove("hidden");
+		musicDelete.classList.toggle("hidden");
 	} else {
 		update = true;
 		playListTitle.classList.remove("hidden");
 		playListTitleUpdate.classList.add("hidden");
-		musicDelete.classList.add("hidden");
+		musicDelete.classList.toggle("hidden");
 	}
 }
 function paintPlayListTitle() {

@@ -295,5 +295,40 @@ public class DAO {
 		}
 		return cnt;
 	}
+	
+	// 검색기능
+		public ArrayList<songinfoDTO> pDetail(String pname) {
+			// 검색받은 데이터 검색
+			String sql = "select songinfo.keys, title, singer, albumimg from songinfo, playlist where pname like '%" + pname
+					+ "%' and songinfo.keys = playlist.keys";
+			// 데이터를 담을 ArrayList
+			ArrayList<songinfoDTO> listDetail = new ArrayList<songinfoDTO>();
+			db_conn();
+			try {
+				psmt = conn.prepareStatement(sql);
+
+				// 실행
+				rs = psmt.executeQuery();
+				// 결과 꺼내서 ArrayList에 담기
+				while (rs.next()) {
+					String keys = rs.getString(1);
+					String title = rs.getString(2);
+					String singer = rs.getString(3);
+					String albumimg = rs.getString(4);
+
+					songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
+
+					listDetail.add(dto);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				db_close();
+			}
+
+			return listDetail;
+
+		}
 
 }

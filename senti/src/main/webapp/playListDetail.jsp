@@ -1,3 +1,7 @@
+<%@page import="Model.DTO"%>
+<%@page import="Model.songinfoDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,6 +25,14 @@
 </head>
 
 <body>
+	<%
+	String pname = request.getParameter("pname");
+	DAO dao = new DAO();
+	ArrayList<songinfoDTO> listDetail = dao.pDetail(pname);
+
+	DTO info = (DTO) session.getAttribute("info");
+
+	%>
 	<main>
 		<div class="p-3 mb-2" id="top">
 			<h1 id="pitch">내 음역대</h1>
@@ -36,7 +48,7 @@
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
 			<img id="playListThumbNail" src="img/add.png" alt="">
 			<div class="d-flex justify-content-between">
-				<strong class="text-gray-dark" id="playListTitle">재생목록이름</strong>
+				<strong class="text-gray-dark" id="playListTitle"><%= pname %></strong>
 				<!-- 재생목록 수정  -->
 				<form class="playListTitleUpdate hidden" action="">
 					<input id="playListTitleUpdateInput"
@@ -84,26 +96,30 @@
 		<br>
 		<hr>
 		<!-- 노래 -->
+		<%
+		for (int i = 0; i < listDetail.size(); i++) {
+		%>
 		<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 			<div class="d-flex text-muted pt-3">
 				<a href=""> <img
 					class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="img/add.png" id="musicAdd">
+					src="<%=listDetail.get(i).getAlbumimg()%>" id="musicAdd">
 				</a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
 					<div class="d-flex justify-content-between">
-						<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
+						<a href=""> <strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
 						</a>
 					</div>
-					<span class="d-block" id="singer" style="float: left;">가수이름</span>
+					<span class="d-block" id="singer" style="float: left;"><%=listDetail.get(i).getSinger()%></span>
 					<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
 					<span class="d-block" id="times" style="float: left;">노래길이</span>
 				</div>
 				<div>
-					<button id="musicDelete" class="bi bi-x-lg fs-1 hidden"></button>
+					<button id="musicDelete" class="bi bi-x-lg fs-1 hidden musicDelete"></button>
 				</div>
 			</div>
 		</div>
+		<% } %>
 		<!-- 하단 네비게이션 -->
 		<ul class="nav fixed-bottom nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link active"

@@ -75,7 +75,7 @@
 		for (int i = 0; i < mlist.size(); i++) {
 		%>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
-			<a href="playListDetail.jsp">
+			<a href="playListDetail.jsp?pname=<%=mlist.get(i).getPname()%>">
 				<div class="">
 					<!-- 앨범 커버 -->
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"

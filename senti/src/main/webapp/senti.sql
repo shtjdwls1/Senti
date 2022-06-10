@@ -34,6 +34,10 @@ albumimg varchar2(1000),
 release varchar2(10) 
 );
 
+select songinfo.keys, title, singer, albumimg
+from songinfo, PLAYLIST
+where pname like '테스트' and songinfo.keys = playlist.keys;
+
 drop table songinfo cascade constraints;
 
 insert into songinfo
@@ -49,7 +53,7 @@ CONSTRAINT playlist_id_fk FOREIGN KEY(id) REFERENCES userinfo(id),
 CONSTRAINT playlist_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 );
 
-delete from playlist where id = 'seoil1221';
+delete from playlist where keys = 'null';
 
 drop table playlist;
 
