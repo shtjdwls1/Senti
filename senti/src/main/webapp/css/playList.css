@@ -107,6 +107,8 @@ button {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
+	margin-left : 5px;
+	margin-top : 5px;
 }
 
 @media ( min-width : 768px) {
