@@ -54,11 +54,10 @@ body{
 }
 
 #playListThumbNail {
-	width: 30%;
-	height: 30%;
+	width: 136px;
 	float: left;
 	margin: 0px;
-	margin-left: 5%;
+	margin-left: 18px;
 }
 
 /* #playListTitle {
@@ -101,9 +100,10 @@ button{
 }
 #playListTitle{
 	margin-top: 10px;
+	margin-left: 10px;
 }
 #playListTitleUpdateInput{
-	width: 70%;
+	width: 150px;
 }
 .hidden{
 	display:none;
@@ -138,4 +138,5 @@ button{
 }
 .playListInfo{
 	margin-left: 10px;
+	display: inline;
 }

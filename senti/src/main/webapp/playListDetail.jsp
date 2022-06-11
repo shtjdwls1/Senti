@@ -47,14 +47,11 @@
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
 			<img class="shadow-sm p-1 mb-1 bg-body rounded "
-				id="playListThumbNail" 
-				<% if(listDetail.size() != 0){ %>
-						src="<%=listDetail.get(0).getAlbumimg()%>"
-					<% } else{ %>
-						src="img/add.png"
-						<% } %>>
+				id="playListThumbNail" <%if (listDetail.size() != 0) {%>
+				src="<%=listDetail.get(0).getAlbumimg()%>" <%} else {%>
+				src="img/add.png" <%}%>>
 			<div class="playListInfo">
-				<div class="d-flex justify-content-between">
+				<div class="">
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
 					<!-- 재생목록 수정  -->
 					<form class="playListTitleUpdate hidden" action="">
@@ -65,13 +62,14 @@
 							class="btn btn-outline-primary d-inline-block" value="입력"></input>
 					</form>
 				</div>
-				<div class="d-flex justify-content-between">
-					<span class="d-block" id="">노래 : <%=listDetail.size()%>곡
+				<div class="">
+					<span class="" id="" style="margin-left: 10px;">노래 : <%=listDetail.size()%>곡
 					</span>
 				</div>
 				<div>
 					<a id="musicPlus" href="musicSearch.jsp">
-						<button type="button" class="bi bi-plus-lg fs-1" title="노래 추가"></button>
+						<button type="button" class="bi bi-plus-lg fs-1" title="노래 추가"
+							style="margin-left: 6px;"></button>
 					</a>
 					<button type="button" class="bi bi-pencil fs-2" id="btnUpdate"
 						title="재생목록이름 수정"></button>
@@ -102,7 +100,7 @@
 				</div>
 			</div>
 		</div>
-		<br> <br>
+		<br>
 		<hr>
 		<!-- 노래 -->
 		<%
