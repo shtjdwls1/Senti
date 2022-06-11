@@ -106,7 +106,8 @@
 		<%
 		for (int i = 0; i < listDetail.size(); i++) {
 		%>
-		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded">
+		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded"
+			style="height: 70px;">
 			<div class="d-flex text-muted pt-1">
 				<a
 					href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
@@ -114,7 +115,8 @@
 					src="<%=listDetail.get(i).getAlbumimg()%>" width="56" height="56">
 				</a>
 				<div class="pb-3 mb-0 small lh-sm w-100">
-					<div class="d-flex justify-content-between">
+					<div class="d-flex justify-content-between"
+						style="margin-top: 11px;">
 						<a
 							href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
 							<strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
