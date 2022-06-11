@@ -128,11 +128,11 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<form action="listDetail" method="post">
 									<%
 									for (int i = 0; i < mlist.size(); i++) {
 										ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
 									%>
+								<form action="listDetail" method="post">
 									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 										<div class="d-flex text-muted pt-3">
 											<a href=""> <img
@@ -146,27 +146,27 @@
 											</a>
 											<div class="pb-3 mb-0 small lh-sm w-100">
 												<div class="d-flex justify-content-between">
-													<a href=""> <strong class="text-gray-dark" id="title"><%=mlist.get(i).getPname()%></strong>
-													</a>
+													<strong class="text-gray-dark" id="title"><%=mlist.get(i).getPname()%></strong>
 												</div>
 												<span class="d-block" id="singer" style="float: left;">
 												노래 : <%= listDetail.size() %>곡 </span>
 											</div>
 											<div>
 												<input type="text" name="keys"
-													value=<%=dto.get(0).getKeys()%> style="display: none" /> <input
-													type="text" name="id" value=<%=info.getId()%>
-													style="display: none" /> <input type="text" name="pname"
-													value=<%=mlist.get(i).getPname()%> style="display: none" />
+												value=<%=dto.get(0).getKeys()%> style="display: none" />
+												<input type="text" name="id"
+												value=<%=info.getId()%> style="display: none" />
+												<input type="text" name="pname"
+												value=<%=mlist.get(i).getPname()%> style="display: none" />
 												<button type="submit" id="musicPlus"
 													class="bi bi-plus-lg fs-1"></button>
 											</div>
 										</div>
 									</div>
+								</form>
 									<%
 									}
 									%>
-								</form>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
