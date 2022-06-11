@@ -137,7 +137,12 @@
 										<div class="d-flex text-muted pt-3">
 											<a href=""> <img
 												class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-												src="<%=listDetail.get(0).getAlbumimg()%>" id="musicAdd">
+												<%if (listDetail.size() != 0) {%>
+												src="<%=listDetail.get(0).getAlbumimg()%>"
+												<%} else {%>
+												src="img/add.png"
+												<%}%>
+												 id="musicAdd">
 											</a>
 											<div class="pb-3 mb-0 small lh-sm w-100">
 												<div class="d-flex justify-content-between">
