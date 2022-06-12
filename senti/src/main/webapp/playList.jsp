@@ -1,5 +1,6 @@
 <!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> -->
 <!DOCTYPE html>
+<%@page import="java.util.Random"%>
 <%@page import="Model.songinfoDTO"%>
 <%@page import="Model.DTO"%>
 <%@page import="Model.DAO"%>
@@ -52,6 +53,7 @@
 
 			if (info != null) {
 				mlist = mdao.playListAdd(info);
+			
 			}
 			%>
 
