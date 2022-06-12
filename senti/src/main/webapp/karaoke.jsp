@@ -29,17 +29,9 @@
 	<div class="musicInfo">
 		<h3 id="title">never ending story</h3>
 		<span id="singer">부활</span> <img id="albumimg" src="img/album.jpg">
-		<audio style="display: none"  id="music" src="music/neverendingstory.mp3"
-			controls></audio>
-		<div id="record">
-			<input type=checkbox id="chk-hear-mic" style="display: none">
-			<label for="chk-hear-mic"></label>
-			<button id="record">녹음 시작</button>
-			<button id="stop">녹음 파일 저장</button>
-		</div>
+		<audio id="music" src="music/neverendingstory.mp3" controls></audio>
 	</div>
-	<br>
-	<div class = "hidden" id="lyrics">
+	<div class="shadow-sm p-1 mb-1 bg-body rounded" id="lyrics">
 		<span>손 닿을 수 없는 저기 어딘가 오늘도 넌 숨쉬고 있지만 너와 머물던 작은 의자위엔 같은 모습의 바람이
 			지나네 <br> 너는 떠나며 마치 날 떠나가듯이 멀리 손을 흔들며 언젠간 추억에 남겨져 갈꺼라고 <br>
 			그리워하면 언젠간 만나게 되는 어느 영화와 같은 일들이 이뤄져가기를 힘겨워한 날에 너를 지킬수 없었던 아름다운 시절속에 머문
@@ -50,7 +42,14 @@
 			힘겨워한 날에 너를 지킬수 없었던 아름다운 시절속에 머문 그대이기에
 		</span>
 	</div>
-	<div id="sound-clips"></div>
+	<div class="record">
+		<input type=checkbox id="chk-hear-mic"> <label
+			for="chk-hear-mic">마이크 소리 듣기</label>
+		<button id="recordStart">녹음</button>
+		<button id="recordStop">녹음 정지/저장</button>
+		<div id="sound-clips"></div>
+	</div>
+	<br>
 	<!-- 부트스트랩 -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

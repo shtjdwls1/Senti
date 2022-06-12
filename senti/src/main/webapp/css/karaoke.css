@@ -65,11 +65,12 @@ audio{
 	width: 292px;
     margin: 0 auto;
     overflow: scroll;
-    height: 267px;
-    font-size: 24px;
+    height: 230px;
+    font-size: 30px;
+    margin-top: 10px;
 }
-#record{
-	margin:auto;
+.record{
+	text-align: center;
 }
 .hidden{
 	display : none;

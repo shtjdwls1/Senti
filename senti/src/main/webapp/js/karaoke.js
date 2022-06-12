@@ -13,10 +13,10 @@ topColor();
 
 
 // 마이크 녹음
-const record = document.getElementById("record");
-const stop = document.getElementById("stop");
-const soundClips = document.getElementById("sound-clips");
-const chkHearMic = document.getElementById("chk-hear-mic");
+const record = document.getElementById("recordStart")
+const stop = document.getElementById("recordStop")
+const soundClips = document.getElementById("sound-clips")
+const chkHearMic = document.getElementById("chk-hear-mic")
 
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)() // 오디오 컨텍스트 정의
 
@@ -50,21 +50,30 @@ if (navigator.mediaDevices) {
 
 			const mediaRecorder = new MediaRecorder(stream)
 
+			chkHearMic.onchange = e => {
+				if (e.target.checked == true) {
+					audioCtx.resume()
+					makeSound(stream)
+				} else {
+					audioCtx.suspend()
+				}
+			}
+
 			record.onclick = () => {
+				music.play();
 				mediaRecorder.start()
-				audioCtx.resume()
-				makeSound(stream)
 				console.log(mediaRecorder.state)
 				console.log("recorder started")
-				music.play()
-				lyrics.classList.remove("hidden")
+				record.style.background = "red"
+				record.style.color = "black"
 			}
 
 			stop.onclick = () => {
 				mediaRecorder.stop()
-				audioCtx.suspend()
 				console.log(mediaRecorder.state)
 				console.log("recorder stopped")
+				record.style.background = ""
+				record.style.color = ""
 			}
 
 			mediaRecorder.onstop = e => {
@@ -89,7 +98,7 @@ if (navigator.mediaDevices) {
 
 				audio.controls = true
 				const blob = new Blob(chunks, {
-					'type': 'audio/wav codecs=opus'
+					'type': 'audio/ogg codecs=opus'
 				})
 				chunks = []
 				const audioURL = URL.createObjectURL(blob)

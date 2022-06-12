@@ -60,7 +60,7 @@
 	if (info != null) {
 		mlist = mdao.playListAdd(info);
 	}
-	
+
 	int cnt = 0;
 	%>
 
@@ -111,10 +111,13 @@
 						</div>
 					</div>
 				</div>
+				<button type="button" class="btn btn-warning" style="color: white;"
+					onclick="location.href='karaoke.jsp';">노래 부르기</button>
 
 				<!-- 플레이리스트 추가 modal -->
 				<button type="button" class="btn btn-success" data-bs-toggle="modal"
-					data-bs-target="#playList">플레이리스트 추가</button>
+					data-bs-target="#playList" style="margin-top: 6px;">플레이리스트
+					추가</button>
 
 				<!-- Modal -->
 				<div class="modal fade" id="playList" data-bs-backdrop="static"
@@ -128,45 +131,42 @@
 									aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-									<%
-									for (int i = 0; i < mlist.size(); i++) {
-										ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
-									%>
+								<%
+								for (int i = 0; i < mlist.size(); i++) {
+									ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
+								%>
 								<form action="listDetail" method="post">
 									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 										<div class="d-flex text-muted pt-3">
 											<a href=""> <img
 												class="bd-placeholder-img flex-shrink-0 me-2 rounded"
 												<%if (listDetail.size() != 0) {%>
-												src="<%=listDetail.get(0).getAlbumimg()%>"
-												<%} else {%>
-												src="img/add.png"
-												<%}%>
-												 id="musicAdd">
+												src="<%=listDetail.get(0).getAlbumimg()%>" <%} else {%>
+												src="img/add.png" <%}%> id="musicAdd">
 											</a>
 											<div class="pb-3 mb-0 small lh-sm w-100">
 												<div class="d-flex justify-content-between">
 													<strong class="text-gray-dark" id="title"><%=mlist.get(i).getPname()%></strong>
 												</div>
 												<span class="d-block" id="singer" style="float: left;">
-												노래 : <%= listDetail.size() %>곡 </span>
+													노래 : <%=listDetail.size()%>곡
+												</span>
 											</div>
 											<div>
 												<input type="text" name="keys"
-												value=<%=dto.get(0).getKeys()%> style="display: none" />
-												<input type="text" name="id"
-												value=<%=info.getId()%> style="display: none" />
-												<input type="text" name="pname"
-												value=<%=mlist.get(i).getPname()%> style="display: none" />
+													value=<%=dto.get(0).getKeys()%> style="display: none" /> <input
+													type="text" name="id" value=<%=info.getId()%>
+													style="display: none" /> <input type="text" name="pname"
+													value=<%=mlist.get(i).getPname()%> style="display: none" />
 												<button type="submit" id="musicPlus"
 													class="bi bi-plus-lg fs-1"></button>
 											</div>
 										</div>
 									</div>
 								</form>
-									<%
-									}
-									%>
+								<%
+								}
+								%>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -177,15 +177,17 @@
 				</div>
 			</div>
 			<audio src="봄여름가을겨울.mp3" controls></audio>
+		</div>
 	</main>
 	<!-- 하단 네비게이션 -->
 	<ul class="nav fixed-bottom nav-pills justify-content-center">
-			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-			<li class="nav-item"><a class="nav-link active" href="musicSearch.jsp" aria-current="page">노래검색</a></li>
-			<li class="nav-item"><a class="nav-link">프로필</a></li>
-		</ul>
+		<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
+		</li>
+		<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
+		<li class="nav-item"><a class="nav-link active"
+			href="musicSearch.jsp" aria-current="page">노래검색</a></li>
+		<li class="nav-item"><a class="nav-link">프로필</a></li>
+	</ul>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
