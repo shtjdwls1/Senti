@@ -46,25 +46,25 @@
 	</div>
 	<!-- 노래 검색하면 뜸 -->
 	<%
-		String search = request.getParameter("search");
-		System.out.println("검색 키워드 : " + search);
-		DAO dao = new DAO();
-		ArrayList<songinfoDTO> playList = dao.SearchSong(search);
+	String search = request.getParameter("search");
+	System.out.println("검색 키워드 : " + search);
+	DAO dao = new DAO();
+	ArrayList<songinfoDTO> playList = dao.SearchSong(search);
 
-		DTO info = (DTO) session.getAttribute("info");
+	DTO info = (DTO) session.getAttribute("info");
 
-		DAO mdao = new DAO();
-		ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+	DAO mdao = new DAO();
+	ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
 
-		if (info != null) {
-			mlist = mdao.playListAdd(info);
-		}
-		%>
+	if (info != null) {
+		mlist = mdao.playListAdd(info);
+	}
+	%>
 	<hr>
 	<!-- 노래 -->
 	<%
-			for (int i = 0; i < playList.size(); i++) {
-			%>
+	for (int i = 0; i < playList.size(); i++) {
+	%>
 	<div id="music1" class="shadow-sm p-0 mb-1 bg-body rounded">
 		<div class="d-flex text-muted pt-1">
 			<a href="musicSearchDetail.jsp?keys=<%=playList.get(i).getKeys()%>"><img
@@ -83,61 +83,62 @@
 				<!-- <button id="playListAdd" class="btn btn-primary w-25"  type=-"button">Button</button> -->
 			</div>
 			<!-- 플레이리스트 추가 modal -->
-			<button type="button" class="bi bi-plus-lg fs-1"
+			<button id="modelBtn" type="button" class="bi bi-plus-lg fs-1"
 				data-bs-toggle="modal" data-bs-target="#playList<%=i%>"></button>
 			<!-- Modal -->
-			<div class="modal fade" id="playList<%=i%>" data-bs-backdrop="static"
-				data-bs-keyboard="false" tabindex="-1"
-				aria-labelledby="staticBackdropLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticBackdropLabel">플레이리스트 목록</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<%
-										for (int p = 0; p < mlist.size(); p++) {
-											ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(p).getPname());
-										%>
-							<form action="listDetail" method="post">
-								<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
-									<div class="d-flex text-muted pt-3">
-										<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-											<%if (listDetail.size() != 0) {%>
-											src="<%=listDetail.get(0).getAlbumimg()%>"
-											<%} else {%>
-											src="img/add.png" <%}%> id="musicAdd">
-										<div class="pb-3 mb-0 small lh-sm w-100">
-											<div class="d-flex justify-content-between">
-												<strong class="text-gray-dark" id="title"><%= mlist.get(p).getPname() %>
-												</strong>
+			<div class="modelStart">
+				<div class="modal fade" id="playList<%=i%>"
+					data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+					aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">플레이리스트 목록</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<%
+								for (int p = 0; p < mlist.size(); p++) {
+									ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(p).getPname());
+								%>
+								<form action="listDetail" method="post">
+									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
+										<div class="d-flex text-muted pt-3">
+											<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+												<%if (listDetail.size() != 0) {%>
+												src="<%=listDetail.get(0).getAlbumimg()%>" <%} else {%>
+												src="img/add.png" <%}%> id="musicAdd">
+											<div class="pb-3 mb-0 small lh-sm w-100">
+												<div class="d-flex justify-content-between">
+													<strong class="text-gray-dark" id="title"><%=mlist.get(p).getPname()%>
+													</strong>
 
+												</div>
+												<span class="d-block" id="singer" style="float: left;">노래
+													: <%=listDetail.size()%>곡
+												</span>
 											</div>
-											<span class="d-block" id="singer" style="float: left;">노래
-												: <%= listDetail.size() %>곡
-											</span>
-										</div>
-										<div>
-											<input type="text" name="keys"
-												value=<%=playList.get(i).getKeys()%> style="display: none" />
-											<input type="text" name="id" value=<%=info.getId()%>
-												style="display: none" /> <input type="text" name="pname"
-												value=<%= mlist.get(p).getPname() %> style="display: none" />
-											<button type="submit" id="musicPlus"
-												class="bi bi-plus-lg fs-1"></button>
+											<div>
+												<input type="text" name="keys"
+													value=<%=playList.get(i).getKeys()%> style="display: none" />
+												<input type="text" name="id" value=<%=info.getId()%>
+													style="display: none" /> <input type="text" name="pname"
+													value=<%=mlist.get(p).getPname()%> style="display: none" />
+												<button type="submit" id="musicPlus"
+													class="bi bi-plus-lg fs-1"></button>
+											</div>
 										</div>
 									</div>
-								</div>
-							</form>
-							<%
-										}
-										%>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-bs-dismiss="modal">닫기</button>
+								</form>
+								<%
+								}
+								%>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">닫기</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -145,8 +146,8 @@
 		</div>
 	</div>
 	<%
-		}
-		%>
+	}
+	%>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom">
 		<ul class="nav fixed-bottom nav-pills justify-content-center">

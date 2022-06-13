@@ -6,6 +6,4 @@ function topColor() {
   const color2 = colors[1];
   button.style.background = `linear-gradient(${color1},${color2})`;
 }
-
-
 topColor();
