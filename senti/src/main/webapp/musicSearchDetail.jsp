@@ -35,9 +35,7 @@
 			</h1>
 		</a>
 	</div>
-	<br>
-	<button id="back" type="button" class="btn-close" aria-label="Close"></button>
-	<br>
+	<button id="back" type="button" class="bi bi-arrow-left fs-1" aria-label="Close"></button>
 	<!-- <div>
         <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
             placeholder="노래, 아티스트 검색" aria-label="Search" style="visibility: hidden;">
@@ -65,7 +63,6 @@
 
 	<!-- 노래 디테일 -->
 	<main>
-		<hr style="visibility: hidden;">
 		<div class="card" style="width: 18rem;">
 			<div class="card-body">
 				<h5 class="card-title" id="title">

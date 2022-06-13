@@ -5,7 +5,7 @@ const btnDelete = document.querySelector("#btnDelete");
 const musicDelete = document.querySelectorAll(".musicDelete");
 const playListTitle = document.querySelector("#playListTitle");
 const playListTitleUpdate = document.querySelector(".playListTitleUpdate ");
-
+const back = document.querySelector("#back");
 
 let update = false;
 
@@ -45,7 +45,15 @@ function paintPlayListTitle() {
 	playListTitleUpdate.classList.add("hidden");
 }
 
+function onBack(){
+	window.history.back();
+}
+
 btnUpdate.addEventListener("click", paintPlayListTitleUpdate);
 playListTitleUpdate.addEventListener("submit", paintPlayListTitle);
 topColor();
+
+
+
+back.addEventListener("click",onBack);
 
