@@ -42,7 +42,8 @@
 				</h1>
 			</a>
 		</div>
-		<button id="back" type="button" class="bi bi-arrow-left fs-1" aria-label="Close"></button>
+		<button id="back" type="button" class="bi bi-arrow-left fs-1"
+			aria-label="Close"></button>
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
 			<img class="shadow-sm p-1 mb-1 bg-body rounded "
@@ -54,7 +55,7 @@
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
 					<!-- 재생목록 수정  -->
 					<form class="playListTitleUpdate hidden" action="Update">
-						<input type="text" name="keys" value=<%=pname%>
+						<input type="text" name="pname" value=<%=pname%>
 							style="display: none" /> <input id="playListTitleUpdateInput"
 							class="form-control me-2 d-inline-block" type="search"
 							name="update_pname" placeholder="" aria-label="Search"> <input
