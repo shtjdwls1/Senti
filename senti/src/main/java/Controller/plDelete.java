@@ -42,8 +42,6 @@ public class plDelete extends HttpServlet {
 			response.sendRedirect("playList.jsp");
 		}
 	
-
-	
 	}
 
 }

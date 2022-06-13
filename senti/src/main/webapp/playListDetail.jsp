@@ -54,10 +54,11 @@
 				<div class="">
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
 					<!-- 재생목록 수정  -->
-					<form class="playListTitleUpdate hidden" action="">
+					<form class="playListTitleUpdate hidden" action="Update">
+						<input type="text" name="keys" value=<%=pname%> style="display: none" />
 						<input id="playListTitleUpdateInput"
 							class="form-control me-2 d-inline-block" type="search"
-							name="search" placeholder="" aria-label="Search"> <input
+							name="update_pname" placeholder="" aria-label="Search"> <input
 							id="playListTitleUpdateSubmit" type="submit"
 							class="btn btn-outline-primary d-inline-block" value="입력"></input>
 					</form>

@@ -353,5 +353,27 @@ public class DAO {
 			}
 			return cnt;
 		}
+		
+		// playList이름 수정
+		public int update(String update_pname) {
+			try {
+				db_conn();
+				String sql = "UPDATE playList SET pname=? WHERE pname=?";
+				
+				psmt = conn.prepareStatement(sql);
+				
+				psmt.setString(1, update_pname);
+				//psmt.setString(2, pname);
+				
+				cnt = psmt.executeUpdate();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				db_close();
+			}
+			return cnt;
+		}
 
 }
