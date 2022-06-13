@@ -36,8 +36,7 @@
 		</a>
 	</div>
 	<br>
-	<button id="back" type="button" class="btn-close" aria-label="Close"
-		></button>
+	<button id="back" type="button" class="btn-close" aria-label="Close"></button>
 	<br>
 	<!-- <div>
         <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
