@@ -1,6 +1,7 @@
 const colors = ["#4e4376", "#2b5876"];
 const music = document.getElementById("music");
 const lyrics = document.getElementById("lyrics");
+const back = document.querySelector("#back");
 
 function topColor() {
 	const color1 = colors[0];
@@ -119,3 +120,9 @@ if (navigator.mediaDevices) {
 			console.log('The following error occurred: ' + err)
 		})
 }
+
+function onBack(){
+	window.history.back();
+}
+
+back.addEventListener("click",onBack);

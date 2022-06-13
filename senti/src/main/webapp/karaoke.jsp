@@ -16,6 +16,9 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+<!-- Bootstrap Icon -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/karaoke.css">
 <title>Document</title>
 </head>
@@ -27,7 +30,7 @@
 	ArrayList<songinfoDTO> dto = new ArrayList<songinfoDTO>();
 	dto = dao.detail(keys);
 	%>
-	
+
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
 		<a href="./playList.jsp">
@@ -36,17 +39,24 @@
 			</h1>
 		</a>
 	</div>
-	<br>
-	<div class="musicInfo">
-		<h3 id="title"><%=dto.get(0).getTitle()%></h3>
-		<span id="singer"><%=dto.get(0).getSinger()%></span> <img id="albumimg" src="<%=dto.get(0).getAlbumimg()%>">
-		<audio id="music" src="music/neverendingstory.mp3" controls></audio>
+	<button id="back" type="button" class="bi bi-arrow-left fs-1"
+		aria-label="Close" style="margin-left: 21px;"></button>
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title" id="title">
+				<strong><%=dto.get(0).getTitle()%></strong>
+			</h5>
+			<p class="card-text mb-1" id="singer"><%=dto.get(0).getSinger()%></p>
+			<img src="<%=dto.get(0).getAlbumimg()%>"
+				class="card-img-top shadow-sm p-3 mb-1 bg-body rounded"
+				id="albumimg" alt="...">
+			<div class="shadow-sm p-1 mb-1 bg-body rounded" id="lyrics">
+				<span> <%=dto.get(0).getLyrics()%>
+				</span>
+			</div>
+		</div>
 	</div>
-	<div class="shadow-sm p-1 mb-1 bg-body rounded" id="lyrics">
-		<span>
-		<%=dto.get(0).getLyrics()%>
-		</span>
-	</div>
+	<audio id = "music" src="music/neverendingstory.mp3" controls></audio>
 	<div class="record">
 		<input type=checkbox id="chk-hear-mic"> <label
 			for="chk-hear-mic">마이크 소리 듣기</label>
