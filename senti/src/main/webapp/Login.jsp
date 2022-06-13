@@ -50,13 +50,8 @@
                 <input required type="password" class="form-control" id="floatingPassword" name="pw" placeholder="Password">
                 <label for="floatingPassword">비밀번호를 입력해주세요</label>
             </div>
-
-            <!--아이디 비밀번호 기억하게 하는거 -->
-            <!-- <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div> -->
+            <br>
+            <div id = "loginFalse">로그인 정보가 올바르지 않습니다.</div>
             <br>
             <button class="w-75 btn btn-lg btn-primary" type="submit" id="login">로그인</button>
             <br>

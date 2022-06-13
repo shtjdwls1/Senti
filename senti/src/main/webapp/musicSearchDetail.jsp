@@ -35,7 +35,8 @@
 			</h1>
 		</a>
 	</div>
-	<button id="back" type="button" class="bi bi-arrow-left fs-1" aria-label="Close"></button>
+	<button id="back" type="button" class="bi bi-arrow-left fs-1"
+		aria-label="Close"></button>
 	<!-- <div>
         <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
             placeholder="노래, 아티스트 검색" aria-label="Search" style="visibility: hidden;">
@@ -108,7 +109,8 @@
 					</div>
 				</div>
 				<button type="button" class="btn btn-warning" style="color: white;"
-					onclick="location.href='karaoke.jsp?keys=<%=dto.get(0).getKeys()%>';">노래 부르기</button>
+					onclick="location.href='karaoke.jsp?keys=<%=dto.get(0).getKeys()%>';">노래
+					부르기</button>
 
 				<!-- 플레이리스트 추가 modal -->
 				<button type="button" class="btn btn-success" data-bs-toggle="modal"
@@ -176,14 +178,16 @@
 		</div>
 	</main>
 	<!-- 하단 네비게이션 -->
-	<ul class="nav fixed-bottom nav-pills justify-content-center">
-		<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
-		</li>
-		<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-		<li class="nav-item"><a class="nav-link active"
-			href="musicSearch.jsp" aria-current="page">노래검색</a></li>
-		<li class="nav-item"><a class="nav-link" href="LogoutServiceCon">로그아웃</a></li>
-	</ul>
+	<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+		<ul class="nav nav-pills justify-content-center">
+			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
+			<li class="nav-item"><a class="nav-link active"
+				href="musicSearch.jsp" aria-current="page">노래검색</a></li>
+			<li class="nav-item"><a class="nav-link" href="LogoutServiceCon">로그아웃</a></li>
+		</ul>
+	</div>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

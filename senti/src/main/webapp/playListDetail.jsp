@@ -130,10 +130,9 @@
 					<span class="d-block" id="times" style="float: left;">노래길이</span>
 				</div>
 				<div class="">
-					<a href="MusicDelete?keys=<%=listDetail.get(i).getKeys()%>" >
-					<input type="text" name="keys"
-					value=<%=pname%> style="display: none" />
-					<button class="musicDelete bi bi-x-lg fs-1 hidden"></button></a>
+					<a href="MusicDelete?keys=<%=listDetail.get(i).getKeys()%>"> <input
+						type="text" name="keys" value=<%=pname%> style="display: none" />
+						<button class="musicDelete bi bi-x-lg fs-1 hidden"></button></a>
 				</div>
 			</div>
 		</div>
@@ -141,14 +140,17 @@
 		}
 		%>
 		<!-- 하단 네비게이션 -->
-		<ul class="nav fixed-bottom nav-pills justify-content-center">
-			<li class="nav-item"><a class="nav-link active"
-				aria-current="page" href="playList.jsp">플레이리스트</a></li>
-			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="LogoutServiceCon">로그아웃</a></li>
-		</ul>
+		<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+			<ul class="nav nav-pills justify-content-center">
+				<li class="nav-item"><a class="nav-link active"
+					aria-current="page" href="playList.jsp">플레이리스트</a></li>
+				<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
+				<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="LogoutServiceCon">로그아웃</a></li>
+			</ul>
+		</div>
 	</main>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

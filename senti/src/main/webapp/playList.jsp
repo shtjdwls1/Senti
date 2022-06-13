@@ -34,7 +34,7 @@
 	<main>
 		<div class="p-3 mb-2" id="top">
 			<h1 id="pitch">내 음역대</h1>
-			<a href = "./playList.jsp">
+			<a href="./playList.jsp">
 				<h1 id="senti">
 					<img src="img/facebook.png" id="logo"> Senti
 				</h1>
@@ -85,14 +85,13 @@
 				<div class="">
 					<!-- 앨범 커버 -->
 					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					<% if(listDetail.size() != 0){ %>
-						src="<%=listDetail.get(0).getAlbumimg()%>"
-					<% } else{ %>
-						src="img/add.png"
-						<% } %>>
+						<% if(listDetail.size() != 0){ %>
+						src="<%=listDetail.get(0).getAlbumimg()%>" <% } else{ %>
+						src="img/add.png" <% } %>>
 					<div id="playListInfo">
 						<strong class="text-gray-dark"><%=mlist.get(i).getPname()%></strong>
-						<span class="d-block">노래 : <%= listDetail.size() %>곡</span>
+						<span class="d-block">노래 : <%= listDetail.size() %>곡
+						</span>
 					</div>
 					<!-- <div class="pb-3 mb-0 small lh-sm w-100">
 						<div class="d-flex justify-content-between">
@@ -111,7 +110,7 @@
 	</main>
 
 	<!-- 하단 네비게이션 -->
-	<div class="nav fixed-bottom">
+	<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link active"
 				aria-current="page" href="playList.jsp">플레이리스트</a></li>

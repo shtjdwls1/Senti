@@ -92,7 +92,7 @@
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
-	<div class="nav fixed-bottom">
+	<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
