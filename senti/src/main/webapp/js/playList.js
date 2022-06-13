@@ -10,12 +10,8 @@ function topColor() {
   button.style.background = `linear-gradient(${color1},${color2})`;
 }
 
-function onMouseUp(){
-	console.log("h2");
-}
 
 
-playList.addEventListener("mouseup",onMouseUp);
 
 topColor();
 

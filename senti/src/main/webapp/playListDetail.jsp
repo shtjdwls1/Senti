@@ -56,8 +56,7 @@
 					<!-- 재생목록 수정  -->
 					<form class="playListTitleUpdate hidden" action="Update">
 						<input type="text" name="pname" value=<%=pname%>
-							style="display: none" />
-							<input id="playListTitleUpdateInput"
+							style="display: none" /> <input id="playListTitleUpdateInput"
 							class="form-control me-2 d-inline-block" type="search"
 							name="update_pname" placeholder="" aria-label="Search"> <input
 							id="playListTitleUpdateSubmit" type="submit"
@@ -92,9 +91,9 @@
 								</div>
 								<div class="modal-body">정말로 삭제하시겠습니까?</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-danger">
-										<a href="delete?pname=<%=pname%>">삭제</a>
-									</button>
+									<a href="delete?pname=<%=pname%>">
+										<button type="button" class="btn btn-danger">삭제</button>
+									</a>
 									<button type="button" class="btn btn-secondary"
 										data-bs-dismiss="modal">닫기</button>
 								</div>
