@@ -108,7 +108,7 @@
 					</div>
 				</div>
 				<button type="button" class="btn btn-warning" style="color: white;"
-					onclick="location.href='karaoke.jsp';">노래 부르기</button>
+					onclick="location.href='karaoke.jsp?keys=<%=dto.get(0).getKeys()%>';">노래 부르기</button>
 
 				<!-- 플레이리스트 추가 modal -->
 				<button type="button" class="btn btn-success" data-bs-toggle="modal"

@@ -1,3 +1,6 @@
+<%@page import="Model.songinfoDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.DAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,6 +20,14 @@
 <title>Document</title>
 </head>
 <body>
+	<%
+	String keys = request.getParameter("keys");
+
+	DAO dao = new DAO();
+	ArrayList<songinfoDTO> dto = new ArrayList<songinfoDTO>();
+	dto = dao.detail(keys);
+	%>
+	
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
 		<a href="./playList.jsp">
@@ -27,19 +38,13 @@
 	</div>
 	<br>
 	<div class="musicInfo">
-		<h3 id="title">never ending story</h3>
-		<span id="singer">부활</span> <img id="albumimg" src="img/album.jpg">
+		<h3 id="title"><%=dto.get(0).getTitle()%></h3>
+		<span id="singer"><%=dto.get(0).getSinger()%></span> <img id="albumimg" src="<%=dto.get(0).getAlbumimg()%>">
 		<audio id="music" src="music/neverendingstory.mp3" controls></audio>
 	</div>
 	<div class="shadow-sm p-1 mb-1 bg-body rounded" id="lyrics">
-		<span>손 닿을 수 없는 저기 어딘가 오늘도 넌 숨쉬고 있지만 너와 머물던 작은 의자위엔 같은 모습의 바람이
-			지나네 <br> 너는 떠나며 마치 날 떠나가듯이 멀리 손을 흔들며 언젠간 추억에 남겨져 갈꺼라고 <br>
-			그리워하면 언젠간 만나게 되는 어느 영화와 같은 일들이 이뤄져가기를 힘겨워한 날에 너를 지킬수 없었던 아름다운 시절속에 머문
-			그대이기에 <br> 너는 떠나며 마치 날 떠나가듯이 멀s리 손을 흔들며 언젠간 추억에 남겨져 갈 거라고 <br>
-			그리워하면 언젠간 만나게 되는 어느 영화와 같은 일들이 이뤄져가기를 힘겨워한 날에 너를 지킬 수 없었던 아름다운 시절속에
-			머문 그대여 <br> 그리워하면 언젠간 만나게 되는 어느 영화와 같은 일들이 이뤄져가기를 힘겨워한 날에 너를 지킬수
-			없었던 아름다운 시절속에 머문 그대여 <br> 그리워하면 언젠간 만나게 되는 어느 영화와 같은 일들이 이뤄져가기를
-			힘겨워한 날에 너를 지킬수 없었던 아름다운 시절속에 머문 그대이기에
+		<span>
+		<%=dto.get(0).getLyrics()%>
 		</span>
 	</div>
 	<div class="record">
