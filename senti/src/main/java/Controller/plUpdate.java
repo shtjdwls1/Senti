@@ -24,18 +24,16 @@ public class plUpdate extends HttpServlet {
 		System.out.println("pname : "+pname);
 		System.out.println("update_pname : "+update_pname);
 		
-		playListDTO up_pname = new playListDTO(pname);
-		
 		DAO dao = new DAO();
-//		int cnt = dao.update(up_pname);
-//		
-//		if(cnt>0){
-//			System.out.println("playList 수정 성공");
-//			response.sendRedirect("playList.jsp");
-//		}else {
-//			System.out.println("playList 수정 실패");
-//			response.sendRedirect("playList.jsp");
-//		}
+		int cnt = dao.update(update_pname, pname);
+		
+		if(cnt>0){
+			System.out.println("playList 수정 성공");
+			response.sendRedirect("playList.jsp");
+		}else {
+			System.out.println("playList 수정 실패");
+			response.sendRedirect("playList.jsp");
+		}
 		
 	}
 

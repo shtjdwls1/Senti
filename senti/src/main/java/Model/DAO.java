@@ -355,7 +355,7 @@ public class DAO {
 		}
 		
 		// playList이름 수정
-		public int update(String update_pname) {
+		public int update(String update_pname, String pname) {
 			try {
 				db_conn();
 				String sql = "UPDATE playList SET pname=? WHERE pname=?";
@@ -363,7 +363,7 @@ public class DAO {
 				psmt = conn.prepareStatement(sql);
 				
 				psmt.setString(1, update_pname);
-				//psmt.setString(2, pname);
+				psmt.setString(2, pname);
 				
 				cnt = psmt.executeUpdate();
 			}
