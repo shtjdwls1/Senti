@@ -49,9 +49,9 @@ body{
 	height: 32px;
 	margin-bottom: 5%;
 }
-.musicInfo{
-	text-align:center;
-	display: grid;
+.card{
+	margin: auto;
+	text-align: center;
 }
 #albumimg{
 	width: 250px;
@@ -59,14 +59,15 @@ body{
 	margin: auto;
 }
 audio{
-	margin: auto;
+	margin-left: 43px;
+	display: block;
+	
 }
 #lyrics{
-	width: 292px;
     margin: 0 auto;
     overflow: scroll;
     height: 230px;
-    font-size: 30px;
+    font-size: 19px;
     margin-top: 10px;
 }
 .record{
@@ -74,4 +75,40 @@ audio{
 }
 .hidden{
 	display : none;
+}
+#back{
+	margin-left: 21px;
+	all: unset;
+}
+#recordStart{
+	all: unset;
+	cursor: pointer;
+	background-color: white;
+	padding: 5px 0px;
+	width: 50px;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px
+		rgba(0, 0, 0, 0.08);
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	color: rgba(0, 0, 0, 0.7);
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 15px;
+}
+#recordStop{
+	all: unset;
+	cursor: pointer;
+	background-color: white;
+	padding: 5px 0px;
+	width: 120px;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px
+		rgba(0, 0, 0, 0.08);
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	color: rgba(0, 0, 0, 0.7);
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 15px;
 }

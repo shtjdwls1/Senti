@@ -42,7 +42,7 @@
             </div>
             <br>
             <div class="form-floating">
-                <input required type="text" class="form-control" id="floatingInput" name="id" placeholder="Id">
+                <input required type="text" class="form-control" id="floatingInput" name="id" placeholder="Id" >
                 <label for="floatingInput">아이디를 입력해주세요</label>
             </div>
           

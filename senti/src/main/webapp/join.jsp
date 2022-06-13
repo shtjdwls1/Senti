@@ -55,7 +55,7 @@
                         <div class="col-12">
                             <label for="id" class="form-label">아이디</label>
                             <input required type="text" class="form-control" id="id" name="id"
-                                placeholder="아이디를 입력해주세요">
+                                placeholder="아이디를 입력해주세요" maxlength='10'>
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
@@ -64,7 +64,7 @@
                         <div class="col-12">
                             <label for="id" class="form-label">비밀번호</label>
                             <input required type="password" class="form-control" id="password" name="pw"
-                                placeholder="비밀번호를 입력해주세요" required>
+                                placeholder="비밀번호를 입력해주세요" required maxlength='10'>
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -74,7 +74,7 @@
                         <div class="col-12">
                             <label for="id2" class="form-label">비밀번호 확인</label>
                             <input required type="password" class="form-control" id="password2" name="pwCheck"
-                                placeholder="비밀번호를 다시 입력해 주세요">
+                                placeholder="비밀번호를 다시 입력해 주세요" maxlength='10'>
                         </div>
 
                         <div class="col-md-5">
@@ -91,7 +91,7 @@
                         <div class="col-md-3">
                             <label for="nickname" class="form-label">닉네임</label>
                             <input required type="text" class="form-control" id="nick" name="nick"
-                                placeholder="닉네임을 입력해주세요" required>
+                                placeholder="닉네임을 입력해주세요" required maxlength='10'>
                             <div class="invalid-feedback">
                                 Zip code required.`
                             </div>
