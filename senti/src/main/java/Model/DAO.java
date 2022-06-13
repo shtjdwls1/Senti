@@ -299,5 +299,27 @@ public class DAO {
          }
          return cnt;
       }
+      
+  	// 음원 개별 삭제
+  	public int MusicDelete(String keys) {
+  		try {
+  			db_conn();
+  			
+  			String sql = "DELETE FROM playList WHERE keys=?";
+  			
+  			psmt = conn.prepareStatement(sql);
+  			
+  			psmt.setString(1, keys);
+  			
+  			cnt = psmt.executeUpdate();
+  		}
+  		catch(Exception e) {
+  			e.printStackTrace();
+  		}
+  		finally {
+  			db_close();
+  		}
+  		return cnt;
+  	}
 
 }

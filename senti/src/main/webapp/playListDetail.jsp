@@ -130,7 +130,10 @@
 					<span class="d-block" id="times" style="float: left;">노래길이</span>
 				</div>
 				<div class="">
-					<button class="musicDelete bi bi-x-lg fs-1 hidden"></button>
+					<a href="MusicDelete?keys=<%=listDetail.get(i).getKeys()%>" >
+					<input type="text" name="keys"
+					value=<%=pname%> style="display: none" />
+					<button class="musicDelete bi bi-x-lg fs-1 hidden"></button></a>
 				</div>
 			</div>
 		</div>
@@ -144,7 +147,7 @@
 			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
 			</li>
-			<li class="nav-item"><a class="nav-link">프로필</a></li>
+			<li class="nav-item"><a class="nav-link" href="LogoutServiceCon">로그아웃</a></li>
 		</ul>
 	</main>
 	<script

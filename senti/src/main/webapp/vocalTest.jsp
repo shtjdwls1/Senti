@@ -76,7 +76,7 @@
 				aria-current="page" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
 			</li>
-			<li class="nav-item"><a class="nav-link">프로필</a></li>
+			<li class="nav-item"><a class="nav-link" href="LogoutServiceCon">로그아웃</a></li>
 		</ul>
 	</div>
 	<script
