@@ -9,371 +9,295 @@ import java.util.ArrayList;
 
 public class DAO {
 
-	// DAO = Data Access Object = DB에 접근하는 객체
+   // DAO = Data Access Object = DB에 접근하는 객체
 
-	// 전역변수 선언
-	Connection conn = null;
-	PreparedStatement psmt = null;
-	int cnt = 0;
-	ResultSet rs = null;
-	String nickname = null;
+   // 전역변수 선언
+   Connection conn = null;
+   PreparedStatement psmt = null;
+   int cnt = 0;
+   ResultSet rs = null;
+   String nickname = null;
 
-	// DB연결 메소드
-	public void db_conn() {
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+   // DB연결 메소드
+   public void db_conn() {
+      try {
+         Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String db_url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String db_id = "senti";
-			String db_pw = "senti";
+         String db_url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+         String db_id = "senti";
+         String db_pw = "senti";
 
-			conn = DriverManager.getConnection(db_url, db_id, db_pw);
+         conn = DriverManager.getConnection(db_url, db_id, db_pw);
 
-			if (conn != null) {
-				System.out.println("DB연결 성공");
-			} else {
-				System.out.println("DB연결 실패");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+         if (conn != null) {
+            System.out.println("DB연결 성공");
+         } else {
+            System.out.println("DB연결 실패");
+         }
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
 
-	// DB닫기 메소드
-	public void db_close() {
-		try {
-			if (rs != null)
-				rs.close();
-			if (psmt != null)
-				psmt.close();
-			if (conn != null)
-				conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+   // DB닫기 메소드
+   public void db_close() {
+      try {
+         if (rs != null)
+            rs.close();
+         if (psmt != null)
+            psmt.close();
+         if (conn != null)
+            conn.close();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
 
-	// 회원가입 메소드
-	public int join(DTO dto) {
-		try {
-			// db연결 메소드 호출
-			db_conn();
-			System.out.println("db연결");
-			// ------------------ DB연결 완료 -----------------------
+   // 검색기능
+   public ArrayList<songinfoDTO> SearchSong(String search) {
+      // 검색받은 데이터 검색
+      String sql = "select keys, title, singer, albumimg from songinfo where title like '%" + search
+            + "%' or singer like '%" + search + "%'";
+      // 데이터를 담을 ArrayList
+      ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
+      db_conn();
+      try {
+         psmt = conn.prepareStatement(sql);
 
-			// DB에서 어떤 행위를 할지 결정 -> sql문
-			// ? = 바인드변수
-			// 들어갈 자리가 정해져있으면 userinfo(id, pw, nickname) 뒤에 들어갈 자리 지정
-			String sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?)";
+         // 실행
+         rs = psmt.executeQuery();
+         // 결과 꺼내서 ArrayList에 담기
+         while (rs.next()) {
+            String keys = rs.getString(1);
+            String title = rs.getString(2);
+            String singer = rs.getString(3);
+            String albumimg = rs.getString(4);
 
-			// DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
-			psmt = conn.prepareStatement(sql);
+            songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
 
-			// ? 바인드 변수에 값채우기
-			// psmt.setString(?의 번호, ?에 넣을 값);
-			psmt.setString(1, dto.getId());
-			psmt.setString(2, dto.getPw());
-			psmt.setString(3, dto.getNick());
-			psmt.setString(4, dto.getGender());
-			psmt.setString(5, "");
-			psmt.setString(6, "");
-			psmt.setString(7, "");
+            playList.add(dto);
+         }
 
-			// SQL문 실행
-			// executeUpdate(); : 데이터베이스에 변화가 생겼을 때 사용
-			// : 실행 결과가 int형태로 반환
-			// : int의 의미 = 몇개의 행이 변화가 생겼는지
-			cnt = psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally { // finally는 무조건 실행해야 함 (DB문 닫기)
-			db_close();
-		}
-		return cnt;
-	}
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         db_close();
+      }
 
-	// 로그인 메소드
-	public String login(String id, String pw) {
-		String nick = null;
-		// DB연결해서 있는지 없는지 확인하기
-		// DB연결을 위한 통로 만들기 -> Class(OracleDriver)
-		try {
-			// db연결 메소드 호출
-			db_conn();
+      return playList;
 
-			// --------------------------DB연결 끝---------------------------
-			// 내가 입력한 id, pw가 userinfo테이블에 있는지 없는지 확인
-			String sql = "select nick from userinfo where id=? and pw=?";
+   }
 
-			// sql문장을 DB에 전달 -> 전달 성공 시 PreparedStatement객체로 반환
-			psmt = conn.prepareStatement(sql);
+   // 음악 상세
+   public ArrayList<songinfoDTO> detail(String key) {
+      // 검색받은 데이터 검색
+      String sql = "select title, singer, albumimg, release, genre, lyrics, keys from songinfo where keys like '%" + key
+            + "%'";
+      // 데이터를 담을 ArrayList
+      ArrayList<songinfoDTO> musicSearchDetail = new ArrayList<songinfoDTO>();
+      db_conn();
+      System.out.println("DetailDAO");
+      try {
+         psmt = conn.prepareStatement(sql);
 
-			// ? 바인드변수에 값 채우기
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
+         // 실행
+         rs = psmt.executeQuery();
+         // 결과 꺼내서 ArrayList에 담기
+         rs.next();
 
-			// sql문장 실행
-			// Query : 질의하다.
-			// executeQuery : select문에서만 사용, DB에 값이 있는지 없는지 조회
-			rs = psmt.executeQuery();
+         String title = rs.getString(1);
+         String singer = rs.getString(2);
+         String albumimg = rs.getString(3);
+         String release = rs.getString(4);
+         String genre = rs.getString(5);
+         String lyrics = rs.getString(6);
+         String keys = rs.getString(7);
+         
+         songinfoDTO dto = new songinfoDTO(title, singer, albumimg, release, genre, lyrics, keys);
 
-			// 성공을 했을 때만 if문 실행
-			if (rs.next()) {
-				nick = rs.getString("nick");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
-		return nick;
-	}
+         musicSearchDetail.add(dto);
 
-	// 검색기능
-	public ArrayList<songinfoDTO> SearchSong(String search) {
-		// 검색받은 데이터 검색
-		String sql = "select keys, title, singer, albumimg from songinfo where title like '%" + search
-				+ "%' or singer like '%" + search + "%'";
-		// 데이터를 담을 ArrayList
-		ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
-		db_conn();
-		try {
-			psmt = conn.prepareStatement(sql);
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         db_close();
+      }
 
-			// 실행
-			rs = psmt.executeQuery();
-			// 결과 꺼내서 ArrayList에 담기
-			while (rs.next()) {
-				String keys = rs.getString(1);
-				String title = rs.getString(2);
-				String singer = rs.getString(3);
-				String albumimg = rs.getString(4);
+      return musicSearchDetail;
 
-				songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
+   }
 
-				playList.add(dto);
-			}
+   // 플레이리스트 생성
+   public int playList(playListDTO dto) {
+      try {
+         // db연결 메소드 호출
+         db_conn();
+         System.out.println("db연결 완료");
+         // ------------------ DB연결 완료 -----------------------
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
+         String sql = "insert into playlist values(?, ?, ?)";
 
-		return playList;
+         // DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
+         psmt = conn.prepareStatement(sql);
 
-	}
+         // ? 바인드 변수에 값채우기
+         // psmt.setString(?의 번호, ?에 넣을 값);
+         psmt.setString(1, "");
+         psmt.setString(2, dto.getId());
+         psmt.setString(3, dto.getPname());
+         System.out.println("keys : " + dto.getKeys());
+         System.out.println("id : " + dto.getId());
+         System.out.println("pname : " + dto.getPname());
 
-	// 음악 상세
-	public ArrayList<songinfoDTO> detail(String key) {
-		// 검색받은 데이터 검색
-		String sql = "select title, singer, albumimg, release, genre, lyrics, keys from songinfo where keys like '%" + key
-				+ "%'";
-		// 데이터를 담을 ArrayList
-		ArrayList<songinfoDTO> musicSearchDetail = new ArrayList<songinfoDTO>();
-		db_conn();
-		System.out.println("DetailDAO");
-		try {
-			psmt = conn.prepareStatement(sql);
+         cnt = psmt.executeUpdate();
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         db_close();
+      }
+      return cnt;
+   }
 
-			// 실행
-			rs = psmt.executeQuery();
-			// 결과 꺼내서 ArrayList에 담기
-			rs.next();
+   // 플레이리스트 출력
+   public ArrayList<playListDTO> playListAdd(DTO info) {
+      ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
 
-			String title = rs.getString(1);
-			String singer = rs.getString(2);
-			String albumimg = rs.getString(3);
-			String release = rs.getString(4);
-			String genre = rs.getString(5);
-			String lyrics = rs.getString(6);
-			String keys = rs.getString(7);
-			
-			songinfoDTO dto = new songinfoDTO(title, singer, albumimg, release, genre, lyrics, keys);
+      try {
+         db_conn();
 
-			musicSearchDetail.add(dto);
+         String sql = "SELECT DISTINCT pname FROM playlist WHERE id=?";
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
+         psmt = conn.prepareStatement(sql);
 
-		return musicSearchDetail;
+         psmt.setString(1, info.getId());
 
-	}
+         rs = psmt.executeQuery();
 
-	// 플레이리스트 생성
-	public int playList(playListDTO dto) {
-		try {
-			// db연결 메소드 호출
-			db_conn();
-			System.out.println("db연결 완료");
-			// ------------------ DB연결 완료 -----------------------
+         while (rs.next()) {
+            //String keys = rs.getString(1);
+            //String id = rs.getString(2);
+            String pname = rs.getString(1);
 
-			String sql = "insert into playlist values(?, ?, ?)";
+            playListDTO dto = new playListDTO(pname);
 
-			// DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
-			psmt = conn.prepareStatement(sql);
+            mlist.add(dto);
+         }
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         db_close();
+      }
+      return mlist;
+   }
 
-			// ? 바인드 변수에 값채우기
-			// psmt.setString(?의 번호, ?에 넣을 값);
-			psmt.setString(1, "");
-			psmt.setString(2, dto.getId());
-			psmt.setString(3, dto.getPname());
-			System.out.println("keys : " + dto.getKeys());
-			System.out.println("id : " + dto.getId());
-			System.out.println("pname : " + dto.getPname());
+   // 음원추가
+   public int listDetail(playListDTO dto2) {
+      try {
+         // db연결 메소드 호출
+         db_conn();
+         System.out.println("db연결 완료");
+         // ------------------ DB연결 완료 -----------------------
 
-			cnt = psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
-		return cnt;
-	}
+         String sql = "insert into playlist values(?, ?, ?)";
 
-	// 플레이리스트 출력
-	public ArrayList<playListDTO> playListAdd(DTO info) {
-		ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+         // DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
+         psmt = conn.prepareStatement(sql);
 
-		try {
-			db_conn();
+         // ? 바인드 변수에 값채우기
+         // psmt.setString(?의 번호, ?에 넣을 값);
+         psmt.setString(1, dto2.getKeys());
+         psmt.setString(2, dto2.getId());
+         psmt.setString(3, dto2.getPname());
+         System.out.println("keys : " + dto2.getKeys());
+         System.out.println("id : " + dto2.getId());
+         System.out.println("pname2 : " + dto2.getPname());
 
-			String sql = "SELECT DISTINCT pname FROM playlist WHERE id=?";
+         cnt = psmt.executeUpdate();
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         db_close();
+      }
+      return cnt;
+   }
+   
+   // 검색기능
+      public ArrayList<songinfoDTO> pDetail(String pname) {
+         // 검색받은 데이터 검색
+         String sql = "select songinfo.keys, title, singer, albumimg from songinfo, playlist where pname like '%" + pname
+               + "%' and songinfo.keys = playlist.keys";
+         // 데이터를 담을 ArrayList
+         ArrayList<songinfoDTO> listDetail = new ArrayList<songinfoDTO>();
+         db_conn();
+         try {
+            psmt = conn.prepareStatement(sql);
 
-			psmt = conn.prepareStatement(sql);
+            // 실행
+            rs = psmt.executeQuery();
+            // 결과 꺼내서 ArrayList에 담기
+            while (rs.next()) {
+               String keys = rs.getString(1);
+               String title = rs.getString(2);
+               String singer = rs.getString(3);
+               String albumimg = rs.getString(4);
 
-			psmt.setString(1, info.getId());
+               songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
 
-			rs = psmt.executeQuery();
+               listDetail.add(dto);
+            }
 
-			while (rs.next()) {
-				//String keys = rs.getString(1);
-				//String id = rs.getString(2);
-				String pname = rs.getString(1);
+         } catch (Exception e) {
+            e.printStackTrace();
+         } finally {
+            db_close();
+         }
 
-				playListDTO dto = new playListDTO(pname);
+         return listDetail;
 
-				mlist.add(dto);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
-		return mlist;
-	}
-
-	// 음원추가
-	public int listDetail(playListDTO dto2) {
-		try {
-			// db연결 메소드 호출
-			db_conn();
-			System.out.println("db연결 완료");
-			// ------------------ DB연결 완료 -----------------------
-
-			String sql = "insert into playlist values(?, ?, ?)";
-
-			// DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
-			psmt = conn.prepareStatement(sql);
-
-			// ? 바인드 변수에 값채우기
-			// psmt.setString(?의 번호, ?에 넣을 값);
-			psmt.setString(1, dto2.getKeys());
-			psmt.setString(2, dto2.getId());
-			psmt.setString(3, dto2.getPname());
-			System.out.println("keys : " + dto2.getKeys());
-			System.out.println("id : " + dto2.getId());
-			System.out.println("pname2 : " + dto2.getPname());
-
-			cnt = psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			db_close();
-		}
-		return cnt;
-	}
-	
-	// 검색기능
-		public ArrayList<songinfoDTO> pDetail(String pname) {
-			// 검색받은 데이터 검색
-			String sql = "select songinfo.keys, title, singer, albumimg from songinfo, playlist where pname like '%" + pname
-					+ "%' and songinfo.keys = playlist.keys";
-			// 데이터를 담을 ArrayList
-			ArrayList<songinfoDTO> listDetail = new ArrayList<songinfoDTO>();
-			db_conn();
-			try {
-				psmt = conn.prepareStatement(sql);
-
-				// 실행
-				rs = psmt.executeQuery();
-				// 결과 꺼내서 ArrayList에 담기
-				while (rs.next()) {
-					String keys = rs.getString(1);
-					String title = rs.getString(2);
-					String singer = rs.getString(3);
-					String albumimg = rs.getString(4);
-
-					songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
-
-					listDetail.add(dto);
-				}
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				db_close();
-			}
-
-			return listDetail;
-
-		}
-		
-		//playList 개별 삭제
-		public int delete(String pname) {
-			try {
-				db_conn();
-				
-				String sql = "DELETE FROM playList WHERE pname=?";
-				
-				psmt = conn.prepareStatement(sql);
-				
-				psmt.setString(1, pname);
-				
-				cnt = psmt.executeUpdate();
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
-			finally {
-				db_close();
-			}
-			return cnt;
-		}
-		
-		// playList이름 수정
-		public int update(String update_pname, String pname) {
-			try {
-				db_conn();
-				String sql = "UPDATE playList SET pname=? WHERE pname=?";
-				
-				psmt = conn.prepareStatement(sql);
-				
-				psmt.setString(1, update_pname);
-				psmt.setString(2, pname);
-				
-				cnt = psmt.executeUpdate();
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
-			finally {
-				db_close();
-			}
-			return cnt;
-		}
+      }
+      
+      //playList 개별 삭제
+      public int delete(String pname) {
+         try {
+            db_conn();
+            
+            String sql = "DELETE FROM playList WHERE pname=?";
+            
+            psmt = conn.prepareStatement(sql);
+            
+            psmt.setString(1, pname);
+            
+            cnt = psmt.executeUpdate();
+         }
+         catch(Exception e) {
+            e.printStackTrace();
+         }
+         finally {
+            db_close();
+         }
+         return cnt;
+      }
+      
+      // playList이름 수정
+      public int update(String update_pname, String pname) {
+         try {
+            db_conn();
+            String sql = "UPDATE playList SET pname=? WHERE pname=?";
+            
+            psmt = conn.prepareStatement(sql);
+            
+            psmt.setString(1, update_pname);
+            psmt.setString(2, pname);
+            
+            cnt = psmt.executeUpdate();
+         }
+         catch(Exception e) {
+            e.printStackTrace();
+         }
+         finally {
+            db_close();
+         }
+         return cnt;
+      }
 
 }
