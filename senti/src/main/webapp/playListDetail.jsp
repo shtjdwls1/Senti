@@ -90,7 +90,7 @@
 								</div>
 								<div class="modal-body">정말로 삭제하시겠습니까?</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-danger">삭제</button>
+									<button type="button" class="btn btn-danger"><a href="delete?pname=<%=pname%>">삭제</a></button>
 									<button type="button" class="btn btn-secondary"
 										data-bs-dismiss="modal">닫기</button>
 								</div>

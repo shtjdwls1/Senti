@@ -331,5 +331,27 @@ public class DAO {
 			return listDetail;
 
 		}
+		
+		//playList 개별 삭제
+		public int delete(String pname) {
+			try {
+				db_conn();
+				
+				String sql = "DELETE FROM playList WHERE pname=?";
+				
+				psmt = conn.prepareStatement(sql);
+				
+				psmt.setString(1, pname);
+				
+				cnt = psmt.executeUpdate();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				db_close();
+			}
+			return cnt;
+		}
 
 }
