@@ -18,9 +18,11 @@
 <title>Document</title>
 </head>
 <body>
-<% DTO info = (DTO) session.getAttribute("info"); %>
+	<%
+	DTO info = (DTO) session.getAttribute("info");
+	%>
 	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
+		<h1 id="pitch"><%=info.getLow()%>~<%=info.getHigh()%></h1>
 		<a href="./playList.jsp">
 			<h1 id="senti">
 				<img src="img/facebook.png" id="logo"> Senti
@@ -31,15 +33,16 @@
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-4">
 			<div class="vocalTestResult">
 				<div>
-					<h2><%= info.getNick() %>님의 음역대는</h2>
+					<h2><%=info.getNick()%>님의 음역대는
+					</h2>
 				</div>
 				<div id="Result">
 					<h1>
-						<strong><%= info.getLow() %>~<%= info.getHigh() %></strong>
+						<strong><%=info.getLow()%>~<%=info.getHigh()%></strong>
 					</h1>
 				</div>
 			</div>
-			<h1 style="font-size: 27px;text-align: center;">추천 노래</h1>
+			<h1 style="font-size: 27px; text-align: center;">추천 노래</h1>
 			<!-- 최저음 테스트 -->
 			<div class="musicRecom shadow p-1 mb-1 bg-body rounded">
 				<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
@@ -144,16 +147,20 @@
 				</div>
 			</div>
 			<!-- 최고음 테스트 -->
-			<div class="col-lg-6">
-				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-warning">Warning</button>
-					<button type="button" class="btn btn-primary">Primary</button>
+			<div class="col-lg-6" style="margin-top: 25px;">
+				<div class="d-flex gap-2 d-md-flex justify-content-md-start"
+					style="width: 77%; margin: auto;">
+					<button type="button" class="btn btn-warning col-6"
+						style="color: white;">다시 추천받기</button>
+					<button type="button" class="btn btn-primary col-6">플레이리스트
+						만들기</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
-	<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+	<div class="nav fixed-bottom"
+		style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
