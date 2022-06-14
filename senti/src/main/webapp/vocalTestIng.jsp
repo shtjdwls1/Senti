@@ -18,9 +18,11 @@
 <title>Document</title>
 </head>
 <body>
-<% DTO info = (DTO) session.getAttribute("info"); %>
+	<%
+	DTO info = (DTO) session.getAttribute("info");
+	%>
 	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
+		<h1 id="pitch"><%=info.getLow()%>~<%=info.getHigh()%></h1>
 		<a href="./playList.jsp">
 			<h1 id="senti">
 				<img src="img/facebook.png" id="logo"> Senti
@@ -45,6 +47,10 @@
 			<div class="vocalTestHigh hidden shadow p-3 mb-2 bg-body rounded">
 				<!-- 비디오 -->
 				<video id="vocalTestHighVideo" src="video/high.mp4" controls></video>
+			</div>
+			<div class="record">
+				<input type=checkbox id="chk-hear-mic"> <label
+					for="chk-hear-mic">마이크 소리 듣기</label>
 			</div>
 			<form action="Testing" class="userInfo">
 				<div id="select">
@@ -87,16 +93,17 @@
 						type="checkbox" name='genres' value="soul"> R&B/소울 <input
 						type="checkbox" name='genres' value="ost"> OST <input
 						type="checkbox" name='genres' value="danse"> 댄스 <input
-						type="checkbox" name='genres' value="rock"> 락
-					<input type="text" name="nick" value=<%= info.getNick() %>
-					style="display: none" />
+						type="checkbox" name='genres' value="rock"> 락 <input
+						type="text" name="nick" value=<%=info.getNick()%>
+						style="display: none" />
 				</div>
 				<button type="submit" class="btn btn-primary">음역대 측정하기</button>
 			</form>
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
-	<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+	<div class="nav fixed-bottom"
+		style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a></li>
 			<li class="nav-item"><a class="nav-link active"
@@ -112,6 +119,21 @@
 		crossorigin="anonymous"></script>
 	<script src="js/vocalTestIng.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!-- alert 꾸미기  -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script>
+		function alert() {
+			Swal.fire({
+				title : '<strong>마이크 사용 권장</strong>',
+				icon : 'info',
+				html : '<b>마이크</b>를 사용하시면 더 정확한 측정이'+'<br>'+'가능합니다',
+				showCloseButton : true,
+				focusConfirm : false,
+				confirmButtonText : '확인',
+			})
+		}
+		alert();
+	</script>
 </body>
 
 </html>
