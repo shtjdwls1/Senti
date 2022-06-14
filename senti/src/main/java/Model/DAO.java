@@ -9,8 +9,6 @@ import java.util.ArrayList;
 
 public class DAO {
 
-   // DAO = Data Access Object = DB에 접근하는 객체
-
    // 전역변수 선언
    Connection conn = null;
    PreparedStatement psmt = null;
@@ -29,11 +27,6 @@ public class DAO {
 
          conn = DriverManager.getConnection(db_url, db_id, db_pw);
 
-         if (conn != null) {
-            System.out.println("DB연결 성공");
-         } else {
-            System.out.println("DB연결 실패");
-         }
       } catch (Exception e) {
          e.printStackTrace();
       }
@@ -55,18 +48,23 @@ public class DAO {
 
    // 검색기능
    public ArrayList<songinfoDTO> SearchSong(String search) {
-      // 검색받은 데이터 검색
       String sql = "select keys, title, singer, albumimg from songinfo where title like '%" + search
             + "%' or singer like '%" + search + "%'";
-      // 데이터를 담을 ArrayList
+
       ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
       db_conn();
+      
+      if (conn != null) {
+          System.out.println("DB연결 성공");
+       } else {
+          System.out.println("DB연결 실패");
+       }
+      
       try {
          psmt = conn.prepareStatement(sql);
 
-         // 실행
          rs = psmt.executeQuery();
-         // 결과 꺼내서 ArrayList에 담기
+
          while (rs.next()) {
             String keys = rs.getString(1);
             String title = rs.getString(2);
@@ -90,19 +88,23 @@ public class DAO {
 
    // 음악 상세
    public ArrayList<songinfoDTO> detail(String key) {
-      // 검색받은 데이터 검색
       String sql = "select title, singer, albumimg, times, genre, lyrics, keys from songinfo where keys like '%" + key
             + "%'";
-      // 데이터를 담을 ArrayList
       ArrayList<songinfoDTO> musicSearchDetail = new ArrayList<songinfoDTO>();
+      
       db_conn();
+      
+      if (conn != null) {
+          System.out.println("DB연결 성공");
+       } else {
+          System.out.println("DB연결 실패");
+       }
+      
       System.out.println("DetailDAO");
       try {
          psmt = conn.prepareStatement(sql);
 
-         // 실행
          rs = psmt.executeQuery();
-         // 결과 꺼내서 ArrayList에 담기
          rs.next();
 
          String title = rs.getString(1);
@@ -130,18 +132,19 @@ public class DAO {
    // 플레이리스트 생성
    public int playList(playListDTO dto) {
       try {
-         // db연결 메소드 호출
-         db_conn();
-         System.out.println("db연결 완료");
-         // ------------------ DB연결 완료 -----------------------
 
+    	  db_conn();
+         
+         if (conn != null) {
+             System.out.println("DB연결 성공");
+          } else {
+             System.out.println("DB연결 실패");
+          }
+         
          String sql = "insert into playlist values(?, ?, ?)";
 
-         // DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
          psmt = conn.prepareStatement(sql);
 
-         // ? 바인드 변수에 값채우기
-         // psmt.setString(?의 번호, ?에 넣을 값);
          psmt.setString(1, "");
          psmt.setString(2, dto.getId());
          psmt.setString(3, dto.getPname());
@@ -164,6 +167,12 @@ public class DAO {
 
       try {
          db_conn();
+         
+         if (conn != null) {
+             System.out.println("DB연결 성공");
+          } else {
+             System.out.println("DB연결 실패");
+          }
 
          String sql = "SELECT DISTINCT pname FROM playlist WHERE id=?";
 
@@ -174,8 +183,6 @@ public class DAO {
          rs = psmt.executeQuery();
 
          while (rs.next()) {
-            //String keys = rs.getString(1);
-            //String id = rs.getString(2);
             String pname = rs.getString(1);
 
             playListDTO dto = new playListDTO(pname);
@@ -193,18 +200,19 @@ public class DAO {
    // 음원추가
    public int listDetail(playListDTO dto2) {
       try {
-         // db연결 메소드 호출
-         db_conn();
-         System.out.println("db연결 완료");
-         // ------------------ DB연결 완료 -----------------------
 
+    	  db_conn();
+         
+         if (conn != null) {
+             System.out.println("DB연결 성공");
+          } else {
+             System.out.println("DB연결 실패");
+          }
+         
          String sql = "insert into playlist values(?, ?, ?)";
 
-         // DB에 sql문 전달 -> 전달 성공 시 PreparedStatement(psmt)객체로 반환
          psmt = conn.prepareStatement(sql);
 
-         // ? 바인드 변수에 값채우기
-         // psmt.setString(?의 번호, ?에 넣을 값);
          psmt.setString(1, dto2.getKeys());
          psmt.setString(2, dto2.getId());
          psmt.setString(3, dto2.getPname());
@@ -223,18 +231,24 @@ public class DAO {
    
    // 검색기능
       public ArrayList<songinfoDTO> pDetail(String pname) {
-         // 검색받은 데이터 검색
-         String sql = "select songinfo.keys, title, singer, albumimg from songinfo, playlist where pname like '%" + pname
+
+    	  String sql = "select songinfo.keys, title, singer, albumimg from songinfo, playlist where pname like '%" + pname
                + "%' and songinfo.keys = playlist.keys";
-         // 데이터를 담을 ArrayList
+
          ArrayList<songinfoDTO> listDetail = new ArrayList<songinfoDTO>();
          db_conn();
+         
+         if (conn != null) {
+             System.out.println("DB연결 성공");
+          } else {
+             System.out.println("DB연결 실패");
+          }
+         
          try {
             psmt = conn.prepareStatement(sql);
 
-            // 실행
             rs = psmt.executeQuery();
-            // 결과 꺼내서 ArrayList에 담기
+
             while (rs.next()) {
                String keys = rs.getString(1);
                String title = rs.getString(2);
@@ -261,6 +275,12 @@ public class DAO {
          try {
             db_conn();
             
+            if (conn != null) {
+                System.out.println("DB연결 성공");
+             } else {
+                System.out.println("DB연결 실패");
+             }
+            
             String sql = "DELETE FROM playList WHERE pname=?";
             
             psmt = conn.prepareStatement(sql);
@@ -282,6 +302,13 @@ public class DAO {
       public int update(String update_pname, String pname) {
          try {
             db_conn();
+            
+            if (conn != null) {
+                System.out.println("DB연결 성공");
+             } else {
+                System.out.println("DB연결 실패");
+             }
+            
             String sql = "UPDATE playList SET pname=? WHERE pname=?";
             
             psmt = conn.prepareStatement(sql);
@@ -304,6 +331,12 @@ public class DAO {
   	public int MusicDelete(String keys) {
   		try {
   			db_conn();
+  			
+  	         if (conn != null) {
+  	            System.out.println("DB연결 성공");
+  	         } else {
+  	            System.out.println("DB연결 실패");
+  	         }
   			
   			String sql = "DELETE FROM playList WHERE keys=?";
   			

@@ -16,6 +16,8 @@ public class MusicDelete extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("MsgDeleteOneServiceCon");
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		String keys = request.getParameter("keys");
 		String pname = request.getParameter("pname");
 		
@@ -26,13 +28,12 @@ public class MusicDelete extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("음원 삭제 성공");
+			response.sendRedirect("playListDetail.jsp?pname="+URLEncoder.encode(pname, "utf-8"));
 		}
 		else {
 			System.out.println("음원 삭제 실패");
 		}
-		
-		response.sendRedirect("playList.jsp");
-		
+			response.sendRedirect("playListDetail.jsp?pname="+URLEncoder.encode(pname, "utf-8"));
 	}
 
 }
