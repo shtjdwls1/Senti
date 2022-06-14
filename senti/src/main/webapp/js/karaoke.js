@@ -90,6 +90,7 @@ if (navigator.mediaDevices) {
 
 				clipContainer.classList.add('clip')
 				audio.setAttribute('controls', '')
+				deleteButton.setAttribute("class","btnDelete");
 				deleteButton.innerHTML = "삭제"
 				clipLabel.innerHTML = clipName
 				result.classList.remove("hidden");

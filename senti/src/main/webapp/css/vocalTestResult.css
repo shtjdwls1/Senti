@@ -101,3 +101,7 @@ body{
 .musicRecom{
 	margin-top:0px;
 }
+a {
+	color: gray;
+	text-decoration: none;
+}

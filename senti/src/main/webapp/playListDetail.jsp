@@ -145,15 +145,14 @@
 		%>
 		<!-- 하단 네비게이션 -->
 		<div class="nav fixed-bottom"
-			style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+			style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 13px;">
 			<ul class="nav nav-pills justify-content-center">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="playList.jsp">플레이리스트</a></li>
 				<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-				<li class="nav-item"><a class="nav-link" href="musicSearch.jsp">노래검색</a>
+				<li class="nav-item"><a class="nav-link  active" href="playList.jsp">플레이리스트</a>
 				</li>
-				<li class="nav-item"><a class="nav-link"
-					href="LogoutServiceCon">로그아웃</a></li>
+				<li class="nav-item"><a class="nav-link" href="musicSearch.jsp"
+					aria-current="page">노래검색</a></li>
+				<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
 			</ul>
 		</div>
 	</main>

@@ -73,7 +73,6 @@
 				<img src="<%=dto.get(0).getAlbumimg()%>"
 					class="card-img-top shadow-sm p-3 mb-1 bg-body rounded"
 					id="albumimg" alt="...">
-				<p><%=dto.get(0).getTimes()%></p>
 				<p class="card-text" id="genre">
 					장르 :
 					<%=dto.get(0).getGenre()%></p>
@@ -179,14 +178,14 @@
 	</main>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom"
-		style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+		style="font-size: 13;background-color: white;border: 1px solid darkgray;font-size: 13px;">
 		<ul class="nav nav-pills justify-content-center">
+			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
 			</li>
-			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link active"
 				href="musicSearch.jsp" aria-current="page">노래검색</a></li>
-			<li class="nav-item"><a class="nav-link" href="LogoutServiceCon">로그아웃</a></li>
+			<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
 		</ul>
 	</div>
 
