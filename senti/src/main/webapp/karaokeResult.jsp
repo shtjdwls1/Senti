@@ -20,35 +20,37 @@
 <title>Document</title>
 </head>
 <body>
-	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch">내 음역대</h1>
-		<a href="./playList.jsp">
-			<h1 id="senti">
-				<img src="img/facebook.png" id="logo"> Senti
-			</h1>
-		</a>
-	</div>
-	<div class="flame">
-		<div class="body">
-			<h5 class="title" id="title">
-				<strong>Celebrity</strong>
-			</h5>
-			<p class="text mb-1" id="singer">아이유</p>
+	<main>
+		<div class="p-3 mb-2" id="top">
+			<h1 id="pitch">내 음역대</h1>
+			<a href="./playList.jsp">
+				<h1 id="senti">
+					<img src="img/facebook.png" id="logo"> Senti
+				</h1>
+			</a>
 		</div>
-		<div class="result">
-			<span>내 노래 점수는?</span>
-			<div id="circle">
-				<span id="point">80</span>
+		<div class="flame">
+			<div class="body">
+				<h5 class="title" id="title">
+					<strong>Celebrity</strong>
+				</h5>
+				<p class="text mb-1" id="singer">아이유</p>
 			</div>
+			<div class="result">
+				<span>내 노래 점수는?</span>
+				<div id="circle">
+					<span id="point">80</span>
+				</div>
+			</div>
+			<button id="back" type="button" class="btn btn-warning btn-lg"
+				style="margin-bottom: 10px; color: white;">다시 부르기</button>
+			<button type="button" class="btn btn-primary btn-lg"
+				onclick="location.href='playList.jsp';">종료</button>
 		</div>
-		<button id="back" type="button" class="btn btn-warning btn-lg"
-			style="margin-bottom: 10px; color: white;">다시 부르기</button>
-		<button type="button" class="btn btn-primary btn-lg"
-			onclick="location.href='playList.jsp';">종료</button>
-	</div>
+	</main>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom"
-		style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+		style="font-size: 13.5px; background-color: white; border: 1px solid darkgray;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
 			</li>
