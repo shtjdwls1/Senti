@@ -29,6 +29,7 @@ public class MusicDelete extends HttpServlet {
 		if(cnt > 0) {
 			System.out.println("음원 삭제 성공");
 			response.sendRedirect("playListDetail.jsp?pname="+URLEncoder.encode(pname, "utf-8"));
+			return;
 		}
 		else {
 			System.out.println("음원 삭제 실패");

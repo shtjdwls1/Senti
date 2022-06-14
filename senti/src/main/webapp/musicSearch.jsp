@@ -78,7 +78,7 @@
 				</div>
 				<span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger()%></span>
 				<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-				<span class="d-block" id="times" style="float: left;">노래길이</span>
+				<span class="d-block" id="times" style="float: left;"><%=playList.get(i).getTimes()%></span>
 				<!-- <button id="playListAdd" class="btn btn-primary w-25"  type=-"button">Button</button> -->
 			</div>
 			<!-- 플레이리스트 추가 modal -->
@@ -121,9 +121,12 @@
 											<div>
 												<input type="text" name="keys"
 													value=<%=playList.get(i).getKeys()%> style="display: none" />
-												<input type="text" name="id" value=<%=info.getId()%>
-													style="display: none" /> <input type="text" name="pname"
+												<input type="text" name="id"
+													value=<%=info.getId()%> style="display: none" />
+												<input type="text" name="pname"
 													value=<%=mlist.get(p).getPname()%> style="display: none" />
+												<input type="text" name="search"
+													value="<%=search%>" style="display: none" />
 												<button type="submit" id="musicPlus"
 													class="bi bi-plus-lg fs-1"></button>
 											</div>

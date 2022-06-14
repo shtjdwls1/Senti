@@ -13,12 +13,13 @@ public class songinfoDTO {
 	private String albumimg;
 	private String times;
 
-	public songinfoDTO(String keys, String title, String singer, String albumimg) {
+	public songinfoDTO(String keys, String title, String singer, String albumimg, String times) {
 		super();
 		this.keys = keys;
 		this.title = title;
 		this.singer = singer;
 		this.albumimg = albumimg;
+		this.times = times;
 	}
 
 	public songinfoDTO(String title, String singer, String albumimg, String times, String genre, String lyrics) {
