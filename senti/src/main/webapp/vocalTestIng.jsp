@@ -39,12 +39,12 @@
 				<button id="btnHigh">최고 음역 테스트</button>
 			</div>
 			<!-- 최저음 테스트 -->
-			<div class="vocalTestLow shadow p-3 mb-2 bg-body rounded">
+			<div class="vocalTestLow">
 				<!-- 비디오  -->
 				<video id="vocalTestLowVideo" src="video/low.mp4" controls></video>
 			</div>
 			<!-- 최고음 테스트 -->
-			<div class="vocalTestHigh hidden shadow p-3 mb-2 bg-body rounded">
+			<div class="vocalTestHigh hidden">
 				<!-- 비디오 -->
 				<video id="vocalTestHighVideo" src="video/high.mp4" controls></video>
 			</div>

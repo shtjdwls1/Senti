@@ -42,7 +42,7 @@
 	}
 	%>
 	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
+		<h1 id="pitch"><%=info.getLow()%>~<%=info.getHigh()%></h1>
 		<a href="./playList.jsp">
 			<h1 id="senti">
 				<img src="img/facebook.png" id="logo"> Senti
@@ -76,10 +76,9 @@
 						<strong class="text-gray-dark" id="title"> <%=playList.get(i).getTitle()%></strong>
 					</a>
 				</div>
-				<div class="d-flex justify-content-between">
-					<span class="d-block" id="singer"> <%=playList.get(i).getSinger()%>
-					</span>
-				</div>
+				<span class="d-block" id="singer" style="float: left;"> <%=playList.get(i).getSinger()%></span>
+				<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
+				<span class="d-block" id="times" style="float: left;">노래길이</span>
 				<!-- <button id="playListAdd" class="btn btn-primary w-25"  type=-"button">Button</button> -->
 			</div>
 			<!-- 플레이리스트 추가 modal -->
@@ -151,7 +150,8 @@
 	<br>
 	<br>
 	<!-- 하단 네비게이션 -->
-	<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+	<div class="nav fixed-bottom"
+		style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
 			</li>

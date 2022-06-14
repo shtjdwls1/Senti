@@ -65,10 +65,10 @@ body{
 	display: none;
 }
 #btnLow{
-	width: 68px;
+	width: 144px;
 }
 #btnHigh{
-	width: 68px;
+	width: 144px;
 }
 .vocalTestLow{
 	margin-top : 0px;
@@ -80,13 +80,11 @@ body{
 }
 #vocalTestLowVideo {
 	width: 342px;
-	margin-left: 9px;
 	height: 207px;
 }
 
 #vocalTestHighVideo {
 	width: 342px;
-	margin-left: 9px;
 	height: 207px;
 }
 
@@ -110,7 +108,7 @@ body{
 	color: rgba(0, 0, 0, 0.7);
 	text-transform: uppercase;
 	font-weight: 800;
-	font-size: 12px;
+	font-size: 17px;
 }
 
 .controls__btns button:active {
