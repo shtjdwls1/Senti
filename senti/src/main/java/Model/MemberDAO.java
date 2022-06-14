@@ -46,12 +46,12 @@ public class MemberDAO {
       try {
          db_conn();
 
-         if(conn != null) {
-             System.out.println("DB연결 성공");
-          }
-          else {
-             System.out.println("DB연결 실패");
-          }
+//         if(conn != null) {
+//             System.out.println("DB연결 성공");
+//          }
+//          else {
+//             System.out.println("DB연결 실패");
+//          }
          
          String sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?)";
 
@@ -79,12 +79,12 @@ public class MemberDAO {
       try {
          db_conn();
          
-         if(conn != null) {
-             System.out.println("DB연결 성공");
-          }
-          else {
-             System.out.println("DB연결 실패");
-          }
+//         if(conn != null) {
+//             System.out.println("DB연결 성공");
+//          }
+//          else {
+//             System.out.println("DB연결 실패");
+//          }
          
          String sql = "SELECT * FROM userinfo WHERE id=? AND pw=?";
          
@@ -121,12 +121,12 @@ public class MemberDAO {
       try {
          db_conn();
          
-         if(conn != null) {
-             System.out.println("DB연결 성공");
-          }
-          else {
-             System.out.println("DB연결 실패");
-          }
+//         if(conn != null) {
+//             System.out.println("DB연결 성공");
+//          }
+//          else {
+//             System.out.println("DB연결 실패");
+//          }
          
          String sql = "UPDATE userinfo SET high=?, low=? WHERE nick=?";
          
@@ -154,12 +154,12 @@ public class MemberDAO {
       try {
          db_conn();
          
-         if(conn != null) {
-             System.out.println("DB연결 성공");
-          }
-          else {
-             System.out.println("DB연결 실패");
-          }
+//         if(conn != null) {
+//             System.out.println("DB연결 성공");
+//          }
+//          else {
+//             System.out.println("DB연결 실패");
+//          }
          
          String sql = "SELECT * FROM userinfo";
          

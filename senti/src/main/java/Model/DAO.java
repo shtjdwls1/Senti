@@ -54,11 +54,11 @@ public class DAO {
       ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
       db_conn();
       
-      if (conn != null) {
-          System.out.println("DB연결 성공");
-       } else {
-          System.out.println("DB연결 실패");
-       }
+//      if (conn != null) {
+//          System.out.println("DB연결 성공");
+//       } else {
+//          System.out.println("DB연결 실패");
+//       }
       
       try {
          psmt = conn.prepareStatement(sql);
@@ -95,11 +95,11 @@ public class DAO {
       
       db_conn();
       
-      if (conn != null) {
-          System.out.println("DB연결 성공");
-       } else {
-          System.out.println("DB연결 실패");
-       }
+//      if (conn != null) {
+//          System.out.println("DB연결 성공");
+//       } else {
+//          System.out.println("DB연결 실패");
+//       }
       
       System.out.println("DetailDAO");
       try {
@@ -136,11 +136,11 @@ public class DAO {
 
     	  db_conn();
          
-         if (conn != null) {
-             System.out.println("DB연결 성공");
-          } else {
-             System.out.println("DB연결 실패");
-          }
+//         if (conn != null) {
+//             System.out.println("DB연결 성공");
+//          } else {
+//             System.out.println("DB연결 실패");
+//          }
          
          String sql = "insert into playlist values(?, ?, ?)";
 
@@ -169,11 +169,11 @@ public class DAO {
       try {
          db_conn();
          
-         if (conn != null) {
-             System.out.println("DB연결 성공");
-          } else {
-             System.out.println("DB연결 실패");
-          }
+//         if (conn != null) {
+//             System.out.println("DB연결 성공");
+//          } else {
+//             System.out.println("DB연결 실패");
+//          }
 
          String sql = "SELECT DISTINCT pname FROM playlist WHERE id=?";
 
@@ -204,11 +204,11 @@ public class DAO {
 
     	  db_conn();
          
-         if (conn != null) {
-             System.out.println("DB연결 성공");
-          } else {
-             System.out.println("DB연결 실패");
-          }
+//         if (conn != null) {
+//             System.out.println("DB연결 성공");
+//          } else {
+//             System.out.println("DB연결 실패");
+//          }
          
          String sql = "insert into playlist values(?, ?, ?)";
 
@@ -239,11 +239,11 @@ public class DAO {
          ArrayList<songinfoDTO> listDetail = new ArrayList<songinfoDTO>();
          db_conn();
          
-         if (conn != null) {
-             System.out.println("DB연결 성공");
-          } else {
-             System.out.println("DB연결 실패");
-          }
+//         if (conn != null) {
+//             System.out.println("DB연결 성공");
+//          } else {
+//             System.out.println("DB연결 실패");
+//          }
          
          try {
             psmt = conn.prepareStatement(sql);
@@ -277,11 +277,11 @@ public class DAO {
          try {
             db_conn();
             
-            if (conn != null) {
-                System.out.println("DB연결 성공");
-             } else {
-                System.out.println("DB연결 실패");
-             }
+//            if (conn != null) {
+//                System.out.println("DB연결 성공");
+//             } else {
+//                System.out.println("DB연결 실패");
+//             }
             
             String sql = "DELETE FROM playList WHERE pname=?";
             
@@ -305,11 +305,11 @@ public class DAO {
          try {
             db_conn();
             
-            if (conn != null) {
-                System.out.println("DB연결 성공");
-             } else {
-                System.out.println("DB연결 실패");
-             }
+//            if (conn != null) {
+//                System.out.println("DB연결 성공");
+//             } else {
+//                System.out.println("DB연결 실패");
+//             }
             
             String sql = "UPDATE playList SET pname=? WHERE pname=?";
             
@@ -334,11 +334,11 @@ public class DAO {
   		try {
   			db_conn();
   			
-  	         if (conn != null) {
-  	            System.out.println("DB연결 성공");
-  	         } else {
-  	            System.out.println("DB연결 실패");
-  	         }
+//  	         if (conn != null) {
+//  	            System.out.println("DB연결 성공");
+//  	         } else {
+//  	            System.out.println("DB연결 실패");
+//  	         }
   			
   			String sql = "DELETE FROM playList WHERE keys=?";
   			

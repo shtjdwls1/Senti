@@ -127,7 +127,7 @@
 						</div>
 						<span class="d-block" id="singer" style="float: left;"><%=listDetail.get(i).getSinger()%></span>
 						<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-						<span class="d-block" id="times" style="float: left;">노래길이</span>
+						<span class="d-block" id="times" style="float: left;"><%= listDetail.get(i).getTimes() %></span>
 					</div>
 					<div class="">
 						<input type="text" name="keys"
