@@ -33,11 +33,16 @@ public class LoginServiceCon extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		if(info != null) {
+			if(info.getHigh() != null) {
 			System.out.println("로그인 성공");
 			session.setAttribute("info", info);
 			response.sendRedirect("playList.jsp");
-		}
-		else {
+			} else {
+			System.out.println("로그인 성공");
+			session.setAttribute("info", info);
+			response.sendRedirect("vocalTest.jsp");
+			}
+		}else {
 			System.out.println("로그인 실패");
 			session.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
 			response.sendRedirect("Login.jsp");
