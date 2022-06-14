@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import Model.DTO;
 import Model.MemberDAO;
@@ -29,20 +30,16 @@ public class LoginServiceCon extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		DTO info = dao.login(dto);
 		
+		HttpSession session = request.getSession();
+		
 		if(info != null) {
 			System.out.println("로그인 성공");
-			
-			//로그인 정보 유지하기 -> session 이용
-			//1. session 객체 선언
-			HttpSession session = request.getSession();
-			
-			//2. 로그인 정보를 담은 session만들기
 			session.setAttribute("info", info);
 			response.sendRedirect("playList.jsp");
 		}
 		else {
 			System.out.println("로그인 실패");
-			
+			session.setAttribute("errMsg", "로그인 정보가 올바르지 않습니다.");
 			response.sendRedirect("Login.jsp");
 		}
 		

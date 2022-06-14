@@ -44,7 +44,7 @@
 				<!-- 비디오 -->
 				<video id="vocalTestHighVideo" src="video/high.mp4" controls></video>
 			</div>
-			<form action="" class="userInfo">
+			<form action="Testing" class="userInfo">
 				<div id="select">
 					<select name="lowSelect">
 						<option selected>최저 음역 입력</option>
