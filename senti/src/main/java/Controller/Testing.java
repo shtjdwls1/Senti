@@ -25,28 +25,30 @@ public class Testing extends HttpServlet {
       request.setCharacterEncoding("UTF-8");
    
       // 2. 값 받아오기
+      String nick = request.getParameter("nick");
       String high = request.getParameter("highSelect");   
       String low = request.getParameter("lowSelect");   
-      String genres = request.getParameter("nick");
+      String genres = request.getParameter("genres");
       
+      System.out.println(nick);
       System.out.println(high);
       System.out.println(low);
       System.out.println(genres);
       
       // 받아온 값을 DTO로 묶기
-      DTO dto = new DTO(high, low);
+      DTO dto = new DTO(nick, high, low);
       
       // join메소드 호출 -> 실행결과(int)
       MemberDAO dao = new MemberDAO();
-      int cnt = dao.join(dto);
+      int cnt = dao.update(dto);
       
       // SQL문 실행결과에 따라 회원가입 성공실패 여부 확인
       if(cnt>0){
-         System.out.println("회원가입 성공");
-         response.sendRedirect("joinSuccess.jsp?nick="+URLEncoder.encode(genres, "utf-8"));
+         System.out.println("음역대 저장 성공");
+         response.sendRedirect("vocalTestResult.jsp?genres="+URLEncoder.encode(genres, "utf-8"));
       }else {
-         System.out.println("회원가입 실패");
-         response.sendRedirect("joinFalse.jsp");
+         System.out.println("음역대 저장 실패");
+         response.sendRedirect("vocalTestIng.jsp");
       }
    
    }

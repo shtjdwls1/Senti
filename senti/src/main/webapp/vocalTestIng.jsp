@@ -1,3 +1,4 @@
+<%@page import="Model.DTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,6 +18,7 @@
 <title>Document</title>
 </head>
 <body>
+<% DTO info = (DTO) session.getAttribute("info"); %>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">내 음역대</h1>
 		<a href="./playList.jsp">
@@ -48,35 +50,35 @@
 				<div id="select">
 					<select name="lowSelect">
 						<option selected>최저 음역 입력</option>
-						<option value="25">C3</option>
-						<option value="27">D3</option>
-						<option value="29">E3</option>
-						<option value="30">F3</option>
-						<option value="32">G3</option>
-						<option value="34">A3</option>
-						<option value="36">B3</option>
-						<option value="37">C4</option>
-						<option value="39">D4</option>
-						<option value="41">E4</option>
-						<option value="42">F4</option>
-						<option value="44">G4</option>
+						<option value="C3">C3</option>
+						<option value="D3">D3</option>
+						<option value="E3">E3</option>
+						<option value="F3">F3</option>
+						<option value="G3">G3</option>
+						<option value="A3">A3</option>
+						<option value="B3">B3</option>
+						<option value="C4">C4</option>
+						<option value="D4">D4</option>
+						<option value="E4">E4</option>
+						<option value="F4">F4</option>
+						<option value="G4">G4</option>
 					</select> <select name="highSelect">
 						<option selected>최고 음역 입력</option>
-						<option value="37">C4</option>
-						<option value="39">D4</option>
-						<option value="41">E4</option>
-						<option value="42">F4</option>
-						<option value="44">G4</option>
-						<option value="46">A4</option>
-						<option value="48">B4</option>
-						<option value="49">C5</option>
-						<option value="51">D5</option>
-						<option value="53">E5</option>
-						<option value="54">F5</option>
-						<option value="56">G5</option>
-						<option value="58">A5</option>
-						<option value="60">B5</option>
-						<option value="61">C6</option>
+						<option value="C4">C4</option>
+						<option value="D4">D4</option>
+						<option value="E4">E4</option>
+						<option value="F4">F4</option>
+						<option value="G4">G4</option>
+						<option value="A4">A4</option>
+						<option value="B4">B4</option>
+						<option value="C5">C5</option>
+						<option value="D5">D5</option>
+						<option value="E5">E5</option>
+						<option value="F5">F5</option>
+						<option value="G5">G5</option>
+						<option value="A5">A5</option>
+						<option value="B5">B5</option>
+						<option value="C6">C6</option>
 					</select>
 				</div>
 				<div id="checkbox" class="shadow-sm p-1 mb-1 bg-body rounded">
@@ -86,6 +88,8 @@
 						type="checkbox" name='genres' value="ost"> OST <input
 						type="checkbox" name='genres' value="danse"> 댄스 <input
 						type="checkbox" name='genres' value="rock"> 락
+					<input type="text" name="nick" value=<%= info.getNick() %>
+					style="display: none" />
 				</div>
 				<button type="submit" class="btn btn-primary">음역대 측정하기</button>
 			</form>

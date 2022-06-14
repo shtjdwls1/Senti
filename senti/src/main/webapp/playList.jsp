@@ -31,17 +31,6 @@
 <title>Document</title>
 </head>
 <body>
-	<main>
-		<div class="p-3 mb-2" id="top">
-			<h1 id="pitch">내 음역대</h1>
-			<a href="./playList.jsp">
-				<h1 id="senti">
-					<img src="img/facebook.png" id="logo"> Senti
-				</h1>
-			</a>
-		</div>
-		<br>
-		<div>
 			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
 			<%
 			String nick = (String) session.getAttribute("nick");
@@ -56,6 +45,17 @@
 			
 			}
 			%>
+	<main>
+		<div class="p-3 mb-2" id="top">
+			<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
+			<a href="./playList.jsp">
+				<h1 id="senti">
+					<img src="img/facebook.png" id="logo"> Senti
+				</h1>
+			</a>
+		</div>
+		<br>
+		<div>
 
 			<h1 id="nick">
 				<%=info.getNick()%>님의<br>플레이리스트

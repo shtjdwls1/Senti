@@ -21,6 +21,13 @@ public class DTO {
 		this.imgpath = imgpath;
 	}
 	
+	public DTO(String nick, String high, String low) {
+		super();
+		this.nick = nick;
+		this.high = high;
+		this.low = low;
+	}
+
 	public DTO(String id, String pw, String nick, String gender) {
 		super();
 		this.id = id;

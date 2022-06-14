@@ -124,17 +124,13 @@ public class MemberDAO {
    public int update(DTO dto) {
       try {
          db_conn();
-         String sql = "UPDATE userinfo SET pw=?, tel=?, address=? WHERE id=?";
+         String sql = "UPDATE userinfo SET high=?, low=? WHERE nick=?";
          
          psmt = conn.prepareStatement(sql);
          
-         psmt.setString(1, dto.getId());
-         psmt.setString(2, dto.getPw());
+         psmt.setString(1, dto.getHigh());
+         psmt.setString(2, dto.getLow());
          psmt.setString(3, dto.getNick());
-         psmt.setString(4, dto.getGender());
-         psmt.setString(5, dto.getHigh());
-         psmt.setString(6, dto.getLow());
-         psmt.setString(7, dto.getImgpath());
          
          cnt = psmt.executeUpdate();
       }
