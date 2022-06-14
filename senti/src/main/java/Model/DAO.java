@@ -48,7 +48,7 @@ public class DAO {
 
    // 검색기능
    public ArrayList<songinfoDTO> SearchSong(String search) {
-      String sql = "select keys, title, singer, albumimg from songinfo where title like '%" + search
+      String sql = "select keys, title, singer, albumimg, times from songinfo where title like '%" + search
             + "%' or singer like '%" + search + "%'";
 
       ArrayList<songinfoDTO> playList = new ArrayList<songinfoDTO>();
@@ -70,8 +70,9 @@ public class DAO {
             String title = rs.getString(2);
             String singer = rs.getString(3);
             String albumimg = rs.getString(4);
+            String times = rs.getString(5);
 
-            songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
+            songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg, times);
 
             playList.add(dto);
          }
@@ -232,7 +233,7 @@ public class DAO {
    // 검색기능
       public ArrayList<songinfoDTO> pDetail(String pname) {
 
-    	  String sql = "select songinfo.keys, title, singer, albumimg from songinfo, playlist where pname like '%" + pname
+    	  String sql = "select songinfo.keys, title, singer, albumimg, times from songinfo, playlist where pname like '%" + pname
                + "%' and songinfo.keys = playlist.keys";
 
          ArrayList<songinfoDTO> listDetail = new ArrayList<songinfoDTO>();
@@ -254,8 +255,9 @@ public class DAO {
                String title = rs.getString(2);
                String singer = rs.getString(3);
                String albumimg = rs.getString(4);
+               String times = rs.getString(5);
 
-               songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg);
+               songinfoDTO dto = new songinfoDTO(keys, title, singer, albumimg, times);
 
                listDetail.add(dto);
             }

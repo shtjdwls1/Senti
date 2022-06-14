@@ -28,9 +28,11 @@ public class listDetail extends HttpServlet {
 		String keys = request.getParameter("keys");
 		String id = request.getParameter("id");
 		String pname = request.getParameter("pname");
+		String search = request.getParameter("search");
 		System.out.println("keys : "+keys);
 		System.out.println("id : " + id);
 		System.out.println("pname : "+pname);
+		System.out.println("search : "+search);
 		
 		// 받아온 값을 DTO로 묶기
 		playListDTO dto2 = new playListDTO(keys, id, pname);
@@ -41,11 +43,16 @@ public class listDetail extends HttpServlet {
 		
 		// SQL문 실행결과에 따라 회원가입 성공실패 여부 확인
 		if(cnt>0){
+			if(search == null) {
 			System.out.println("음원추가 성공");
-			response.sendRedirect("playList.jsp");
+			response.sendRedirect("musicSearch.jsp?search=");
+			} else {
+			System.out.println("음원추가 성공");
+			response.sendRedirect("musicSearch.jsp?search="+URLEncoder.encode(search, "utf-8"));
+			}
 		}else {
 			System.out.println("음원추가 실패");
-			response.sendRedirect("playList.jsp");
+			response.sendRedirect("musicSearch.jsp?search="+URLEncoder.encode(search, "utf-8"));
 		}
 	
 
