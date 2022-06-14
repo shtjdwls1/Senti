@@ -34,15 +34,15 @@
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 			<div class="vocalTestResult">
 				<div>
-					<h2>시원님의 음역대는</h2>
+					<h2><%= info.getNick() %>의 음역대는</h2>
 				</div>
 				<div id="Result">
 					<h1>
-						<strong>최저음역 ~ 최고음역</strong>
+						<strong><%= info.getLow() %>~<%= info.getHigh() %></strong>
 					</h1>
 				</div>
 			</div>
-			<h1 style="font-size: 27px;">시원님이 부를 수 있는 노래</h1>
+			<h1 style="font-size: 27px;"><%= info.getNick() %>님이 부를 수 있는 노래</h1>
 			<!-- 최저음 테스트 -->
 			<div class="musicRecom shadow p-3 mb-5 bg-body rounded">
 				<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
