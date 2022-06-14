@@ -108,6 +108,7 @@
 		<%
 		for (int i = 0; i < listDetail.size(); i++) {
 		%>
+		<form action="MusicDelete" method="post">
 		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded"
 			style="height: 70px;">
 			<div class="d-flex text-muted pt-1">
@@ -129,12 +130,13 @@
 					<span class="d-block" id="times" style="float: left;">노래길이</span>
 				</div>
 				<div class="">
-					<a href="MusicDelete?keys=<%=listDetail.get(i).getKeys()%>"> <input
-						type="text" name="keys" value=<%=pname%> style="display: none" />
-						<button class="musicDelete bi bi-x-lg fs-1 hidden"></button></a>
+					<input type="text" name="keys" value=<%=listDetail.get(i).getKeys()%> style="display: none" />
+					<input type="text" name="pname" value=<%=pname%> style="display: none" />
+						<button class="musicDelete bi bi-x-lg fs-1 hidden" type="submit"></button></a>
 				</div>
 			</div>
 		</div>
+		</form>
 		<%
 		}
 		%>
