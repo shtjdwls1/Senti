@@ -30,7 +30,10 @@
 </head>
 
 <body class="text-center">
-
+	<% String errMsg = (String)session.getAttribute("errMsg");
+	if(errMsg == null) errMsg ="";
+	session.invalidate();
+		%>
     <main class="form-signin">
         <form action="LoginServiceCon" method="post">
             <div class="p-3 mb-2" id="top">
@@ -51,7 +54,7 @@
                 <label for="floatingPassword">비밀번호를 입력해주세요</label>
             </div>
             <br>
-            <div id = "loginFalse">로그인 정보가 올바르지 않습니다.</div>
+            <div id = "loginFalse"><%= errMsg %></div>
             <br>
             <button class="w-75 btn btn-lg btn-primary" type="submit" id="login">로그인</button>
             <br>
