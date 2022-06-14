@@ -34,7 +34,7 @@
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 			<div class="vocalTestResult">
 				<div>
-					<h2><%= info.getNick() %>의 음역대는</h2>
+					<h2><%= info.getNick() %>님의 음역대는</h2>
 				</div>
 				<div id="Result">
 					<h1>

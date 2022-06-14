@@ -91,7 +91,7 @@ public class DAO {
    // 음악 상세
    public ArrayList<songinfoDTO> detail(String key) {
       // 검색받은 데이터 검색
-      String sql = "select title, singer, albumimg, release, genre, lyrics, keys from songinfo where keys like '%" + key
+      String sql = "select title, singer, albumimg, times, genre, lyrics, keys from songinfo where keys like '%" + key
             + "%'";
       // 데이터를 담을 ArrayList
       ArrayList<songinfoDTO> musicSearchDetail = new ArrayList<songinfoDTO>();

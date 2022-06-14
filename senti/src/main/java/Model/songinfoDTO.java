@@ -11,7 +11,7 @@ public class songinfoDTO {
 	private String path;
 	private String mrpath;
 	private String albumimg;
-	private String release;
+	private String times;
 
 	public songinfoDTO(String keys, String title, String singer, String albumimg) {
 		super();
@@ -21,17 +21,17 @@ public class songinfoDTO {
 		this.albumimg = albumimg;
 	}
 
-	public songinfoDTO(String title, String singer, String albumimg, String release, String genre, String lyrics) {
+	public songinfoDTO(String title, String singer, String albumimg, String times, String genre, String lyrics) {
 		super();
 		this.title = title;
 		this.singer = singer;
 		this.genre = genre;
 		this.albumimg = albumimg;
-		this.release = release;
+		this.times = times;
 		this.lyrics = lyrics;
 	}
 	
-	public songinfoDTO(String title, String singer, String albumimg, String release, String genre, String lyrics, 
+	public songinfoDTO(String title, String singer, String albumimg, String times, String genre, String lyrics, 
 			String keys) {
 		super();
 		this.keys = keys;
@@ -40,7 +40,7 @@ public class songinfoDTO {
 		this.genre = genre;
 		this.lyrics = lyrics;
 		this.albumimg = albumimg;
-		this.release = release;
+		this.times = times;
 	}
 
 	public String getKeys() {
@@ -115,12 +115,12 @@ public class songinfoDTO {
 		this.albumimg = albumimg;
 	}
 
-	public String getRelease() {
-		return release;
+	public String getTimes() {
+		return times;
 	}
 
-	public void setRelease(String release) {
-		this.release = release;
+	public void setTimes(String times) {
+		this.times = times;
 	}
 
 }

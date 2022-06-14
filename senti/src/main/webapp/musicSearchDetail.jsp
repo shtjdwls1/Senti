@@ -73,7 +73,7 @@
 				<img src="<%=dto.get(0).getAlbumimg()%>"
 					class="card-img-top shadow-sm p-3 mb-1 bg-body rounded"
 					id="albumimg" alt="...">
-				<p><%=dto.get(0).getRelease()%></p>
+				<p><%=dto.get(0).getTimes()%></p>
 				<p class="card-text" id="genre">
 					장르 :
 					<%=dto.get(0).getGenre()%></p>
