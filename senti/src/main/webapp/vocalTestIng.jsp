@@ -88,33 +88,48 @@
 					</select>
 				</div>
 				<div id="checkbox" class="shadow-sm p-1 mb-1 bg-body rounded">
-					<h5>
-						<strong>선호하는 장르</strong>
-					</h5>
-					<input type="checkbox" name='genres' value="ballad"> 발라드<br> <input
-						type="checkbox" name='genres' value="soul"> R&B/소울<br>
-					<input type="checkbox" name='genres' value="ost"> OST<br> <input
-						type="checkbox" name='genres' value="danse"> 댄스<br> <input
-						type="checkbox" name='genres' value="rock"> 락<br> <input
-						type="text" name="nick" value=<%=info.getNick()%>
-						style="display: none" />
+					<div>
+						<h5>
+							<strong>선호하는 장르</strong>
+						</h5>
+					</div>
+					<div class = "genre">
+						<input class="ballad" type="checkbox" name="genres" value="ballad"
+							style="display: none;" />
+						<button id="ballad">발라드</button>
+						<br /> <input class="soul" type="checkbox" name="genres"
+							value="soul" style="display: none;" />
+						<button id="soul">R&B/소울</button>
+						<br /> <input class="ost" type="checkbox" name="genres"
+							value="ost" style="display: none;" />
+						<button id="ost">OST</button>
+						<br /> <input class="dance" type="checkbox" name="genres"
+							value="dance" style="display: none;" />
+						<button id="dance">댄스</button>
+						<br /> <input class="rock" type="checkbox" name="genres"
+							value="rock" style="display: none;" />
+						<button id="rock">락</button>
+						<input type="text" name="nick" value=<%=info.getNick()%>
+							style="display: none" />
+					</div>
 				</div>
 				<button type="submit" class="btn btn-primary">음역대 측정하기</button>
 			</form>
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
-		<div class="nav fixed-bottom"
-			style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 13px;">
-			<ul class="nav nav-pills justify-content-center">
-				<li class="nav-item"><a class="nav-link  active" href="vocalTest.jsp">음역대측정</a></li>
-				<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="musicSearch.jsp"
-					aria-current="page">노래검색</a></li>
-				<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
-			</ul>
-		</div>
+	<div class="nav fixed-bottom"
+		style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 14px;">
+		<ul class="nav nav-pills justify-content-center">
+			<li class="nav-item"><a class="nav-link  active"
+				href="vocalTest.jsp">음역대측정</a></li>
+			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp"
+				aria-current="page">노래검색</a></li>
+			<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
+		</ul>
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

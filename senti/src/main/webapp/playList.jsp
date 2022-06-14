@@ -111,7 +111,7 @@
 
 	<!-- 하단 네비게이션 -->
 		<div class="nav fixed-bottom"
-			style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 13px;">
+		style="font-size: 13;background-color: white;border: 1px solid darkgray;font-size: 14px;">
 			<ul class="nav nav-pills justify-content-center">
 				<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 				<li class="nav-item"><a class="nav-link  active" href="playList.jsp">플레이리스트</a>

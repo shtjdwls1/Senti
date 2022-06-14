@@ -116,3 +116,103 @@ if (navigator.mediaDevices) {
 		})
 }
 
+// checkbox
+const btnBallad = document.querySelector("#ballad");
+const ballad = document.querySelector(".ballad");
+const btnSoul = document.querySelector("#soul");
+const soul = document.querySelector(".soul");
+const btnOst = document.querySelector("#ost");
+const ost = document.querySelector(".ost");
+const btnDance = document.querySelector("#dance");
+const dance = document.querySelector(".dance");
+const btnRock = document.querySelector("#rock");
+const rock = document.querySelector(".rock");
+
+let checkBallad = false;
+let checkSoul = false;
+let checkOst = false;
+let checkDanse = false;
+let checkRock = false;
+
+function onCheckedBallad(event) {
+  event.preventDefault();
+  if (!checkBallad) {
+    ballad.checked = true;
+    checkBallad = true;
+    btnBallad.style.color = "white";
+    btnBallad.style.background = "black";
+  } else {
+    ballad.checked = false;
+    checkBallad = false;
+    btnBallad.style.color = "rgba(0, 0, 0, 0.7)";
+    btnBallad.style.background = "white";
+  }
+}
+
+function onCheckedSoul(event) {
+  event.preventDefault();
+  if (!checkSoul) {
+    soul.checked = true;
+    checkSoul = true;
+    btnSoul.style.color = "white";
+    btnSoul.style.background = "black";
+  } else {
+    soul.checked = false;
+    checkSoul = false;
+    btnSoul.style.color = "rgba(0, 0, 0, 0.7)";
+    btnSoul.style.background = "white";
+  }
+}
+
+function onCheckedOst(event) {
+  event.preventDefault();
+  if (!checkOst) {
+    ost.checked = true;
+    checkOst = true;
+    btnOst.style.color = "white";
+    btnOst.style.background = "black";
+  } else {
+    ost.checked = false;
+    checkOst = false;
+    btnOst.style.color = "rgba(0, 0, 0, 0.7)";
+    btnOst.style.background = "white";
+  }
+}
+
+function onCheckedDanse(event) {
+  event.preventDefault();
+  if (!checkDanse) {
+    dance.checked = true;
+    checkDanse = true;
+    btnDance.style.color = "white";
+    btnDance.style.background = "black";
+  } else {
+    dance.checked = false;
+    checkDanse = false;
+    btnDance.style.color = "rgba(0, 0, 0, 0.7)";
+    btnDance.style.background = "white";
+  }
+}
+
+function onCheckedRock(event) {
+  event.preventDefault();
+  if (!checkRock) {
+    rock.checked = true;
+    checkRock = true;
+    btnRock.style.color = "white";
+    btnRock.style.background = "black";
+  } else {
+    rock.checked = false;
+    checkRock = false;
+    btnRock.style.color = "rgba(0, 0, 0, 0.7)";
+    btnRock.style.background = "white";
+  }
+}
+
+btnBallad.addEventListener("click", onCheckedBallad);
+btnSoul.addEventListener("click", onCheckedSoul);
+btnOst.addEventListener("click", onCheckedOst);
+btnDance.addEventListener("click", onCheckedDanse);
+btnRock.addEventListener("click", onCheckedRock);
+
+
