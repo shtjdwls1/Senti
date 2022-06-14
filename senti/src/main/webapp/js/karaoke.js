@@ -2,6 +2,7 @@ const colors = ["#4e4376", "#2b5876"];
 const music = document.getElementById("music");
 const lyrics = document.getElementById("lyrics");
 const back = document.querySelector("#back");
+const result = document.querySelector(".result");
 
 function topColor() {
 	const color1 = colors[0];
@@ -91,6 +92,7 @@ if (navigator.mediaDevices) {
 				audio.setAttribute('controls', '')
 				deleteButton.innerHTML = "삭제"
 				clipLabel.innerHTML = clipName
+				result.classList.remove("hidden");
 
 				clipContainer.appendChild(audio)
 				clipContainer.appendChild(clipLabel)
@@ -109,6 +111,7 @@ if (navigator.mediaDevices) {
 				deleteButton.onclick = e => {
 					evtTgt = e.target
 					evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode)
+					result.classList.add("hidden");
 				}
 			}
 

@@ -65,6 +65,10 @@
 		<div id="sound-clips"></div>
 	</div>
 	<br>
+	<div class = "result hidden">
+		<button type="button" class="btn btn-primary btn-lg" onclick="location.href='karaokeResult.jsp';">점수 확인</button>
+	</div>
+	<br>
 	<!-- 부트스트랩 -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -112,3 +112,12 @@ audio{
 	font-weight: 800;
 	font-size: 15px;
 }
+.result{
+	text-align : center;
+}
+.hidden{
+	display : none;
+}
+audio{
+	margin-bottom: 10px;
+}
