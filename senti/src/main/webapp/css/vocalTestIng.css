@@ -125,7 +125,8 @@ select {
 	color: rgba(0, 0, 0, 0.7);
 	text-transform: uppercase;
 	font-weight: 800;
-	font-size: 12px;
+	width: 162px;
+	font-size: 17px;
 }
 .userInfo{
 	margin-top:10px;
@@ -135,7 +136,7 @@ select {
 }
 #checkbox{
 	text-align : center;
-	margin-top: 50px;
+	margin-top: 12px;
 }
 .btn{
 	margin-left: 98px;

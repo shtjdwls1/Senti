@@ -27,11 +27,8 @@
 			</h1>
 		</a>
 	</div>
-	<br>
-	<h1 class="display-5 fw-bold lh-1 mb-1" style="text-align: center;">테스트
-		결과</h1>
 	<div class="container col-xxl-8 px-4 py-5">
-		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-4">
 			<div class="vocalTestResult">
 				<div>
 					<h2><%= info.getNick() %>님의 음역대는</h2>
@@ -42,9 +39,9 @@
 					</h1>
 				</div>
 			</div>
-			<h1 style="font-size: 27px;"><%= info.getNick() %>님이 부를 수 있는 노래</h1>
+			<h1 style="font-size: 27px;text-align: center;">추천 노래</h1>
 			<!-- 최저음 테스트 -->
-			<div class="musicRecom shadow p-3 mb-5 bg-body rounded">
+			<div class="musicRecom shadow p-1 mb-1 bg-body rounded">
 				<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 					<div class="d-flex text-muted pt-3">
 						<a href=""> <img
@@ -149,8 +146,8 @@
 			<!-- 최고음 테스트 -->
 			<div class="col-lg-6">
 				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-					<button type="button" class="btn btn-success btn-lg px-4 me-md-2">측정
-						완료</button>
+					<button type="button" class="btn btn-warning">Warning</button>
+					<button type="button" class="btn btn-primary">Primary</button>
 				</div>
 			</div>
 		</div>

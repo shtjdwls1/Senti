@@ -34,7 +34,7 @@
 	%>
 	<main>
 		<div class="p-3 mb-2" id="top">
-			<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
+			<h1 id="pitch"><%=info.getLow()%>~<%=info.getHigh()%></h1>
 			<a href="./playList.jsp">
 				<h1 id="senti">
 					<img src="img/facebook.png" id="logo"> Senti
@@ -57,8 +57,8 @@
 						<input type="text" name="pname" value=<%=pname%>
 							style="display: none" /> <input id="playListTitleUpdateInput"
 							class="form-control me-2 d-inline-block" type="search"
-							name="update_pname" placeholder="" aria-label="Search"> <input
-							id="playListTitleUpdateSubmit" type="submit"
+							name="update_pname" placeholder=<%=pname%> aria-label="Search">
+						<input id="playListTitleUpdateSubmit" type="submit"
 							class="btn btn-outline-primary d-inline-block" value="입력"></input>
 					</form>
 				</div>
@@ -109,39 +109,43 @@
 		for (int i = 0; i < listDetail.size(); i++) {
 		%>
 		<form action="MusicDelete" method="post">
-		<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded"
-			style="height: 70px;">
-			<div class="d-flex text-muted pt-1">
-				<a
-					href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
-					<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
-					src="<%=listDetail.get(i).getAlbumimg()%>" width="56" height="56">
-				</a>
-				<div class="pb-3 mb-0 small lh-sm w-100">
-					<div class="d-flex justify-content-between"
-						style="margin-top: 11px;">
-						<a
-							href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
-							<strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
+			<div id="music1" class="shadow-sm p-1 mb-1 bg-body rounded"
+				style="height: 70px;">
+				<div class="d-flex text-muted pt-1">
+					<a
+						href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
+						<img class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+						src="<%=listDetail.get(i).getAlbumimg()%>" width="56" height="56">
+					</a>
+					<div class="pb-3 mb-0 small lh-sm w-100">
+						<div class="d-flex justify-content-between"
+							style="margin-top: 11px;">
+							<a
+								href="musicSearchDetail.jsp?keys=<%=listDetail.get(i).getKeys()%>">
+								<strong class="text-gray-dark" id="title"><%=listDetail.get(i).getTitle()%></strong>
+							</a>
+						</div>
+						<span class="d-block" id="singer" style="float: left;"><%=listDetail.get(i).getSinger()%></span>
+						<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
+						<span class="d-block" id="times" style="float: left;">노래길이</span>
+					</div>
+					<div class="">
+						<input type="text" name="keys"
+							value=<%=listDetail.get(i).getKeys()%> style="display: none" />
+						<input type="text" name="pname" value=<%=pname%>
+							style="display: none" />
+						<button class="musicDelete bi bi-x-lg fs-1 hidden" type="submit"></button>
 						</a>
 					</div>
-					<span class="d-block" id="singer" style="float: left;"><%=listDetail.get(i).getSinger()%></span>
-					<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-					<span class="d-block" id="times" style="float: left;">노래길이</span>
-				</div>
-				<div class="">
-					<input type="text" name="keys" value=<%=listDetail.get(i).getKeys()%> style="display: none" />
-					<input type="text" name="pname" value=<%=pname%> style="display: none" />
-						<button class="musicDelete bi bi-x-lg fs-1 hidden" type="submit"></button></a>
 				</div>
 			</div>
-		</div>
 		</form>
 		<%
 		}
 		%>
 		<!-- 하단 네비게이션 -->
-		<div class="nav fixed-bottom" style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
+		<div class="nav fixed-bottom"
+			style="font-size: 15px; background-color: white; border: 1px solid darkgray;">
 			<ul class="nav nav-pills justify-content-center">
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="playList.jsp">플레이리스트</a></li>

@@ -32,7 +32,7 @@
 	<br>
 	<h1 class="display-5 fw-bold lh-1 mb-1" style="text-align: center;">음역대
 		테스트</h1>
-	<div class="container col-xxl-8 px-4 py-5">
+	<div class="container col-xxl-8 px-4 py-4">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 			<div class="controls__btns">
 				<button id="btnLow">최저 음역 테스트</button>
@@ -88,12 +88,14 @@
 					</select>
 				</div>
 				<div id="checkbox" class="shadow-sm p-1 mb-1 bg-body rounded">
-					<h5>선호하는 장르</h5>
-					<input type="checkbox" name='genres' value="ballad"> 발라드 <input
-						type="checkbox" name='genres' value="soul"> R&B/소울 <input
-						type="checkbox" name='genres' value="ost"> OST <input
-						type="checkbox" name='genres' value="danse"> 댄스 <input
-						type="checkbox" name='genres' value="rock"> 락 <input
+					<h5>
+						<strong>선호하는 장르</strong>
+					</h5>
+					<input type="checkbox" name='genres' value="ballad"> 발라드<br> <input
+						type="checkbox" name='genres' value="soul"> R&B/소울<br>
+					<input type="checkbox" name='genres' value="ost"> OST<br> <input
+						type="checkbox" name='genres' value="danse"> 댄스<br> <input
+						type="checkbox" name='genres' value="rock"> 락<br> <input
 						type="text" name="nick" value=<%=info.getNick()%>
 						style="display: none" />
 				</div>
@@ -126,7 +128,7 @@
 			Swal.fire({
 				title : '<strong>마이크 사용 권장</strong>',
 				icon : 'info',
-				html : '<b>마이크</b>를 사용하시면 더 정확한 측정이'+'<br>'+'가능합니다',
+				html : '<b>마이크</b>를 사용하시면 더 정확한 측정이' + '<br>' + '가능합니다',
 				showCloseButton : true,
 				focusConfirm : false,
 				confirmButtonText : '확인',
