@@ -26,8 +26,23 @@
 </head>
 
 <body>
+	<%
+	String search = request.getParameter("search");
+	System.out.println("검색 키워드 : " + search);
+	DAO dao = new DAO();
+	ArrayList<songinfoDTO> playList = dao.SearchSong(search);
+
+	DTO info = (DTO) session.getAttribute("info");
+
+	DAO mdao = new DAO();
+	ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
+
+	if (info != null) {
+		mlist = mdao.playListAdd(info);
+	}
+	%>
 	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch">내 음역대</h1>
+		<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
 		<a href="./playList.jsp">
 			<h1 id="senti">
 				<img src="img/facebook.png" id="logo"> Senti
@@ -45,21 +60,6 @@
 		</form>
 	</div>
 	<!-- 노래 검색하면 뜸 -->
-	<%
-	String search = request.getParameter("search");
-	System.out.println("검색 키워드 : " + search);
-	DAO dao = new DAO();
-	ArrayList<songinfoDTO> playList = dao.SearchSong(search);
-
-	DTO info = (DTO) session.getAttribute("info");
-
-	DAO mdao = new DAO();
-	ArrayList<playListDTO> mlist = new ArrayList<playListDTO>();
-
-	if (info != null) {
-		mlist = mdao.playListAdd(info);
-	}
-	%>
 	<hr>
 	<!-- 노래 -->
 	<%

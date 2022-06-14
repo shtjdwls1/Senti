@@ -27,22 +27,6 @@
 </head>
 
 <body>
-	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch">내 음역대</h1>
-		<a href="./playList.jsp">
-			<h1 id="senti">
-				<img src="img/facebook.png" id="logo"> Senti
-			</h1>
-		</a>
-	</div>
-	<button id="back" type="button" class="bi bi-arrow-left fs-1"
-		aria-label="Close"></button>
-	<!-- <div>
-        <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
-            placeholder="노래, 아티스트 검색" aria-label="Search" style="visibility: hidden;">
-    </div> -->
-	<!-- 노래 검색하면 뜸 -->
-
 	<%
 	String keys = request.getParameter("keys");
 
@@ -61,6 +45,22 @@
 
 	int cnt = 0;
 	%>
+	<div class="p-3 mb-2" id="top">
+		<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
+		<a href="./playList.jsp">
+			<h1 id="senti">
+				<img src="img/facebook.png" id="logo"> Senti
+			</h1>
+		</a>
+	</div>
+	<button id="back" type="button" class="bi bi-arrow-left fs-1"
+		aria-label="Close"></button>
+	<!-- <div>
+        <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
+            placeholder="노래, 아티스트 검색" aria-label="Search" style="visibility: hidden;">
+    </div> -->
+	<!-- 노래 검색하면 뜸 -->
+
 
 	<!-- 노래 디테일 -->
 	<main>

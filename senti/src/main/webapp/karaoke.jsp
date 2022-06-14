@@ -1,3 +1,4 @@
+<%@page import="Model.DTO"%>
 <%@page import="Model.songinfoDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.DAO"%>
@@ -29,10 +30,11 @@
 	DAO dao = new DAO();
 	ArrayList<songinfoDTO> dto = new ArrayList<songinfoDTO>();
 	dto = dao.detail(keys);
+	DTO info = (DTO) session.getAttribute("info");
 	%>
 
 	<div class="p-3 mb-2" id="top">
-		<h1 id="pitch">내 음역대</h1>
+		<h1 id="pitch"><%= info.getLow() %>~<%= info.getHigh() %></h1>
 		<a href="./playList.jsp">
 			<h1 id="senti">
 				<img src="img/facebook.png" id="logo"> Senti
