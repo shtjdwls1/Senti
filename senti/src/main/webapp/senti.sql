@@ -61,9 +61,16 @@ CONSTRAINT playlist_id_fk FOREIGN KEY(id) REFERENCES userinfo(id),
 CONSTRAINT playlist_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 );
 
-insert into playlist('id','keys') values('wjdeogus','8229565');
 select * from playlist;
-drop table playlist cascade constraints;
+
+alter table songinfo add primary key(keys);
+
+
+select C.COLUMN_NAME 
+from USER_CONS_COLUMNS C, USER_CONSTRAINTS S
+where C.CONSTRAINT_NAME = S.CONSTRAINT_NAME 
+and S.CONSTRAINT_TYPE = 'P' 
+and C.TABLE_NAME = 'SONGINFO';
 
 create table recommend(
 id varchar2(10) ,
