@@ -142,5 +142,8 @@ h5 {
     overflow: hidden;
 }
 #update{
-	margin-bottom: 10px; margin-top: 10px; color: white;
+	display : none;
+}
+#updateBtn{
+	display : none;
 }

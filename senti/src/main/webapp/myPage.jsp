@@ -63,6 +63,14 @@
 							address.</div>
 					</div>
 
+					<div class="col-12 hidden">
+						<label for="id" class="form-label">비밀번호</label> <input required
+							type="password" class="form-control" id="password" name="pw"
+							placeholder="" required maxlength='10' value="여기다가 비밀번호" disabled>
+						<div class="invalid-feedback">Please enter your shipping
+							address.</div>
+					</div>
+
 					<div class="col-12">
 						<label for="gender" class="form-label">성별</label> <input required
 							type="text" class="form-control" id="gender" name="gender"
@@ -85,12 +93,22 @@
 						<div class="invalid-feedback">Zip code required.`</div>
 					</div>
 
+					<div class="col-md-3 hidden">
+						<label for="nick" class="form-label">닉네임</label> <input
+							type="text" class="form-control" id="nick" name="nick"
+							placeholder="침착맨" maxlength='10' disabled>
+						<div class="invalid-feedback">Zip code required.`</div>
+					</div>
 					<hr class="my-3">
-					<input id="update" class="w-100 btn btn-warning btn-lg hidden"
-						type="submit" value="회원정보수정"></input>
+					<input id="updateBtn"
+						class="updateBtn w-100 btn btn-warning btn-lg" type="submit"
+						value="회원정보수정 완료"
+						style="margin-bottom: 10px; margin-top: 10px; color: white;"></input>
 				</form>
-				<input id="logout" class="w-100 btn btn-secondary btn-lg"
-					type="submit" value="로그아웃"></input>
+				<button id="" class="update w-100 btn btn-warning btn-lg"
+					style="margin-bottom: 10px; margin-top: 10px; color: white;">회원정보수정</button>
+				<a href="LogoutServiceCon"><input id="logout"
+					class="w-100 btn btn-secondary btn-lg" type="submit" value="로그아웃"></input></a>
 			</div>
 		</main>
 		<!-- 하단 네비게이션 -->
