@@ -121,18 +121,21 @@ const btnBallad = document.querySelector("#ballad");
 const ballad = document.querySelector(".ballad");
 const btnSoul = document.querySelector("#soul");
 const soul = document.querySelector(".soul");
-const btnOst = document.querySelector("#ost");
-const ost = document.querySelector(".ost");
+const btnHiphop = document.querySelector("#hiphop");
+const hiphop = document.querySelector(".hiphop");
 const btnDance = document.querySelector("#dance");
 const dance = document.querySelector(".dance");
 const btnRock = document.querySelector("#rock");
 const rock = document.querySelector(".rock");
+const btnIndi = document.querySelector("#indi");
+const indi = document.querySelector(".indi");
 
 let checkBallad = false;
 let checkSoul = false;
-let checkOst = false;
+let checkHiphop = false;
 let checkDanse = false;
 let checkRock = false;
+let checkIndi = false;
 
 function onCheckedBallad(event) {
   event.preventDefault();
@@ -164,18 +167,18 @@ function onCheckedSoul(event) {
   }
 }
 
-function onCheckedOst(event) {
+function onCheckedHiphop(event) {
   event.preventDefault();
-  if (!checkOst) {
-    ost.checked = true;
-    checkOst = true;
-    btnOst.style.color = "white";
-    btnOst.style.background = "black";
+  if (!checkHiphop) {
+    hiphop.checked = true;
+    checkHiphop = true;
+    btnHiphop.style.color = "white";
+    btnHiphop.style.background = "black";
   } else {
-    ost.checked = false;
-    checkOst = false;
-    btnOst.style.color = "rgba(0, 0, 0, 0.7)";
-    btnOst.style.background = "white";
+    hiphop.checked = false;
+    checkHiphop = false;
+    btnHiphop.style.color = "rgba(0, 0, 0, 0.7)";
+    btnHiphop.style.background = "white";
   }
 }
 
@@ -209,10 +212,27 @@ function onCheckedRock(event) {
   }
 }
 
+function onCheckedIndi(event) {
+  event.preventDefault();
+  if (!checkIndi) {
+    indi.checked = true;
+    checkIndi = true;
+    btnIndi.style.color = "white";
+    btnIndi.style.background = "black";
+  } else {
+    indi.checked = false;
+    checkIndi = false;
+    btnIndi.style.color = "rgba(0, 0, 0, 0.7)";
+    btnIndi.style.background = "white";
+  }
+}
+
+
 btnBallad.addEventListener("click", onCheckedBallad);
 btnSoul.addEventListener("click", onCheckedSoul);
-btnOst.addEventListener("click", onCheckedOst);
+btnHiphop.addEventListener("click", onCheckedHiphop);
 btnDance.addEventListener("click", onCheckedDanse);
 btnRock.addEventListener("click", onCheckedRock);
+btnIndi.addEventListener("click", onCheckedIndi);
 
 

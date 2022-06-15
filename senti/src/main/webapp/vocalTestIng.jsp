@@ -104,15 +104,18 @@
 						<button id="soul">
 							R&B<br>/소울
 						</button>
-						<br /> <input class="ost" type="checkbox" name="genres"
-							value="ost" style="display: none;" />
-						<button id="ost">OST</button>
+						<br /> <input class="hiphop" type="checkbox" name="genres"
+							value="hiphop" style="display: none;" />
+						<button id="hiphop">힙합</button>
 						<br /> <input class="dance" type="checkbox" name="genres"
 							value="dance" style="display: none;" />
 						<button id="dance">댄스</button>
 						<br /> <input class="rock" type="checkbox" name="genres"
 							value="rock" style="display: none;" />
-						<button id="rock">락</button>
+						<button id="rock">Rock</button>
+						<br /> <input class="indi" type="checkbox" name="genres"
+							value="indi" style="display: none;" />
+						<button id="indi">인디</button>
 						<input type="text" name="nick" value=<%=info.getNick()%>
 							style="display: none" />
 					</div>
