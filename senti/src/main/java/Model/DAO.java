@@ -146,9 +146,13 @@ public class DAO {
 
          psmt = conn.prepareStatement(sql);
 
-         psmt.setString(1, "");
-         psmt.setString(2, dto.getId());
-         psmt.setString(3, dto.getPname());
+         psmt.setString(1, dto.getId());
+         psmt.setString(2, "");
+         if(dto.getPname() == "") {
+        	 psmt.setString(3, "플레이리스트");}
+         else {
+        	 psmt.setString(3, dto.getPname());
+         }
          System.out.println("keys : " + dto.getKeys());
          System.out.println("id : " + dto.getId());
          System.out.println("pname : " + dto.getPname());
