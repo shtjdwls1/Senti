@@ -218,8 +218,8 @@ public class DAO {
 
          psmt = conn.prepareStatement(sql);
 
-         psmt.setString(1, dto2.getKeys());
-         psmt.setString(2, dto2.getId());
+         psmt.setString(1, dto2.getId());
+         psmt.setString(2, dto2.getKeys());
          psmt.setString(3, dto2.getPname());
          System.out.println("keys : " + dto2.getKeys());
          System.out.println("id : " + dto2.getId());
