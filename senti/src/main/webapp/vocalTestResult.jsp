@@ -162,6 +162,8 @@
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
+	<%if(info.getHigh()==null){
+	}else{ %>
 	<div class="nav fixed-bottom"
 		style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 14px;">
 		<ul class="nav nav-pills justify-content-center">
@@ -174,6 +176,7 @@
 			<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
 		</ul>
 	</div>
+	<% } %>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

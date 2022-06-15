@@ -1,16 +1,17 @@
+select * from tabs;
 create table userinfo(
 id varchar2(50) primary key,
 pw varchar2(10) not null,
 nick varchar2(50) not null,
 gender varchar2(10) not null,
-high number(8,4),
-low number(8,4),
+high varchar2(10),
+low varchar2(10),
 stability number(10,5),
 coverpath varchar2(100)
 ); --o
 
 select * from USERINFO;
-
+insert into userinfo('id','pw','nick','gender') values('wjdeogus','12','danny','man');
 delete from userinfo where pw = '123';
 
 create table songinfo(
@@ -88,7 +89,7 @@ frequeny number(8,4) not null
 
 select * from compassinfo;
 
-drop table userinfo;
+drop table userinfo cascade constraints;
 drop table songinfo cascade constraints;
 drop table playlist;
 drop table range;
