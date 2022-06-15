@@ -30,7 +30,8 @@
 		</a>
 	</div>
 	<br>
-	<h1 class="display-5 fw-bold lh-1 mb-1" style="text-align: center;">음역대
+	<h1 class="display-5 fw-bold lh-1 mb-1"
+		style="font-family: 'GmarketSansBold'; text-align: center;">음역대
 		테스트</h1>
 	<div class="container col-xxl-8 px-4 py-4">
 		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -50,7 +51,8 @@
 			</div>
 			<div class="record">
 				<input type=checkbox id="chk-hear-mic"> <label
-					for="chk-hear-mic">마이크 소리 듣기</label>
+					for="chk-hear-mic" style="font-family: 'GmarketSansLight';">마이크
+					소리 듣기</label>
 			</div>
 			<form action="Testing" class="userInfo">
 				<div id="select">
@@ -87,19 +89,21 @@
 						<option value="C6">C6</option>
 					</select>
 				</div>
-				<div id="checkbox" class="shadow-sm p-1 mb-1 bg-body rounded">
+				<div id="checkbox" class="">
 					<div>
 						<h5>
 							<strong>선호하는 장르</strong>
 						</h5>
 					</div>
-					<div class = "genre">
+					<div class="genre">
 						<input class="ballad" type="checkbox" name="genres" value="ballad"
 							style="display: none;" />
 						<button id="ballad">발라드</button>
 						<br /> <input class="soul" type="checkbox" name="genres"
 							value="soul" style="display: none;" />
-						<button id="soul">R&B/소울</button>
+						<button id="soul">
+							R&B<br>/소울
+						</button>
 						<br /> <input class="ost" type="checkbox" name="genres"
 							value="ost" style="display: none;" />
 						<button id="ost">OST</button>
@@ -118,10 +122,12 @@
 		</div>
 	</div>
 	<!-- 하단 네비게이션 -->
-	<%if(info.getHigh()==null){
-	}else{ %>
+	<%
+	if (info.getHigh() == null) {
+	} else {
+	%>
 	<div class="nav fixed-bottom"
-		style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 14px;">
+		style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 15px;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link  active"
 				href="vocalTest.jsp">음역대측정</a></li>
@@ -132,7 +138,9 @@
 			<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
 		</ul>
 	</div>
-	<% } %>
+	<%
+	}
+	%>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

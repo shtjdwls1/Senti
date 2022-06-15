@@ -1,3 +1,31 @@
+/*  font */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+strong{
+	font-family: 'GmarketSansMedium';
+}
+span{
+	font-family: 'GmarketSansLight';
+}
+
+
 /* fadein css */
 body {
 	animation: fadeout 3s;
@@ -28,31 +56,25 @@ body{
 #top {
 	height: 60px;
 }
-
 #pitch {
 	float: right;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'GmarketSansBold';
 	color: white;
 }
-
 #senti {
 	float: left;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'GmarketSansBold';
 	color: white;
 	font-size: 28px;
 }
-
 #logo {
 	width: 32px;
 	height: 32px;
 	margin-bottom: 5%;
 }
 .main{
-	font-family: 'Nanum Gothic', sans-serif;
+	
 }
-
 .nav-link {
 	font-size: 90%;
 }
@@ -67,7 +89,7 @@ body{
 #nick {
 	text-align: center;
 	margin-top: 20px;
-	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'GmarketSansMedium';
 }
 
 #playList1{
@@ -126,10 +148,12 @@ img {
 	float: left;
 	height: 38px;
 	margin-left: 10px;
+	font-family: 'GmarketSansLight';
 }
 
 #playListSubmit {
 	margin-left: 10px;
+	font-family: 'GmarketSansLight';
 }
 a {
 	color: gray;

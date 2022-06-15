@@ -31,8 +31,8 @@
 <title>Document</title>
 </head>
 <body>
-			<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
-			<%
+	<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
+	<%
 			String nick = (String) session.getAttribute("nick");
 			String id = (String) session.getAttribute("id");
 			DTO info = (DTO) session.getAttribute("info");
@@ -110,17 +110,17 @@
 	</main>
 
 	<!-- 하단 네비게이션 -->
-		<div class="nav fixed-bottom"
-		style="font-size: 13;background-color: white;border: 1px solid darkgray;font-size: 14px;">
-			<ul class="nav nav-pills justify-content-center">
-				<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
-				<li class="nav-item"><a class="nav-link  active" href="playList.jsp">플레이리스트</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="musicSearch.jsp"
-					aria-current="page">노래검색</a></li>
-				<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
-			</ul>
-		</div>
+	<div class="nav fixed-bottom"
+		style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 15px;">
+		<ul class="nav nav-pills justify-content-center">
+			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
+			<li class="nav-item"><a class="nav-link  active"
+				href="playList.jsp">플레이리스트</a></li>
+			<li class="nav-item"><a class="nav-link" href="musicSearch.jsp"
+				aria-current="page">노래검색</a></li>
+			<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
+		</ul>
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

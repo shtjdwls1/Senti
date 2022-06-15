@@ -37,7 +37,8 @@
 	</div>
 	<br>
 	<h1 class="display-5 lh-1 mb-1"
-		style="text-align: center; font: revert;">마이 페이지</h1>
+		style="text-align: center; font: revert; font-family: 'GmarketSansBold';">마이
+		페이지</h1>
 	<div class="container" id="join">
 		<main>
 			<div class="col-md-7 col-lg-8" style="margin-top: 25px;">
@@ -56,17 +57,10 @@
 					</div>
 
 					<div class="col-12">
-						<label for="id" class="form-label">비밀번호</label> <input required
-							type="password" class="form-control" id="password" name="pw"
-							placeholder="" required maxlength='10' value="여기다가 비밀번호" disabled>
-						<div class="invalid-feedback">Please enter your shipping
-							address.</div>
-					</div>
-
-					<div class="col-12 hidden">
-						<label for="id" class="form-label">비밀번호</label> <input required
-							type="password" class="form-control" id="password" name="pw"
-							placeholder="" required maxlength='10' value="여기다가 비밀번호" disabled>
+						<label for="password" class="form-label">비밀번호</label> <input
+							required type="password" class="form-control" id="password"
+							name="pw" placeholder="" required maxlength='10'
+							value="여기다가 비밀번호" disabled>
 						<div class="invalid-feedback">Please enter your shipping
 							address.</div>
 					</div>
@@ -79,26 +73,20 @@
 							address for shipping updates.</div>
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-12">
 						<label for="lowHigh" class="form-label">음역대</label> <input
 							type="text" class="form-control" id="lowHigh" name="lowHigh"
 							placeholder="최저~최고" maxlength='10' disabled>
 						<div class="invalid-feedback">Zip code required.`</div>
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-12">
 						<label for="nick" class="form-label">닉네임</label> <input
 							type="text" class="form-control" id="nick" name="nick"
 							placeholder="침착맨" maxlength='10' disabled>
 						<div class="invalid-feedback">Zip code required.`</div>
 					</div>
 
-					<div class="col-md-3 hidden">
-						<label for="nick" class="form-label">닉네임</label> <input
-							type="text" class="form-control" id="nick" name="nick"
-							placeholder="침착맨" maxlength='10' disabled>
-						<div class="invalid-feedback">Zip code required.`</div>
-					</div>
 					<hr class="my-3">
 					<input id="updateBtn"
 						class="updateBtn w-100 btn btn-warning btn-lg" type="submit"
@@ -106,14 +94,15 @@
 						style="margin-bottom: 10px; margin-top: 10px; color: white;"></input>
 				</form>
 				<button id="" class="update w-100 btn btn-warning btn-lg"
-					style="margin-bottom: 10px; margin-top: 10px; color: white;">회원정보수정</button>
+					style="margin-bottom: 10px; margin-top: 10px; color: white; font-family: 'GmarketSansMedium';">회원정보수정</button>
 				<a href="LogoutServiceCon"><input id="logout"
-					class="w-100 btn btn-secondary btn-lg" type="submit" value="로그아웃"></input></a>
+					class="w-100 btn btn-secondary btn-lg" type="submit" value="로그아웃"
+					style="font-family: 'GmarketSansMedium';"></input></a>
 			</div>
 		</main>
 		<!-- 하단 네비게이션 -->
 		<div class="nav fixed-bottom"
-			style="font-size: 13; background-color: white; border: 1px solid darkgray; font-size: 13px;">
+			style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 13.5px;">
 			<ul class="nav nav-pills justify-content-center">
 				<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 				<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
