@@ -11,6 +11,7 @@ coverpath varchar2(100)
 ); --o
 
 select * from USERINFO;
+
 insert into userinfo('id','pw','nick','gender') values('wjdeogus','12','danny','man');
 delete from userinfo where pw = '123';
 
