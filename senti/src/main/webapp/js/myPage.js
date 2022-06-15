@@ -51,7 +51,8 @@ function onChangeImg() {
 previewImage.addEventListener("click", onChangeImg);
 
 // 회원정보수정
-const update = document.querySelector("#update");
+const update = document.querySelector(".update");
+const updateBtn = document.querySelector(".updateBtn");
 const password = document.querySelector("#password");
 const nick = document.querySelector("#nick");
 
@@ -60,16 +61,16 @@ let updateOn = false;
 function onUpdateMyPage() {
 	if (!updateOn) {
 		updateOn = true;
-		password.removeAttribute("disabled")
-		nick.removeAttribute("disabled")
-		update.setAttribute("value","회원정보수정 완료")
-		update.setAttribute("type","submit");
+		password.removeAttribute("disabled");
+		nick.removeAttribute("disabled");
+		updateBtn.removeAttribute("id");
+		update.setAttribute("id","update");
 		}else{
 		updateOn = false;
 		password.disabled = true;
 		nick.disabled = true;
-		update.setAttribute("value","회원정보수정 ")	
-		update.setAttribute("type","button");
+		updateBtn.setAttribute("id","updateBtn");
+		update.removeAttribute("id");
 		}
 	}
 
