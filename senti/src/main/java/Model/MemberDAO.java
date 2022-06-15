@@ -53,7 +53,7 @@ public class MemberDAO {
 //             System.out.println("DB연결 실패");
 //          }
          
-         String sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?)";
+         String sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?, ?)";
 
          psmt = conn.prepareStatement(sql);
 
@@ -64,6 +64,7 @@ public class MemberDAO {
          psmt.setString(5, "");
          psmt.setString(6, "");
          psmt.setString(7, "");
+         psmt.setString(8, "");
 
          cnt = psmt.executeUpdate();
       } catch (Exception e) {
