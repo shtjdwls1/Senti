@@ -132,7 +132,7 @@
 								for (int i = 0; i < mlist.size(); i++) {
 									ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname(), info.getId());
 								%>
-								<form action="listDetail" method="post">
+								<form action="listDetail2" method="post">
 									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">
 										<div class="d-flex text-muted pt-3">
 											<a href=""> <img

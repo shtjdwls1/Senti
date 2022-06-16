@@ -31,6 +31,7 @@ public class LoginServiceCon extends HttpServlet {
 		DTO info = dao.login(dto);
 		
 		HttpSession session = request.getSession();
+		session.setMaxInactiveInterval(60*60);
 		
 		if(info != null) {
 			if(info.getHigh() != null) {

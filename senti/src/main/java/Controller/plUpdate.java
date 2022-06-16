@@ -22,12 +22,14 @@ public class plUpdate extends HttpServlet {
 		
 		String pname = request.getParameter("pname");
 		String update_pname = request.getParameter("update_pname");
+		String id = request.getParameter("id");
 		
 		System.out.println("pname : "+pname);
 		System.out.println("update_pname : "+update_pname);
+		System.out.println("id : "+id);
 		
 		DAO dao = new DAO();
-		int cnt = dao.update(update_pname, pname);
+		int cnt = dao.update(update_pname, pname, id);
 		
 		if(cnt>0){
 			System.out.println("playList 수정 성공");

@@ -54,10 +54,10 @@
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
 					<!-- 재생목록 수정  -->
 					<form class="playListTitleUpdate hidden" action="Update">
-						<input type="text" name="pname" value=<%=pname%>
-							style="display: none" /> <input id="playListTitleUpdateInput"
-							class="form-control me-2 d-inline-block" type="search"
+						<input type="text" name="pname" value=<%=pname%> style="display: none" />
+						<input id="playListTitleUpdateInput" class="form-control me-2 d-inline-block" type="search"
 							name="update_pname" placeholder=<%=pname%> aria-label="Search">
+						<input type="text" name="id" value=<%=info.getId()%> style="display: none" />
 						<input id="playListTitleUpdateSubmit" type="submit"
 							class="btn btn-outline-primary d-inline-block" value="입력"></input>
 					</form>
