@@ -42,7 +42,7 @@
 			</a>
 		</div>
 		<button id="back" type="button" class="bi bi-arrow-left fs-1"
-			aria-label="Close"></button>
+			aria-label="Close"onclick="location.href='playList.jsp' "></button>
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
 			<img class="shadow-sm p-1 mb-1 bg-body rounded "
