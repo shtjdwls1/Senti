@@ -194,6 +194,24 @@
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 	<script src="js/musicSearchDetail.js"></script>
+	<!-- alert 꾸미기  -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script>
+		function onAlert() {
+			Swal.fire({
+				position : 'top-end',
+				icon : 'success',
+				title : '플레이리스트에<br> 추가되었습니다.',
+				showConfirmButton : false,
+			/* timer : 4500 */
+			})
+		}
+		const addAlert = document.querySelectorAll("#musicPlus");
+		var addAlertLen = addAlert.length;
+		for (var i = 0; i < addAlertLen; i++) {
+			addAlert[i].addEventListener("click", onAlert);
+		}
+	</script>
 </body>
 
 </html>
