@@ -23,7 +23,10 @@ strong{
 span{
 	font-family: 'GmarketSansLight';
 }
-
+h2{
+    font-size : 19px;
+    font-family: 'GmarketSansBold';
+}
 /* fadein css */
 body {
 	animation: fadeout 3s;

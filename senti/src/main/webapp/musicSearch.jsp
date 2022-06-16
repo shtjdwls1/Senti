@@ -121,12 +121,11 @@
 											<div>
 												<input type="text" name="keys"
 													value=<%=playList.get(i).getKeys()%> style="display: none" />
-												<input type="text" name="id"
-													value=<%=info.getId()%> style="display: none" />
-												<input type="text" name="pname"
+												<input type="text" name="id" value=<%=info.getId()%>
+													style="display: none" /> <input type="text" name="pname"
 													value=<%=mlist.get(p).getPname()%> style="display: none" />
-												<input type="text" name="search"
-													value="<%=search%>" style="display: none" />
+												<input type="text" name="search" value="<%=search%>"
+													style="display: none" />
 												<button type="submit" id="musicPlus"
 													class="bi bi-plus-lg fs-1"></button>
 											</div>
@@ -154,7 +153,7 @@
 	<br>
 	<!-- 하단 네비게이션 -->
 	<div class="nav fixed-bottom"
-		style="font-family: 'GmarketSansLight';background-color: white;border: 1px solid darkgray;font-size: 15px;">
+		style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 15px;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
@@ -169,6 +168,24 @@
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 	<script src="js/musicSearch.js"></script>
+	<!-- alert 꾸미기  -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script>
+		function onAlert() {
+			Swal.fire({
+				position : 'top-end',
+				icon : 'success',
+				title : '플레이리스트에 추가되었습니다.',
+				showConfirmButton : false,
+				/* timer : 4500 */
+			})
+		}
+		const addAlert = document.querySelectorAll("#musicPlus");
+		var addAlertLen = addAlert.length;
+		for(var i = 0; i<addAlertLen; i++){
+			addAlert[i].addEventListener("click", onAlert);
+		}	
+	</script>
 </body>
 
 </html>
