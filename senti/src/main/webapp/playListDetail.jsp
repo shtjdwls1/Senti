@@ -28,9 +28,9 @@
 	<%
 	String pname = request.getParameter("pname");
 	DAO dao = new DAO();
-	ArrayList<songinfoDTO> listDetail = dao.pDetail(pname);
 
 	DTO info = (DTO) session.getAttribute("info");
+	ArrayList<songinfoDTO> listDetail = dao.pDetail(pname, info.getId());
 	%>
 	<main>
 		<div class="p-3 mb-2" id="top">
