@@ -54,7 +54,7 @@
 		</a>
 	</div>
 	<button id="back" type="button" class="bi bi-arrow-left fs-1"
-		aria-label="Close"></button>
+		aria-label="Close" onclick="location.href='playList.jsp'"></button>
 	<!-- <div>
         <input id="musicSearch" class="form-control me-2 w-75 h-25 d-inline-block" type="search"
             placeholder="노래, 아티스트 검색" aria-label="Search" style="visibility: hidden;">
