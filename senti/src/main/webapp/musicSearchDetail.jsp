@@ -130,7 +130,7 @@
 							<div class="modal-body">
 								<%
 								for (int i = 0; i < mlist.size(); i++) {
-									ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
+									ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname(), info.getId());
 								%>
 								<form action="listDetail" method="post">
 									<div id="music" class="my-1 p-1 bg-body rounded shadow-sm">

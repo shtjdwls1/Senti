@@ -98,8 +98,8 @@
 					<div class="col-md-5">
 						<label for="country" class="form-label">성별</label> <select
 							class="form-select" name="gender" id="gender" required>
-							<option value="woman">여</option>
-							<option value="man">남</option>
+							<option value="여자">여자</option>
+							<option value="남자">남자</option>
 						</select>
 						<div class="invalid-feedback">Please select a valid country.
 						</div>

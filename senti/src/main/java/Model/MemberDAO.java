@@ -14,7 +14,7 @@ public class MemberDAO {
    int cnt = 0;
    DTO info = null;
    
-   //DB연결
+// DB연결
    public void db_conn() {
       try {
          Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -30,7 +30,7 @@ public class MemberDAO {
       }
    }
    
-   //DB종료
+// DB종료
    public void db_close() {
       try {
          if(rs != null) rs.close();
@@ -46,13 +46,6 @@ public class MemberDAO {
       try {
          db_conn();
 
-//         if(conn != null) {
-//             System.out.println("DB연결 성공");
-//          }
-//          else {
-//             System.out.println("DB연결 실패");
-//          }
-         
          String sql = "insert into userinfo values(?, ?, ?, ?, ?, ?, ?, ?)";
 
          psmt = conn.prepareStatement(sql);
@@ -75,17 +68,10 @@ public class MemberDAO {
       return cnt;
    }
    
-   //로그인
+// 로그인
    public DTO login(DTO dto) {
       try {
          db_conn();
-         
-//         if(conn != null) {
-//             System.out.println("DB연결 성공");
-//          }
-//          else {
-//             System.out.println("DB연결 실패");
-//          }
          
          String sql = "SELECT * FROM userinfo WHERE id=? AND pw=?";
          
@@ -117,17 +103,10 @@ public class MemberDAO {
       return info;
    }
 
-   //회원정보수정
+// 음역대 정보 입력
    public int update(DTO dto) {
       try {
          db_conn();
-         
-//         if(conn != null) {
-//             System.out.println("DB연결 성공");
-//          }
-//          else {
-//             System.out.println("DB연결 실패");
-//          }
          
          String sql = "UPDATE userinfo SET high=?, low=? WHERE nick=?";
          
@@ -148,19 +127,12 @@ public class MemberDAO {
       return cnt;
    }
    
-   //회원정보관리
+// 회원정보관리
    public ArrayList<DTO> select() {
       ArrayList<DTO> list = new ArrayList<DTO>();
       
       try {
          db_conn();
-         
-//         if(conn != null) {
-//             System.out.println("DB연결 성공");
-//          }
-//          else {
-//             System.out.println("DB연결 실패");
-//          }
          
          String sql = "SELECT * FROM userinfo";
          
@@ -184,6 +156,30 @@ public class MemberDAO {
          db_close();
       }
       return list;
+   }
+   
+// 회원정보 수정
+   public int infoUpdate(userDTO dto) {
+      try {
+         db_conn();
+         
+         String sql = "UPDATE userinfo SET pw=?, nick=? WHERE id=?";
+         
+         psmt = conn.prepareStatement(sql);
+         
+         psmt.setString(1, dto.getPw());
+         psmt.setString(2, dto.getNick());
+         psmt.setString(3, dto.getId());
+         
+         cnt = psmt.executeUpdate();
+      }
+      catch(Exception e) {
+         e.printStackTrace();
+      }
+      finally {
+         db_close();
+      }
+      return cnt;
    }
    
 }

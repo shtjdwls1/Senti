@@ -1,3 +1,4 @@
+<%@page import="Model.DTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!doctype html>
@@ -25,6 +26,7 @@
 </head>
 
 <body>
+<% DTO info = (DTO) session.getAttribute("info"); %>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch">
 			<%-- <%= info.getLow() %>~<%= info.getHigh() %> --%>
@@ -46,12 +48,13 @@
 					<img id="preview-image" src="img/women.jpg"> <input
 						style="display: none;" type="file" id="input-image">
 				</div>
-				<form class="needs-validation" action="" method="post">
+				<form class="needs-validation" action="infoUpdate" method="post">
 					<hr class="my-3">
 					<div class="col-12">
 						<label for="id" class="form-label">아이디</label> <input type="text"
-							class="form-control" id="id" name="id" placeholder="아이디"
+							class="form-control" id="id" name="id" placeholder="<%= info.getId() %>"
 							maxlength='10' disabled>
+						<input type="text" name="id" value=<%=info.getId()%> style="display: none" />
 						<div class="invalid-feedback">Please enter a valid email
 							address for shipping updates.</div>
 					</div>
@@ -60,7 +63,7 @@
 						<label for="password" class="form-label">비밀번호</label> <input
 							required type="password" class="form-control" id="password"
 							name="pw" placeholder="" required maxlength='10'
-							value="여기다가 비밀번호" disabled>
+							value="<%= info.getPw() %>" disabled>
 						<div class="invalid-feedback">Please enter your shipping
 							address.</div>
 					</div>
@@ -68,7 +71,7 @@
 					<div class="col-12">
 						<label for="gender" class="form-label">성별</label> <input required
 							type="text" class="form-control" id="gender" name="gender"
-							placeholder="남/여" maxlength='10' disabled>
+							placeholder="<%= info.getGender() %>" maxlength='10' disabled>
 						<div class="invalid-feedback">Please enter a valid email
 							address for shipping updates.</div>
 					</div>
@@ -76,14 +79,14 @@
 					<div class="col-12">
 						<label for="lowHigh" class="form-label">음역대</label> <input
 							type="text" class="form-control" id="lowHigh" name="lowHigh"
-							placeholder="최저~최고" maxlength='10' disabled>
+							placeholder="<%= info.getLow() %>~<%= info.getHigh() %>" maxlength='10' disabled>
 						<div class="invalid-feedback">Zip code required.`</div>
 					</div>
 
 					<div class="col-12">
 						<label for="nick" class="form-label">닉네임</label> <input
 							type="text" class="form-control" id="nick" name="nick"
-							placeholder="침착맨" maxlength='10' disabled>
+							placeholder="<%= info.getNick() %>" maxlength='10' disabled>
 						<div class="invalid-feedback">Zip code required.`</div>
 					</div>
 

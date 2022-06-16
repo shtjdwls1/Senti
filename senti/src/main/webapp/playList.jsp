@@ -77,8 +77,8 @@
 		<%
 		for (int i = 0; i < mlist.size(); i++) {
 		DAO dao = new DAO();
-		ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname());
-		
+		ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname(), info.getId());
+		System.out.println(listDetail.size());
 		%>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
 			<a href="playListDetail.jsp?pname=<%=mlist.get(i).getPname()%>">

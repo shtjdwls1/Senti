@@ -61,7 +61,15 @@ CONSTRAINT playlist_id_fk FOREIGN KEY(id) REFERENCES userinfo(id),
 CONSTRAINT playlist_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 );
 
+select songinfo.keys, title, singer, albumimg, times, playlist.id
+from songinfo, playlist
+where pname like '테스트' and songinfo.keys = playlist.keys and playlist.id='seoil1221';
+
 select * from playlist;
+
+delete from playlist where id = 'hs';
+
+insert into playlist values('seoil1221','8229565','테스트');
 
 alter table songinfo add primary key(keys);
 

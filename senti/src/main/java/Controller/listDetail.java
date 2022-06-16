@@ -37,11 +37,9 @@ public class listDetail extends HttpServlet {
 		// 받아온 값을 DTO로 묶기
 		playListDTO dto2 = new playListDTO(keys, id, pname);
 		
-		// join메소드 호출 -> 실행결과(int)
 		DAO dao = new DAO();
 		int cnt = dao.listDetail(dto2);
 		
-		// SQL문 실행결과에 따라 회원가입 성공실패 여부 확인
 		if(cnt>0){
 			if(search == null) {
 			System.out.println("음원추가 성공");
