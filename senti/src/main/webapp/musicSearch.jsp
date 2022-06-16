@@ -175,7 +175,7 @@
 			Swal.fire({
 				position : 'top-end',
 				icon : 'success',
-				title : '플레이리스트에 추가되었습니다.',
+				title : '플레이리스트에<br> 추가되었습니다.',
 				showConfirmButton : false,
 				/* timer : 4500 */
 			})
