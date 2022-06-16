@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</div>
-	<audio id = "music" src="music/neverendingstory.mp3" controls></audio>
+	<audio id = "music" src="music/snow.mp3" controls></audio>
 	<div class="record">
 		<input type=checkbox id="chk-hear-mic"> <label
 			for="chk-hear-mic">마이크 소리 듣기</label>

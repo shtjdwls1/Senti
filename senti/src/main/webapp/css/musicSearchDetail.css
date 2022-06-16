@@ -20,11 +20,17 @@
 strong{
 	font-family: 'GmarketSansMedium';
 }
-span{
+p{
 	font-family: 'GmarketSansLight';
 }
-button{
+.btn{
 	font-family: 'GmarketSansMedium';
+}
+h5{
+	font-family: 'GmarketSansMedium';
+}
+.modal-body{
+	font-family: 'GmarketSansLight';
 }
 /* fadein css */
 body{

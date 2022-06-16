@@ -47,14 +47,15 @@
 				</div>
 			</div>
 			<button id="back" type="button" class="btn btn-warning btn-lg"
-				style="margin-bottom: 10px; color: white;">다시 부르기</button>
+				style="margin-bottom: 10px; margin-top: 10px; color: white;">다시
+				부르기</button>
 			<button type="button" class="btn btn-primary btn-lg"
 				onclick="location.href='playList.jsp';">종료</button>
 		</div>
 	</main>
 	<!-- 하단 네비게이션 -->
-	<div class="nav fixed-bottom"
-		style="font-family: 'GmarketSansLight';background-color: white;border: 1px solid darkgray;font-size: 13.5px;">
+	<!-- <div class="nav fixed-bottom"
+		style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 13.5px;">
 		<ul class="nav nav-pills justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 			<li class="nav-item"><a class="nav-link" href="playList.jsp">플레이리스트</a>
@@ -63,7 +64,7 @@
 				aria-current="page">노래검색</a></li>
 			<li class="nav-item"><a class="nav-link" href="myPage.jsp">마이페이지</a></li>
 		</ul>
-	</div>
+	</div> -->
 	<!-- 부트스트랩 -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
