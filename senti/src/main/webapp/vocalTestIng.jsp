@@ -120,7 +120,7 @@
 							style="display: none" />
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">음역대 측정하기</button>
+				<button type="submit" class="btn btn-primary">음원 추천받기</button>
 			</form>
 		</div>
 	</div>
