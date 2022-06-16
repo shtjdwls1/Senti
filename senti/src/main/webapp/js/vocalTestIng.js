@@ -32,18 +32,18 @@ const chkHearMic = document.getElementById("chk-hear-mic")
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)() // 오디오 컨텍스트 정의
 
 const analyser = audioCtx.createAnalyser()
-//        const distortion = audioCtx.createWaveShaper()
-//        const gainNode = audioCtx.createGain()
-//        const biquadFilter = audioCtx.createBiquadFilter()
+        const distortion = audioCtx.createWaveShaper()
+        const gainNode = audioCtx.createGain()
+        const biquadFilter = audioCtx.createBiquadFilter()
 
 function makeSound(stream) {
 	const source = audioCtx.createMediaStreamSource(stream)
 
 	source.connect(analyser)
-	//            analyser.connect(distortion)
-	//            distortion.connect(biquadFilter)
-	//            biquadFilter.connect(gainNode)
-	//            gainNode.connect(audioCtx.destination) // connecting the different audio graph nodes together
+	            analyser.connect(distortion)
+	            distortion.connect(biquadFilter)
+	            biquadFilter.connect(gainNode)
+	            gainNode.connect(audioCtx.destination) // connecting the different audio graph nodes together
 	analyser.connect(audioCtx.destination)
 
 }

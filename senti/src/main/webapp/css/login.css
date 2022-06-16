@@ -17,6 +17,9 @@
     font-weight: normal;
     font-style: normal;
 }
+.btn{
+	font-family: 'GmarketSansMedium';
+}
 
 .bd-placeholder-img {
   font-size: 1.125rem;
