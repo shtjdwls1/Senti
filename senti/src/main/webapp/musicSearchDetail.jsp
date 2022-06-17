@@ -32,15 +32,14 @@
 	String keys = request.getParameter("keys");
 
 	DAO dao = new DAO();
-	
+
 	ArrayList<songinfoDTO> dto = new ArrayList<songinfoDTO>();
 	dto = dao.detail(keys);
-	
+
 	String dto2 = dao.range(keys);
-	
+
 	String dto3 = dao.range2(keys);
-	
-	
+
 	DTO info = (DTO) session.getAttribute("info");
 
 	DAO mdao = new DAO();
@@ -49,9 +48,9 @@
 	if (info != null) {
 		mlist = mdao.playListAdd(info);
 	}
-	
+
 	String high = info.getHigh();
-	
+
 	double dto4 = dao.Frequency(high);
 
 	int cnt = 0;
@@ -87,9 +86,15 @@
 				<p class="card-text" id="genre">
 					장르 :
 					<%=dto.get(0).getGenre()%></p>
-				<p class="card-text" id="singer">음역대 : <br><%= dto2 %> ~ <%= dto3 %></p>
-				<% System.out.println(); %>
-				<p class="card-text">내 음역대와 비교</p>
+				<p class="card-text" id="singer">
+					음역대 : <br><%=dto2%>
+					~
+					<%=dto3%></p>
+				<%
+				System.out.println();
+				%>
+				<p class="card-text" style="color: skyblue; font-weight: bold;">내
+					음역대와 비교</p>
 
 				<!-- 가사 modal -->
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
