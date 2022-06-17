@@ -28,7 +28,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap"
 	rel="stylesheet">
-<title>Document</title>
+<title>Senti</title>
 </head>
 <body>
 	<!-- <img id="profileImg" src="img/women.jpg" alt=""> -->
@@ -78,7 +78,6 @@
 		for (int i = 0; i < mlist.size(); i++) {
 		DAO dao = new DAO();
 		ArrayList<songinfoDTO> listDetail = dao.pDetail(mlist.get(i).getPname(), info.getId());
-		System.out.println(listDetail.size());
 		%>
 		<div id="playList1" class="bg-body rounded shadow-sm col-6">
 			<a href="playListDetail.jsp?pname=<%=mlist.get(i).getPname()%>">

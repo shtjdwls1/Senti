@@ -36,7 +36,7 @@
 	}
 }
 </style>
-<title>Document</title>
+<title>Senti</title>
 
 </head>
 

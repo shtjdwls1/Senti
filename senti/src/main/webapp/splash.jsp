@@ -10,7 +10,7 @@
     <!-- 3초후에 Login.html로 화면 이동 -->
     <meta http-equiv="refresh" content="3;url=Login.jsp">
     <link rel="stylesheet" href="css/splash.css">
-    <title>Document</title>
+    <title>Senti</title>
 </head>
 
 <body>

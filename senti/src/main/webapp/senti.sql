@@ -99,12 +99,23 @@ CONSTRAINT non_recommend_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 select * from non_recommend;
 
 create table compassinfo(
-compass varchar2(5) not null,
+compass varchar2(20) not null,
 frequeny number(8,4) not null
 );
 
 select * from compassinfo;
+select compass from compassinfo where high_range;
 
+select compass
+from compassinfo, songrange
+where keys = '7099195'
+and songrange.low_range >= frequeny;
+-- and songrange.low_range < frequeny;
+--where low_range = '168.8587'
+--and '168.8587' < compassinfo.frequeny;
+--where songrange.low_range = '146.8325'
+
+drop table compassinfo;
 drop table userinfo cascade constraints;
 drop table songinfo cascade constraints;
 drop table playlist;
