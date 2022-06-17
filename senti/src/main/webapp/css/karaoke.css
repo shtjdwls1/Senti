@@ -158,6 +158,10 @@ audio{
 audio{
 	margin-bottom: 10px;
 }
+/* audio 색상  */
+audio::-webkit-media-controls-panel {
+    background-color:  white;
+}
 .btnDelete{
 	all: unset;
 	cursor: pointer;

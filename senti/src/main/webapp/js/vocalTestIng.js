@@ -121,8 +121,6 @@ const btnBallad = document.querySelector("#ballad");
 const ballad = document.querySelector(".ballad");
 const btnSoul = document.querySelector("#soul");
 const soul = document.querySelector(".soul");
-const btnHiphop = document.querySelector("#hiphop");
-const hiphop = document.querySelector(".hiphop");
 const btnDance = document.querySelector("#dance");
 const dance = document.querySelector(".dance");
 const btnRock = document.querySelector("#rock");
@@ -132,7 +130,6 @@ const indi = document.querySelector(".indi");
 
 let checkBallad = false;
 let checkSoul = false;
-let checkHiphop = false;
 let checkDanse = false;
 let checkRock = false;
 let checkIndi = false;
@@ -164,21 +161,6 @@ function onCheckedSoul(event) {
     checkSoul = false;
     btnSoul.style.color = "rgba(0, 0, 0, 0.7)";
     btnSoul.style.background = "white";
-  }
-}
-
-function onCheckedHiphop(event) {
-  event.preventDefault();
-  if (!checkHiphop) {
-    hiphop.checked = true;
-    checkHiphop = true;
-    btnHiphop.style.color = "white";
-    btnHiphop.style.background = "black";
-  } else {
-    hiphop.checked = false;
-    checkHiphop = false;
-    btnHiphop.style.color = "rgba(0, 0, 0, 0.7)";
-    btnHiphop.style.background = "white";
   }
 }
 
@@ -230,7 +212,6 @@ function onCheckedIndi(event) {
 
 btnBallad.addEventListener("click", onCheckedBallad);
 btnSoul.addEventListener("click", onCheckedSoul);
-btnHiphop.addEventListener("click", onCheckedHiphop);
 btnDance.addEventListener("click", onCheckedDanse);
 btnRock.addEventListener("click", onCheckedRock);
 btnIndi.addEventListener("click", onCheckedIndi);

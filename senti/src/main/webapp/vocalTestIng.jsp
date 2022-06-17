@@ -104,9 +104,6 @@
 						<button id="soul">
 							R&B<br>/소울
 						</button>
-						<br /> <input class="hiphop" type="checkbox" name="genres"
-							value="hiphop" style="display: none;" />
-						<button id="hiphop">힙합</button>
 						<br /> <input class="dance" type="checkbox" name="genres"
 							value="dance" style="display: none;" />
 						<button id="dance">댄스</button>
