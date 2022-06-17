@@ -29,7 +29,7 @@ mrpath varchar2(100),
 gender varchar2(10) 
 );
 
-select * from songinfo;
+select * from songinfo where keys = '7099195';
 
 select songinfo.keys, title, singer, albumimg
 from songinfo, PLAYLIST
@@ -52,6 +52,7 @@ CONSTRAINT songrange_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 );
 
 select * from songrange;
+select * from songrange where keys = '7099195';
 
 create table playlist(
 id varchar2(50),
@@ -100,20 +101,38 @@ select * from non_recommend;
 
 create table compassinfo(
 compass varchar2(20) not null,
-frequeny number(8,4) not null
+frequency number(8,4) not null
 );
 
 select * from compassinfo;
-select compass from compassinfo where high_range;
 
-select compass
+select frequency from compassinfo where compass like '%C5%';
+
+-- 최저 음역대
+select max(compass) from COMPASSINFO where frequeny in (
+select frequeny
+from compassinfo, songrange
+where keys = '7099195'
+and songrange.low_range >= frequeny);
+
+-- 최대 음역대
+select min(compass) from COMPASSINFO where frequeny in (
+select frequeny
+from compassinfo, songrange
+where keys = '7099195'
+and songrange.high_range < frequeny);
+
+-- 최저 음역대
+select max(compass)
 from compassinfo, songrange
 where keys = '7099195'
 and songrange.low_range >= frequeny;
--- and songrange.low_range < frequeny;
---where low_range = '168.8587'
---and '168.8587' < compassinfo.frequeny;
---where songrange.low_range = '146.8325'
+
+-- 최대 음역대
+select max(compass)
+from compassinfo, songrange
+where keys = '7099195'
+and frequeny < songrange.high_range;
 
 drop table compassinfo;
 drop table userinfo cascade constraints;

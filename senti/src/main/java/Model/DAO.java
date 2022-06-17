@@ -118,15 +118,13 @@ public class DAO {
 
 	}
 
-	// 음악 상세 음역대
-	public ArrayList<songrangeDTO> range(String keys) {
+	// 음악 최저 음역대
+	public String range(String keys) {
 
-		String sql = "select compass from compassinfo, songrange where keys = '"+ keys +"' and songrange.low_range >= frequeny";
-
-		ArrayList<songrangeDTO> range = new ArrayList<songrangeDTO>();
-
+		String sql = "select max(compass) from compassinfo, songrange where keys = '"+ keys +"' and songrange.low_range >= frequency";
+		
 		db_conn();
-
+		String low_range = "";
 		System.out.println("songrange");
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -134,11 +132,7 @@ public class DAO {
 			rs = psmt.executeQuery();
 			rs.next();
 
-			String low_range = rs.getString(1);
-
-			songrangeDTO dto = new songrangeDTO(low_range);
-
-			range.add(dto);
+			low_range = rs.getString(1);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -146,10 +140,60 @@ public class DAO {
 			db_close();
 		}
 
-		return range;
+		return low_range;
+
+	}
+	
+	// 음악 최고 음역대
+	public String range2(String keys) {
+
+		String sql = "select max(compass) from compassinfo, songrange where keys = '"+ keys +"' and frequency < songrange.high_range";
+		
+		db_conn();
+		String high_range = "";
+		System.out.println("songrange");
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			rs = psmt.executeQuery();
+			rs.next();
+
+			high_range = rs.getString(1);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db_close();
+		}
+
+		return high_range;
 
 	}
 
+	// 사용자 Frequency
+	public double Frequency(String high) {
+		
+		String sql = "select frequency from compassinfo where compass like '%"+high+"%'";
+		
+		db_conn();
+		double user_range = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			rs = psmt.executeQuery();
+			rs.next();
+
+			user_range = rs.getDouble(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db_close();
+		}
+
+		return user_range;
+
+	}
+	
 	// 플레이리스트 생성
 	public int playList(playListDTO dto) {
 		try {
