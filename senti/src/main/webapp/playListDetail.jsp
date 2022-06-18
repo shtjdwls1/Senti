@@ -42,7 +42,7 @@
 			</a>
 		</div>
 		<button id="back" type="button" class="bi bi-arrow-left fs-1"
-			aria-label="Close"onclick="location.href='playList.jsp' "></button>
+			aria-label="Close" onclick="location.href='playList.jsp' "></button>
 		<br>
 		<div class="shadow p-3 mb-5 bg-body rounded" id="main">
 			<img class="shadow-sm p-1 mb-1 bg-body rounded "
@@ -54,12 +54,14 @@
 					<strong class="text-gray-dark" id="playListTitle"><%=pname%></strong>
 					<!-- 재생목록 수정  -->
 					<form class="playListTitleUpdate hidden" action="Update">
-						<input type="text" name="pname" value=<%=pname%> style="display: none" />
-						<input id="playListTitleUpdateInput" class="form-control me-2 d-inline-block" type="search"
+						<input type="text" name="pname" value=<%=pname%>
+							style="display: none" /> <input id="playListTitleUpdateInput"
+							class="form-control me-2 d-inline-block" type="search"
 							name="update_pname" placeholder=<%=pname%> aria-label="Search">
-						<input type="text" name="id" value=<%=info.getId()%> style="display: none" />
-						<input id="playListTitleUpdateSubmit" type="submit"
-							class="btn btn-outline-primary d-inline-block" value="입력"></input>
+						<input type="text" name="id" value=<%=info.getId()%>
+							style="display: none" /> <input id="playListTitleUpdateSubmit"
+							type="submit" class="btn btn-outline-primary d-inline-block"
+							value="입력"></input>
 					</form>
 				</div>
 				<div class="">
@@ -91,7 +93,8 @@
 								<div class="modal-body">정말로 삭제하시겠습니까?</div>
 								<div class="modal-footer">
 									<a href="delete?pname=<%=pname%>">
-										<button type="button" class="btn btn-danger">삭제</button>
+										<button type="button" class="btn btn-danger"
+											style="margin-right: 0px;">삭제</button>
 									</a>
 									<button type="button" class="btn btn-secondary"
 										data-bs-dismiss="modal">닫기</button>
@@ -145,7 +148,7 @@
 		%>
 		<!-- 하단 네비게이션 -->
 		<div class="nav fixed-bottom"
-		style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 15px;">
+			style="font-family: 'GmarketSansLight'; background-color: white; border: 1px solid darkgray; font-size: 15px;">
 			<ul class="nav nav-pills justify-content-center">
 				<li class="nav-item"><a class="nav-link" href="vocalTest.jsp">음역대측정</a></li>
 				<li class="nav-item"><a class="nav-link  active"
