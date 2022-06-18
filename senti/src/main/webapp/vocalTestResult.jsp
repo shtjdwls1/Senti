@@ -58,12 +58,12 @@
 						<div class="pb-3 mb-0 small lh-sm w-100">
 							<div class="d-flex justify-content-between"
 								style="margin-top: 11px;">
-								<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
+								<a href=""> <strong class="text-gray-dark" id="title">노래제목1</strong>
 								</a>
 							</div>
-							<span class="d-block" id="singer" style="float: left;">가수이름</span>
+							<span class="d-block" id="singer" style="float: left;">가수이름1</span>
 							<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-							<span class="d-block" id="times" style="float: left;">노래길이</span>
+							<span class="d-block" id="times" style="float: left;">노래길이1</span>
 						</div>
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
@@ -81,12 +81,12 @@
 						<div class="pb-3 mb-0 small lh-sm w-100">
 							<div class="d-flex justify-content-between"
 								style="margin-top: 11px;">
-								<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
+								<a href=""> <strong class="text-gray-dark" id="title">노래제목2</strong>
 								</a>
 							</div>
-							<span class="d-block" id="singer" style="float: left;">가수이름</span>
+							<span class="d-block" id="singer" style="float: left;">가수이름2</span>
 							<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-							<span class="d-block" id="times" style="float: left;">노래길이</span>
+							<span class="d-block" id="times" style="float: left;">노래길이2</span>
 						</div>
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
@@ -104,12 +104,12 @@
 						<div class="pb-3 mb-0 small lh-sm w-100">
 							<div class="d-flex justify-content-between"
 								style="margin-top: 11px;">
-								<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
+								<a href=""> <strong class="text-gray-dark" id="title">노래제목3</strong>
 								</a>
 							</div>
-							<span class="d-block" id="singer" style="float: left;">가수이름</span>
+							<span class="d-block" id="singer" style="float: left;">가수이름3</span>
 							<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-							<span class="d-block" id="times" style="float: left;">노래길이</span>
+							<span class="d-block" id="times" style="float: left;">노래길이3</span>
 						</div>
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
@@ -127,12 +127,12 @@
 						<div class="pb-3 mb-0 small lh-sm w-100">
 							<div class="d-flex justify-content-between"
 								style="margin-top: 11px;">
-								<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
+								<a href=""> <strong class="text-gray-dark" id="title">노래제목4</strong>
 								</a>
 							</div>
-							<span class="d-block" id="singer" style="float: left;">가수이름</span>
+							<span class="d-block" id="singer" style="float: left;">가수이름4</span>
 							<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-							<span class="d-block" id="times" style="float: left;">노래길이</span>
+							<span class="d-block" id="times" style="float: left;">노래길이4</span>
 						</div>
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
@@ -150,12 +150,12 @@
 						<div class="pb-3 mb-0 small lh-sm w-100">
 							<div class="d-flex justify-content-between"
 								style="margin-top: 11px;">
-								<a href=""> <strong class="text-gray-dark" id="title">노래제목</strong>
+								<a href=""> <strong class="text-gray-dark" id="title">노래제목5</strong>
 								</a>
 							</div>
-							<span class="d-block" id="singer" style="float: left;">가수이름</span>
+							<span class="d-block" id="singer" style="float: left;">가수이름5</span>
 							<span class="d-block" id="singer" style="float: left;">&nbsp﻿·&nbsp﻿</span>
-							<span class="d-block" id="times" style="float: left;">노래길이</span>
+							<span class="d-block" id="times" style="float: left;">노래길이5</span>
 						</div>
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />

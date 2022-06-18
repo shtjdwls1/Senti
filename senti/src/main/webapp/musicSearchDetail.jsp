@@ -39,7 +39,11 @@
 	String dto2 = dao.range(keys);
 
 	String dto3 = dao.range2(keys);
+	
+	double dto5 = dao.range3(keys);
 
+	System.out.println("음원 frequency : "+dto5);
+	
 	DTO info = (DTO) session.getAttribute("info");
 
 	DAO mdao = new DAO();
@@ -52,8 +56,16 @@
 	String high = info.getHigh();
 
 	double dto4 = dao.Frequency(high);
-
+	
+	System.out.println("사용자 Frequency : "+dto4);
+	
 	int cnt = 0;
+	
+	ArrayList<songrangeDTO> high_info = dao.high_info(keys);
+	
+	System.out.println("음원 음역대 : "+high_info.get(0).getHigh_range());
+	System.out.println("음원 Frequency : "+high_info.get(0).getFrequent());
+	
 	%>
 	<div class="p-3 mb-2" id="top">
 		<h1 id="pitch"><%=info.getLow()%>~<%=info.getHigh()%></h1>
@@ -90,11 +102,15 @@
 					음역대 : <br><%=dto2%>
 					~
 					<%=dto3%></p>
-				<%
-				System.out.println();
-				%>
-				<p class="card-text" style="color: skyblue; font-weight: bold;">내
-					음역대와 비교</p>
+				<p class="card-text" style="color: skyblue; font-weight: bold;">
+				<%if(dto4 < dto5) {%>
+				나의 음역대보다 높습니다.
+				<% }else if(dto4 > dto5){ %>
+				나의 음역대보다 낮습니다.
+				<% }else{%>
+				나의 음역대와 같습니다.
+				<% } %>
+				</p>
 
 				<!-- 가사 modal -->
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -113,9 +129,6 @@
 							</div>
 							<div class="modal-body" style="font-size: 15px;">
 								<%=dto.get(0).getLyrics()%>
-								<%
-								System.out.println(dto.get(0).getKeys());
-								%>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"

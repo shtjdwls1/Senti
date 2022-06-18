@@ -20,6 +20,12 @@ public class songrangeDTO {
 		this.low_range = low_range;
 	}
 	
+	public songrangeDTO(String high_range, String frequent) {
+		super();
+		this.high_range = high_range;
+		this.frequent = frequent;
+	}
+
 	public String getKeys() {
 		return keys;
 	}

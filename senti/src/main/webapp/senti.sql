@@ -53,6 +53,7 @@ CONSTRAINT songrange_keys_fk FOREIGN KEY(keys) REFERENCES songinfo(keys)
 
 select * from songrange;
 select * from songrange where keys = '7099195';
+select high_range from songrange where keys = '7099195';
 
 create table playlist(
 id varchar2(50),
@@ -109,30 +110,25 @@ select * from compassinfo;
 select frequency from compassinfo where compass like '%C5%';
 
 -- 최저 음역대
-select max(compass) from COMPASSINFO where frequeny in (
-select frequeny
-from compassinfo, songrange
-where keys = '7099195'
-and songrange.low_range >= frequeny);
-
--- 최대 음역대
-select min(compass) from COMPASSINFO where frequeny in (
-select frequeny
-from compassinfo, songrange
-where keys = '7099195'
-and songrange.high_range < frequeny);
-
--- 최저 음역대
 select max(compass)
 from compassinfo, songrange
 where keys = '7099195'
-and songrange.low_range >= frequeny;
+and songrange.low_range >= frequency;
 
--- 최대 음역대
-select max(compass)
+-- 최고 음역대
+select max(compass), max(frequency)
 from compassinfo, songrange
 where keys = '7099195'
-and frequeny < songrange.high_range;
+and frequency < songrange.high_range;
+
+-- 최고 음역대 숫자
+select max(frequency)
+from compassinfo, songrange
+where keys = '7099195';
+and frequency < songrange.high_range;
+
+select keys, high_range
+from songrange;
 
 drop table compassinfo;
 drop table userinfo cascade constraints;
