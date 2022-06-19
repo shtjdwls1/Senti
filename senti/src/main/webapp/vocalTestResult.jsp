@@ -15,6 +15,9 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/vocalTestResult.css">
+<!-- Bootstrap Icon -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 <title>Senti</title>
 </head>
 <body>
@@ -68,6 +71,7 @@
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
 							<input type="text" name="pname" value="" style="display: none" />
+							<button class="musicDelete bi bi-x-lg fs-1" type="submit"></button>
 						</div>
 					</div>
 				</div>
@@ -91,6 +95,7 @@
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
 							<input type="text" name="pname" value="" style="display: none" />
+							<button class="musicDelete bi bi-x-lg fs-1" type="submit"></button>
 						</div>
 					</div>
 				</div>
@@ -114,6 +119,7 @@
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
 							<input type="text" name="pname" value="" style="display: none" />
+							<button class="musicDelete bi bi-x-lg fs-1" type="submit"></button>
 						</div>
 					</div>
 				</div>
@@ -137,6 +143,7 @@
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
 							<input type="text" name="pname" value="" style="display: none" />
+							<button class="musicDelete bi bi-x-lg fs-1" type="submit"></button>
 						</div>
 					</div>
 				</div>
@@ -160,6 +167,7 @@
 						<div class="">
 							<input type="text" name="keys" value="" style="display: none" />
 							<input type="text" name="pname" value="" style="display: none" />
+							<button class="musicDelete bi bi-x-lg fs-1" type="submit"></button>
 						</div>
 					</div>
 				</div>

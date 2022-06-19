@@ -137,7 +137,7 @@
 							value=<%=listDetail.get(i).getKeys()%> style="display: none" />
 						<input type="text" name="pname" value=<%=pname%>
 							style="display: none" />
-						<button class="musicDelete bi bi-x-lg fs-1 hidden" type="submit"></button>
+						<button id="musicDelete" class="musicDelete bi bi-x-lg fs-1 hidden" type="submit"></button>
 						</a>
 					</div>
 				</div>

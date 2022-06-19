@@ -138,3 +138,8 @@ a {
 	color: gray;
 	text-decoration: none;
 }
+.musicDelete{
+	all: unset;
+	margin-top: 7px;
+    margin-right: 9px
+}
