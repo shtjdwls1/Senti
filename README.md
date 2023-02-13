@@ -4,7 +4,7 @@
 
 ## 👀 프로젝트 소개
 * 프로젝트명 : 사용자 음역대 분석을 통한 노래 추천 / 노래방 서비스
-* 프로젝트 설명 : 본 프로젝트는 홈베이킹을 하는 사람들이 더욱 편하게 취미를 즐길 수 있도록 하는 기능을 구현하는 데에 목적을 두고 있다. 서로 다른 특징을 가진 세 가지 레시피를 제공함으로써 사용자가 본인 취향에 맞게 레시피를 선택할 수 있도록 하고, 재료량 계산기 기능을 통해 계량에 대한 번거로움을 줄여주고자 했다.
+* 프로젝트 설명 : 본 프로젝트는 음악 감상과 노래 부르는 것을 좋아하지만 자신의 음역대르 몰라 어떤 노래를 불러야 할지 모르는 사람들을 위한 기능을 구현하는 데에 목적을 두고 있다. 자신의 목소리를 녹음하거나 저장된 영상을 통해 자신의 음역대를 파악하고 이에 해당하는 노래들을 추천받고 감상할 수 있으며, 노래를 부른후 점수대도 파악해 볼 수 있다.
 
 ## 📅 프로젝트 기간
 2022.05.09 ~ 2022.06.21 (6주)
@@ -15,23 +15,12 @@
 <ul>
     <li><b>웹 - 사용자</b>
         <ul>
-            <li>레시피 화면
-                <ul>
-                    <li>재료, 재료량 계산기, 계량법 안내, 레시피 안내</li>
-                    <li>취향별 선택</li>
-                </ul>
-            </li>
-            <li>유의사항 화면</li>
-            <li>사용자 게시판 화면</li>
-            <li>기본으로 구비하면 좋은 재료 및 도구 정보 제공 화면 및 판매처</li>
-            <li>회원가입 및 로그인 화면</li>
-        </ul>
-    </li>
-</ul>
-<ul>
-    <li><b>웹 - 관리자</b>
-        <ul>
-            <li>회원관리 화면</li>
+            <li>회원가입</li>
+            <li>음역대측정</li>
+            <li>음악감상</li>
+            <li>노래부르기</li>
+            <li>노래검색</li>
+            <li>마이페이지</li>
         </ul>
     </li>
 </ul>
@@ -52,6 +41,7 @@
             <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/>
             <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"/>
             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/>
+            <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> 
         </td>
     </tr>
     <tr>
@@ -65,6 +55,7 @@
         <td>
             <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white"/>
             <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white"/>
+            <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
         </td>
     </tr>
     <tr>
@@ -83,7 +74,7 @@
         <td>협업도구</td>
         <td>
             <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"/>
-            <img src="https://img.shields.io/badge/GitLab-4B4B77?style=for-the-badge&logo=GitLab&logoColor=white"/>
+            <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
         </td>
     </tr>
 </table>
@@ -118,7 +109,8 @@
 <details>
 <summary><h2>🖥 화면구성</h2></summary>
 <div markdown="1">
-<img src="https://user-images.githubusercontent.com/101631017/217444021-b3a88a72-47be-40cf-8d3b-9b02173857d1.png">
+    <img width="952" alt="sentipage1" src="https://user-images.githubusercontent.com/101631017/218411034-2126543a-f71b-4c15-9f73-52c0ffa9b10f.png">
+    <img width="1202" alt="sentipage2" src="https://user-images.githubusercontent.com/101631017/218411089-05a5dbaa-09f6-43d0-bbcd-68935001dd3a.png">
 <br>
 </div>
 </details>
